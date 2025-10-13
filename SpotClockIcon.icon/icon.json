@@ -1,0 +1,53 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "extended-srgb:1.00000,0.80000,0.00000,1.00000",
+      "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "blend-mode-specializations" : [
+        {
+          "appearance" : "dark",
+          "value" : "lighten"
+        }
+      ],
+      "layers" : [
+        {
+          "image-name" : "spotclock-clockHands.svg",
+          "name" : "spotclock-clockHands"
+        },
+        {
+          "image-name" : "spotclock-clockCircle.svg",
+          "name" : "spotclock-clockCircle"
+        },
+        {
+          "image-name" : "spotclock-pLetter.svg",
+          "name" : "spotclock-pLetter"
+        },
+        {
+          "fill" : "automatic",
+          "image-name" : "spotclock-signBase.svg",
+          "name" : "spotclock-signBase"
+        }
+      ],
+      "lighting" : "individual",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

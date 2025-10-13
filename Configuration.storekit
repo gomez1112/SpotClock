@@ -1,0 +1,140 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "B02B3F12",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "7211F9ED",
+      "localizations" : [
+
+      ],
+      "name" : "SpotClock Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "A8890224",
+          "introductoryOffer" : {
+            "internalID" : "5CE83D09",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlock unlimited parking timers, and saved parking history. Cancel anytime.",
+              "displayName" : "SpotClock Pro (Monthly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.spotclock.subscriptions.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "SpotClock Pro Monthly",
+          "subscriptionGroupID" : "7211F9ED",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "D75B2CBF",
+          "introductoryOffer" : {
+            "internalID" : "6601F946",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Save 40% with the annual plan. ",
+              "displayName" : "SpotClock Pro (Yearly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.spotclock.subscriptions.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "SpotClock Pro Yearly",
+          "subscriptionGroupID" : "7211F9ED",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "E2080E07",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Try Pro weekly for full access.",
+              "displayName" : "SpotClock Pro (Weekly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.spotclock.subscriptions.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "SpotClock Pro Weekly",
+          "subscriptionGroupID" : "7211F9ED",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

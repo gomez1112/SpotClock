@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CC2839252E9C063D008875B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2839242E9C063D008875B7 /* StoreKit.framework */; };
+		CC28392A2E9C06B6008875B7 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CC2839292E9C06B6008875B7 /* Configuration.storekit */; };
+		CCFD9BF12E9D23A600872585 /* SpotClockIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = CCFD9BF02E9D23A600872585 /* SpotClockIcon.icon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CC2839072E9C0619008875B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +33,27 @@
 		CC2838F92E9C0618008875B7 /* SpotClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2839062E9C0619008875B7 /* SpotClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2839102E9C0619008875B7 /* SpotClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC2839242E9C063D008875B7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CC2839292E9C06B6008875B7 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		CCFD9BF02E9D23A600872585 /* SpotClockIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = SpotClockIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CC2839282E9C0659008875B7 /* Exceptions for "SpotClock" folder in "SpotClock" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CC2838F82E9C0618008875B7 /* SpotClock */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CC2838FB2E9C0618008875B7 /* SpotClock */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CC2839282E9C0659008875B7 /* Exceptions for "SpotClock" folder in "SpotClock" target */,
+			);
 			path = SpotClock;
 			sourceTree = "<group>";
 		};
@@ -52,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2839252E9C063D008875B7 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +98,12 @@
 		CC2838F02E9C0618008875B7 = {
 			isa = PBXGroup;
 			children = (
+				CCFD9BF02E9D23A600872585 /* SpotClockIcon.icon */,
+				CC2839292E9C06B6008875B7 /* Configuration.storekit */,
 				CC2838FB2E9C0618008875B7 /* SpotClock */,
 				CC2839092E9C0619008875B7 /* SpotClockTests */,
 				CC2839132E9C0619008875B7 /* SpotClockUITests */,
+				CC2839232E9C063D008875B7 /* Frameworks */,
 				CC2838FA2E9C0618008875B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +116,14 @@
 				CC2839102E9C0619008875B7 /* SpotClockUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CC2839232E9C063D008875B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC2839242E9C063D008875B7 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +246,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFD9BF12E9D23A600872585 /* SpotClockIcon.icon in Resources */,
+				CC28392A2E9C06B6008875B7 /* Configuration.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,13 +429,20 @@
 		CC28391B2E9C0619008875B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SpotClockIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SpotClock/SpotClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 88QL9VPLMY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpotClock/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SpotClock - Parking Timer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SpotClock uses your location to help you find your parked car.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SpotClock needs your location to save where you parked.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -417,7 +460,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -425,13 +468,20 @@
 		CC28391C2E9C0619008875B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SpotClockIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SpotClock/SpotClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 88QL9VPLMY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpotClock/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SpotClock - Parking Timer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SpotClock uses your location to help you find your parked car.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SpotClock needs your location to save where you parked.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,7 +499,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
