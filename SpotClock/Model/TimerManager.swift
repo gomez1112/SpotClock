@@ -158,9 +158,9 @@ final class TimerManager {
         
         // Create alert presentation
         let alert = AlarmPresentation.Alert(
-            title: "🚨 Parking Meter Expired!",
+            title: "🚨 Parking Expired!",
             stopButton: AlarmButton(
-                text: "Done",
+                text: "Dismiss",
                 textColor: .white,
                 systemImageName: "checkmark.circle.fill"
             )

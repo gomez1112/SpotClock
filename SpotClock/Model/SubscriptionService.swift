@@ -21,7 +21,7 @@ final class SubscriptionService {
     private let maxFreeSessions = 3
     
     // Your subscription group id from ASC / StoreKit config
-    let subscriptionGroupID = "7211F9ED"
+    let subscriptionGroupID = "21805417"
     
     init() {
         loadSessionCount()

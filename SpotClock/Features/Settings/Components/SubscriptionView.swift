@@ -27,11 +27,6 @@ struct SubscriptionView: View {
                         .padding(.horizontal, 24)
                         .padding(.bottom, 32)
                     
-                    // ROI Calculator
-                    roiSection
-                        .padding(.horizontal, 24)
-                        .padding(.bottom, 32)
-                    
                     // Feature comparison
                     featureComparisonSection
                         .padding(.horizontal, 24)
@@ -183,36 +178,6 @@ struct SubscriptionView: View {
         }
     }
     
-    // MARK: - ROI Section
-    private var roiSection: some View {
-        VStack(spacing: 16) {
-            Text("The Math")
-                .font(.title2.bold())
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack(spacing: 12) {
-                roiRow(label: "Average parking ticket", value: "$75")
-                roiRow(label: "Pro monthly cost", value: "$2.99")
-                
-                Divider()
-                    .padding(.vertical, 4)
-                
-                HStack {
-                    Text("Months of protection per ticket")
-                        .font(.headline)
-                    Spacer()
-                    Text("25+ months")
-                        .font(.title3.bold())
-                        .foregroundStyle(.green)
-                }
-            }
-            .padding(20)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(.ultraThinMaterial)
-            )
-        }
-    }
     
     private func roiRow(label: String, value: String) -> some View {
         HStack {
@@ -237,50 +202,43 @@ struct SubscriptionView: View {
                     icon: "infinity",
                     title: "Unlimited Timers",
                     description: "Park as many times as you want",
-                    isPro: true
+                    color: .blue
                 )
                 
                 featureRow(
                     icon: "bell.badge.fill",
                     title: "Smart Notifications",
                     description: "Never miss an expiration alert",
-                    isPro: false
+                    color: .green
                 )
                 
                 featureRow(
                     icon: "map.fill",
                     title: "Location Saving",
                     description: "Always find your parked car",
-                    isPro: false
+                    color: .teal
                 )
                 
                 featureRow(
                     icon: "clock.arrow.circlepath",
                     title: "Parking History",
                     description: "Track all your parking sessions",
-                    isPro: false
-                )
-                
-                featureRow(
-                    icon: "star.fill",
-                    title: "Priority Support",
-                    description: "Get help when you need it",
-                    isPro: true
+                    color: .pink
                 )
             }
         }
     }
     
-    private func featureRow(icon: String, title: String, description: String, isPro: Bool) -> some View {
+    private func featureRow(icon: String, title: String, description: String, color: Color) -> some View {
         HStack(spacing: 16) {
             ZStack {
                 Circle()
-                    .fill(isPro ? Color.blue.opacity(0.15) : Color.gray.opacity(0.1))
+                    .fill(color.opacity(0.1))
                     .frame(width: 44, height: 44)
                 
                 Image(systemName: icon)
                     .font(.title3)
-                    .foregroundStyle(isPro ? .blue : .secondary)
+                    .foregroundStyle(color)
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -288,21 +246,6 @@ struct SubscriptionView: View {
                     Text(title)
                         .font(.headline)
                     
-                    if isPro {
-                        Text("PRO")
-                            .font(.caption2.bold())
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(
-                                LinearGradient(
-                                    colors: [.blue, .purple],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                ),
-                                in: Capsule()
-                            )
-                    }
                 }
                 
                 Text(description)

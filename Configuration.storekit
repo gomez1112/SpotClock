@@ -88,7 +88,7 @@
           },
           "localizations" : [
             {
-              "description" : "Save 40% with the annual plan. ",
+              "description" : "Unlock unlimited parking timers, and saved parking history. Cancel anytime.",
               "displayName" : "SpotClock Pro (Yearly)",
               "locale" : "en_US"
             }
@@ -116,7 +116,7 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Try Pro weekly for full access.",
+              "description" : "Unlock unlimited parking timers, and saved parking history. Cancel anytime.",
               "displayName" : "SpotClock Pro (Weekly)",
               "locale" : "en_US"
             }
