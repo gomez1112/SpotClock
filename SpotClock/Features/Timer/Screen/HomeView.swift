@@ -45,9 +45,21 @@ struct HomeView: View {
             .sheet(isPresented: $showSubscription) {
                 SubscriptionView()
             }
+            .task {
+                setupExpirationHandler()
+            }
         }
     }
-    
+    private func setupExpirationHandler() {
+        timerManager.onSessionExpired = { [modelContext] session in
+            modelContext.insert(session)
+            do {
+                try modelContext.save()
+            } catch {
+                timerManager.userMessage = "Failed to save expired session: \(error)"
+            }
+        }
+    }
     private var idleView: some View {
         VStack(spacing: 0) {
             Spacer()

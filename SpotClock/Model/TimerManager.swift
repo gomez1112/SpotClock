@@ -26,6 +26,7 @@ final class TimerManager {
     private var currentAlarmID: UUID?
     
     // MARK: - Public API
+    var onSessionExpired: ((ParkingSession) -> Void)?
     
     func startParking(
         duration: TimeInterval,
@@ -126,6 +127,9 @@ final class TimerManager {
         if remaining <= 0 {
             isRunning = false
             tickTimer?.invalidate()
+            
+            onSessionExpired?(session)
+            activeSession = nil
         }
     }
     

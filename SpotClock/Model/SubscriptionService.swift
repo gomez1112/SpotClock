@@ -22,6 +22,7 @@ final class SubscriptionService {
     
     // Your subscription group id from ASC / StoreKit config
     let subscriptionGroupID = "21805417"
+    //let subscriptionGroupID = "7211F9ED"
     
     init() {
         loadSessionCount()
