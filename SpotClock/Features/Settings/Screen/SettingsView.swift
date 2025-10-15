@@ -66,11 +66,11 @@ struct SettingsView: View {
                             .foregroundStyle(.secondary)
                     }
                     
-                    Link(destination: URL(string: "https://apple.com/privacy")!) {
+                    Link(destination: URL(string: "https://transfinite.us/policies/")!) {
                         Label("Privacy Policy", systemImage: "hand.raised")
                     }
                     
-                    Link(destination: URL(string: "https://apple.com/legal")!) {
+                    Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
                         Label("Terms of Service", systemImage: "doc.text")
                     }
                 }
