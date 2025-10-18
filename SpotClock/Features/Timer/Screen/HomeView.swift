@@ -52,14 +52,13 @@ struct HomeView: View {
     }
     private func setupExpirationHandler() {
         timerManager.onSessionExpired = { [modelContext] session in
-            modelContext.insert(session)
-            do {
-                try modelContext.save()
-            } catch {
-                timerManager.userMessage = "Failed to save expired session: \(error)"
+            Task { @MainActor in
+                modelContext.insert(session)
+                try? modelContext.save()
             }
         }
     }
+
     private var idleView: some View {
         VStack(spacing: 0) {
             Spacer()

@@ -36,5 +36,5 @@ struct RingProgressView: View {
 }
 
 #Preview {
-    RingProgressView(progress: 50.0, lineWidth: 2)
+    RingProgressView(progress: 0.5, lineWidth: 20)
 }

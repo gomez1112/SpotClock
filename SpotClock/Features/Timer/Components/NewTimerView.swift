@@ -159,9 +159,8 @@ struct NewTimerView: View {
         guard duration > 0 else { return }
         
         Task { @MainActor in
-            // Make sure we try to get a human name before saving
             let name = await locationManager.ensureLocationName()
-            let loc  = locationManager.location
+            let loc = locationManager.location
             
             await timerManager.startParking(
                 duration: duration,
@@ -170,20 +169,6 @@ struct NewTimerView: View {
                 longitude: loc?.coordinate.longitude ?? 0,
                 notes: notes
             )
-            
-            // If reverse-geocoding finishes later with a better string, update the active session.
-            // (nice UX: the on-screen card will refresh)
-            Task { @MainActor [weak locationManager, weak timerManager] in
-                // Try one more time a moment later
-                try? await Task.sleep(nanoseconds: 800_000_000)
-                guard let lm = locationManager else { return }
-                if let current = lm.location {
-                    let refreshed = await lm.reverseGeocode(current)
-                    if let tm = timerManager, let s = tm.activeSession, !refreshed.isEmpty, refreshed != s.location {
-                        s.location = refreshed
-                    }
-                }
-            }
             
             subscriptionManager.recordSession()
             dismiss()

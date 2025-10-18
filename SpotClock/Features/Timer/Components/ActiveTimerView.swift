@@ -65,7 +65,7 @@ struct ActiveTimerView: View {
                             )
                             .frame(width: 240, height: 240)
                             .rotationEffect(.degrees(-90))
-                            .animation(.smooth, value: progress)
+                            .animation(.smooth, value: timerManager.timeRemaining)
                         // Inner content
                         VStack {
                             Image(systemName: "parkingsign.circle.fill")

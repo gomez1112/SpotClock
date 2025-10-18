@@ -5,6 +5,7 @@
 //  Created by Gerard Gomez on 10/12/25.
 //
 
+import os
 import Foundation
 @preconcurrency import AlarmKit
 import SwiftUI
@@ -13,6 +14,8 @@ nonisolated struct TimerData: AlarmMetadata {}
 
 @Observable
 final class TimerManager {
+    private let logger = Logger(subsystem: "com.transfinite.SpotClock", category: "TimerManager")
+    private var hasExpired = false
     @ObservationIgnored private let alarmManager = AlarmManager.shared
     
     // Public properties for views
@@ -28,6 +31,12 @@ final class TimerManager {
     // MARK: - Public API
     var onSessionExpired: ((ParkingSession) -> Void)?
     
+    init() {
+        Task {
+            await cleanupPendingAlarm()
+        }
+    }
+    
     func startParking(
         duration: TimeInterval,
         location: String,
@@ -35,6 +44,7 @@ final class TimerManager {
         longitude: Double,
         notes: String = ""
     ) async {
+        hasExpired = false
         let endTime = Date().addingTimeInterval(duration)
         let session = ParkingSession(
             endTime: endTime,
@@ -64,23 +74,21 @@ final class TimerManager {
     }
     
     func stopParking() {
-        // Cancel any active alarm
-        if let alarmID = currentAlarmID {
-            Task {
-                do {
-                    try alarmManager.cancel(id: alarmID)
-                    userMessage = "Cancelled alarm."
-                } catch {
-                    userMessage = "Failed to cancel alarm: \(error.localizedDescription)"
-                }
-            }
-            currentAlarmID = nil
-        }
+        let alarmID = currentAlarmID
+        currentAlarmID = nil
         
         isRunning = false
         timeRemaining = 0
+        activeSession = nil
         tickTimer?.invalidate()
         tickTimer = nil
+        
+        if let alarmID {
+            Task {
+                try? alarmManager.cancel(id: alarmID)
+                UserDefaults.standard.removeObject(forKey: "activeAlarmID")
+            }
+        }
         
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
@@ -88,17 +96,23 @@ final class TimerManager {
     func extendParking(by additionalTime: TimeInterval) {
         guard let session = activeSession else { return }
         
-        // Update session
         session.endTime = session.endTime.addingTimeInterval(additionalTime)
         session.duration += additionalTime
         session.wasExtended = true
         
-        // Cancel old alarm and schedule new one
+        // Stop current timer
+        tickTimer?.invalidate()
+        tickTimer = nil
+        
         Task {
             if let alarmID = currentAlarmID {
                 try? alarmManager.cancel(id: alarmID)
             }
             await scheduleTimer(for: session)
+            // Restart timer
+            await MainActor.run {
+                startTicking()
+            }
         }
         
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -107,15 +121,19 @@ final class TimerManager {
     // MARK: - Private Methods
     
     private func startTicking() {
-        guard currentAlarmID != nil else {
-            userMessage = "Alarm not scheduled - timer will not start."
-            return
+        if currentAlarmID == nil {
+            userMessage = "Warning: Alarm not scheduled, but timer will run."
         }
+        
         tickTimer?.invalidate()
         tickTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             Task { @MainActor [weak self] in
                 self?.updateRemaining()
             }
+        }
+        
+        if let timer = tickTimer {
+            RunLoop.main.add(timer, forMode: .common)
         }
     }
     
@@ -124,12 +142,13 @@ final class TimerManager {
         let remaining = max(0, session.endTime.timeIntervalSinceNow)
         timeRemaining = remaining
         
-        if remaining <= 0 {
+        if remaining <= 0 && !hasExpired {
+            hasExpired = true
             isRunning = false
             tickTimer?.invalidate()
-            
             onSessionExpired?(session)
             activeSession = nil
+            UserDefaults.standard.removeObject(forKey: "activeAlarmID")
         }
     }
     
@@ -188,9 +207,24 @@ final class TimerManager {
                 )
             )
             currentAlarmID = alarmID
+            UserDefaults.standard.set(alarmID.uuidString, forKey: "activeAlarmID")
             userMessage = "Timer scheduled."
         } catch {
             userMessage = "Failed to schedule alarm: \(error.localizedDescription)"
+            logger.error("Failed to schedule alarm: \(error.localizedDescription)")
+        }
+    }
+    // MARK: - Alarm Cleanup on Launch
+    private func cleanupPendingAlarm() async {
+        if let stored = UserDefaults.standard.string(forKey: "activeAlarmID"),
+           let uuid = UUID(uuidString: stored) {
+            do {
+                try alarmManager.cancel(id: uuid)
+                logger.notice("Cleaned up stale alarm \(uuid)")
+                UserDefaults.standard.removeObject(forKey: "activeAlarmID")
+            } catch {
+                logger.error("Cleanup failed: \(error.localizedDescription)")
+            }
         }
     }
 }

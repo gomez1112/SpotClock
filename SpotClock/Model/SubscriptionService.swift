@@ -6,12 +6,14 @@
 //
 
 
+import os
 import StoreKit
 import SwiftUI
 
 @MainActor
 @Observable
 final class SubscriptionService {
+    private let logger = Logger(subsystem: "com.transfinite.SpotClock", category: "Subscription")
     // MARK: - Access
     var hasProAccess = false
     
@@ -20,25 +22,21 @@ final class SubscriptionService {
     var currentMonthStart = Date()
     private let maxFreeSessions = 3
     
-    // Your subscription group id from ASC / StoreKit config
-    let subscriptionGroupID = "21805417"
-    //let subscriptionGroupID = "7211F9ED"
+    let subscriptionGroupID = "7211F9ED"
+    //let subscriptionGroupID = "21805417"
+  
     
     init() {
         loadSessionCount()
-        
-        // Establish entitlement once at launch
         Task { await refreshEntitlements() }
         
-        // Listen for any subsequent transaction changes (upgrades, renewals, restores)
-        Task {
+        // ✅ FIXED: Use Task.detached to avoid hanging async sequence
+        Task.detached { [weak self] in
             for await result in Transaction.updates {
-                guard case .verified(let transaction) = result else { continue }
-                // Only react to transactions from our group
-                if transaction.subscriptionGroupID == subscriptionGroupID {
-                    await refreshEntitlements()
-                }
-                await transaction.finish()
+                guard case .verified(let tx) = result else { continue }
+                guard tx.subscriptionGroupID == self?.subscriptionGroupID else { continue }
+                await self?.refreshEntitlements(using: tx)
+                await tx.finish()
             }
         }
     }
@@ -70,7 +68,7 @@ final class SubscriptionService {
                     break
             }
         } catch {
-            // handle purchase error (optional logging/UI)
+            logger.error("Purchase error: \(error.localizedDescription)")
         }
     }
     
@@ -80,7 +78,7 @@ final class SubscriptionService {
             try await AppStore.sync()
             await refreshEntitlements()
         } catch {
-            // optional: surface restore error
+            logger.error("Restore failed: \(error.localizedDescription)")
         }
     }
     

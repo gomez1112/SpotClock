@@ -45,7 +45,6 @@ struct DesignSystem {
     static let cardBackground = Color(uiColor: .systemBackground).opacity(0.95)
     
     static let presetDurations: [(title: String, duration: TimeInterval, icon: String)] = [
-        ("5 sec", 5, "circle"),
         ("15 min", 900, "15.circle.fill"),
         ("30 min", 1800, "30.circle.fill"),
         ("1 hour", 3600, "clock.fill"),
