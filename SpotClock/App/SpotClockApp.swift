@@ -5,35 +5,36 @@
 //  Created by Gerard Gomez on 10/12/25.
 //
 
+import AppIntents
 import SwiftData
 import SwiftUI
 
 @main
 struct SpotClockApp: App {
-    @State private var timerManager = TimerManager()
-    @State private var subscriptionManager = SubscriptionService()
-    @State private var locationManager = LocationService()
+    private let container = ModelContainerFactory.createSharedContainer
+    private let subscriptionService: SubscriptionService
+    private let timerService: TimerService
+    private let locationService: LocationService
     
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            ParkingSession.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    init() {
+        let timerService = TimerService()
+        let locationService = LocationService()
+        let subscriptionService = SubscriptionService()
         
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+        self.timerService = timerService
+        self.locationService = locationService
+        self.subscriptionService = subscriptionService
+        
+        AppDependencyManager.shared.add(dependency: timerService)
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(timerManager)
-                .environment(subscriptionManager)
-                .environment(locationManager)
+                .environment(timerService)
+                .environment(subscriptionService)
+                .environment(locationService)
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(container)
     }
 }

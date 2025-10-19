@@ -14,7 +14,7 @@ struct SubscriptionView: View {
     @State private var isAnimating = false
     
     var body: some View {
-        SubscriptionStoreView(groupID: subscriptionManager.subscriptionGroupID) {
+        SubscriptionStoreView(groupID: subscriptionManager.subscriptionGroupIDTesting) {
             ScrollView {
                 VStack(spacing: 0) {
                     // Hero section with premium feel

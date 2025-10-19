@@ -20,7 +20,7 @@ final class SubscriptionService {
     // MARK: - Free tier tracking
     var monthlySessionsUsed = 0
     var currentMonthStart = Date()
-    private let maxFreeSessions = 3
+    private let maxFreeSessions = 100
     
     let subscriptionGroupIDTesting = "7211F9ED"
     let subscriptionGroupID = "21805417"

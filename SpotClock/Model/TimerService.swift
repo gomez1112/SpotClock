@@ -10,10 +10,13 @@ import Foundation
 @preconcurrency import AlarmKit
 import SwiftUI
 
-nonisolated struct TimerData: AlarmMetadata {}
+nonisolated struct TimerData: AlarmMetadata {
+    let parkingTitle: String
+    let location: String
+}
 
 @Observable
-final class TimerManager {
+final class TimerService {
     private let logger = Logger(subsystem: "com.transfinite.SpotClock", category: "TimerManager")
     private var hasExpired = false
     @ObservationIgnored private let alarmManager = AlarmManager.shared
@@ -58,7 +61,6 @@ final class TimerManager {
         activeSession = session
         timeRemaining = duration
         isRunning = true
-        
         // Schedule the alarm
             guard await checkForAuthorization() else {
                 userMessage = "Alarm permission required. Enable in Settings."
@@ -68,9 +70,6 @@ final class TimerManager {
         
         // Start UI ticker
         startTicking()
-        
-        // Haptic feedback
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
     func stopParking() {
@@ -181,18 +180,22 @@ final class TimerManager {
         
         // Create alert presentation
         let alert = AlarmPresentation.Alert(
-            title: "🚨 Parking Expired!",
+            title: "🚨 Parking Expired! • \(session.location)",
             stopButton: AlarmButton(
                 text: "Dismiss",
                 textColor: .white,
                 systemImageName: "checkmark.circle.fill"
             )
         )
+        let metadata = TimerData(
+            parkingTitle: "Parking",
+            location: session.location
+        )
         let countdownContent = AlarmPresentation.Countdown(title: "Parking", pauseButton: .pauseButton)
         let pausedContent = AlarmPresentation.Paused(title: "Paused", resumeButton: .resumeButton)
         let attributes = AlarmAttributes<TimerData>(
             presentation: AlarmPresentation(alert: alert, countdown: countdownContent, paused: pausedContent),
-            tintColor: .red
+            metadata: metadata, tintColor: .indigo
         )
       
         // Schedule the alarm as a timer (countdown)

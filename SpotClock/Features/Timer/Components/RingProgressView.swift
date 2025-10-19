@@ -9,32 +9,58 @@
 import SwiftUI
 
 struct RingProgressView: View {
-    var progress: Double           // 0...1
     var lineWidth: CGFloat = 20
-
+    @Environment(TimerService.self) private var timerManager
     var body: some View {
         ZStack {
             Circle()
-                .strokeBorder(.quaternary, lineWidth: lineWidth)
-
+                .stroke(.quaternary, lineWidth: 24)
+                .frame(width: 240, height: 240)
+            
             Circle()
-                .trim(from: 0, to: max(0, min(1, progress)))
+                .trim(from: 0, to: progress)
                 .stroke(
-                    AngularGradient(
-                        gradient: Gradient(colors: [Color.accent]),
-                        center: .center
-                    ),
-                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
+                    timeGradient,
+                    style: StrokeStyle(lineWidth: 24, lineCap: .round)
                 )
+                .frame(width: 240, height: 240)
                 .rotationEffect(.degrees(-90))
-                .animation(.linear(duration: 0.6), value: progress)
+                .animation(.smooth, value: timerManager.timeRemaining)
+            // Inner content
+            VStack {
+                Image(systemName: "parkingsign.circle.fill")
+                    .font(.system(size: 48))
+                    .foregroundStyle(.tertiary)
+                
+                Text("\(Int(progress * 100))%")
+                    .font(.title3.bold())
+                    .foregroundStyle(.secondary)
+            }
         }
-        .accessibilityElement()
-        .accessibilityLabel("Progress")
-        .accessibilityValue("\(Int(progress * 100)) percent")
+        .shadow(color: timeColor.opacity(0.2), radius: 20, y: 10)
+        .padding()
+    }
+    private var timeColor: Color {
+        if timerManager.timeRemaining > 600 { return .green }
+        else if timerManager.timeRemaining > 300 { return .orange }
+        else { return .red }
+    }
+    
+    private var timeGradient: LinearGradient {
+        if timerManager.timeRemaining > 600 {
+            return LinearGradient(colors: [.green, .green.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        } else if timerManager.timeRemaining > 300 {
+            return LinearGradient(colors: [.orange, .orange.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        } else {
+            return LinearGradient(colors: [.red, .red.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        }
+    }
+    private var progress: Double {
+        guard let session = timerManager.activeSession, session.duration > 0 else { return 0 }
+        return timerManager.timeRemaining / session.duration
     }
 }
 
 #Preview {
-    RingProgressView(progress: 0.5, lineWidth: 20)
+    RingProgressView(lineWidth: 20)
 }

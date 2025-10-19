@@ -10,10 +10,11 @@ import SwiftUI
 
 struct NewTimerView: View {
     @Environment(\.dismiss) private var dismiss
-    @Environment(TimerManager.self) private var timerManager
+    @Environment(TimerService.self) private var timerManager
     @Environment(LocationService.self) private var locationManager
     @Environment(SubscriptionService.self) private var subscriptionManager
     
+    @State private var startTapped = false
     @State private var selectedDuration: TimeInterval = 3600
     @State private var customHours = 1
     @State private var customMinutes = 0
@@ -143,8 +144,10 @@ struct NewTimerView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Start") {
+                        startTapped.toggle()
                         startTimer()
                     }
+                    .sensoryFeedback(.impact(weight: .medium), trigger: startTapped)
                     .fontWeight(.semibold)
                 }
             }
@@ -179,6 +182,6 @@ struct NewTimerView: View {
 #Preview {
     NewTimerView()
         .environment(SubscriptionService())
-        .environment(TimerManager())
+        .environment(TimerService())
         .environment(LocationService())
 }

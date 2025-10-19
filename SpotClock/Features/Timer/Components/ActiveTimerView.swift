@@ -7,11 +7,13 @@
 
 import SwiftData
 import SwiftUI
-
 struct ActiveTimerView: View {
 
     @Environment(\.modelContext) private var modelContext
-    @Environment(TimerManager.self) private var timerManager
+    @Environment(TimerService.self) private var timerManager
+    
+    @State private var extendHapticTick: Int = 0
+    @State private var endHapticTick: Int = 0
     
     var session: ParkingSession
     
@@ -52,33 +54,7 @@ struct ActiveTimerView: View {
                     .padding()
                     
                     // Enhanced progress ring with better styling
-                    ZStack {
-                        Circle()
-                            .stroke(.quaternary, lineWidth: 24)
-                            .frame(width: 240, height: 240)
-                        
-                        Circle()
-                            .trim(from: 0, to: progress)
-                            .stroke(
-                                timeGradient,
-                                style: StrokeStyle(lineWidth: 24, lineCap: .round)
-                            )
-                            .frame(width: 240, height: 240)
-                            .rotationEffect(.degrees(-90))
-                            .animation(.smooth, value: timerManager.timeRemaining)
-                        // Inner content
-                        VStack {
-                            Image(systemName: "parkingsign.circle.fill")
-                                .font(.system(size: 48))
-                                .foregroundStyle(.tertiary)
-                            
-                            Text("\(Int(progress * 100))%")
-                                .font(.title3.bold())
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    .shadow(color: timeColor.opacity(0.2), radius: 20, y: 10)
-                    .padding()
+                    RingProgressView()
                     
                     // Action buttons with improved layout
                     VStack {
@@ -88,8 +64,7 @@ struct ActiveTimerView: View {
                         }
                         
                         Button(role: .destructive) {
-                            let generator = UINotificationFeedbackGenerator()
-                            generator.notificationOccurred(.success)
+                            endHapticTick += 1
                             
                             if let session = timerManager.activeSession {
                                 modelContext.insert(session)
@@ -109,6 +84,7 @@ struct ActiveTimerView: View {
                         .tint(.red)
                         .buttonSizing(.flexible)
                         .buttonStyle(.borderedProminent)
+                        .sensoryFeedback(.success, trigger: endHapticTick)
                     }
                     .padding()
                     
@@ -119,25 +95,11 @@ struct ActiveTimerView: View {
         }
         
     }
-    private var progress: Double {
-        guard let session = timerManager.activeSession, session.duration > 0 else { return 0 }
-        return timerManager.timeRemaining / session.duration
-    }
-    
+
     private var timeColor: Color {
         if timerManager.timeRemaining > 600 { return .green }
         else if timerManager.timeRemaining > 300 { return .orange }
         else { return .red }
-    }
-    
-    private var timeGradient: LinearGradient {
-        if timerManager.timeRemaining > 600 {
-            return LinearGradient(colors: [.green, .green.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
-        } else if timerManager.timeRemaining > 300 {
-            return LinearGradient(colors: [.orange, .orange.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
-        } else {
-            return LinearGradient(colors: [.red, .red.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing)
-        }
     }
     
     private var statusText: String {
@@ -159,8 +121,7 @@ struct ActiveTimerView: View {
     }
     private func extendButton(minutes: Int, icon: String) -> some View {
         Button {
-            let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
+            extendHapticTick += 1
             timerManager.extendParking(by: TimeInterval(minutes * 60))
         } label: {
             VStack {
@@ -176,12 +137,14 @@ struct ActiveTimerView: View {
         .tint(.blue)
         .buttonSizing(.flexible)
         .buttonStyle(.borderedProminent)
+        .sensoryFeedback(.impact(weight: .light), trigger: extendHapticTick)
     }
 }
 
 #Preview {
     NavigationStack {
         ActiveTimerView(session: ParkingSession(endTime: Date(), duration: 2000))
-            .environment(TimerManager())
+            .environment(TimerService())
     }
 }
+

@@ -10,7 +10,7 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
-    @Environment(TimerManager.self) private var timerManager
+    @Environment(TimerService.self) private var timerManager
     @Environment(SubscriptionService.self) private var subscriptionManager
     @Environment(LocationService.self) private var locationManager: LocationService
     @State private var showNewTimer = false
@@ -205,5 +205,5 @@ struct HomeView: View {
     HomeView()
         .environment(LocationService())
         .environment(SubscriptionService())
-        .environment(TimerManager())
+        .environment(TimerService())
 }

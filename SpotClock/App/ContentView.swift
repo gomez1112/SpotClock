@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(TimerManager.self) var timerManager: TimerManager
+    @Environment(TimerService.self) var timerManager: TimerService
     @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
     private enum Tabs: Hashable { case timer, history, settings }
     @State private var selectedTab: Tabs = .timer
@@ -43,7 +43,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(TimerManager())
+        .environment(TimerService())
         .environment(SubscriptionService())
         .environment(LocationService())
 }
