@@ -22,8 +22,8 @@ final class SubscriptionService {
     var currentMonthStart = Date()
     private let maxFreeSessions = 3
     
-    let subscriptionGroupID = "7211F9ED"
-    //let subscriptionGroupID = "21805417"
+    let subscriptionGroupIDTesting = "7211F9ED"
+    let subscriptionGroupID = "21805417"
   
     
     init() {

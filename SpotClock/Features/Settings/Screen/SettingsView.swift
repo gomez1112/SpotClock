@@ -62,8 +62,10 @@ struct SettingsView: View {
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.0.0")
-                            .foregroundStyle(.secondary)
+                        if let version = getAppVersionAndBuild.version {
+                            Text(version)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     
                     Link(destination: URL(string: "https://transfinite.us/policies/")!) {
@@ -122,6 +124,12 @@ struct SettingsView: View {
                 showAlert = true
             }
         }
+    }
+    var getAppVersionAndBuild: (version: String?, build: String?) {
+        let bundle = Bundle.main
+        let version = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
+        let build = bundle.infoDictionary?["CFBundleVersion"] as? String
+        return (version, build)
     }
 }
 
