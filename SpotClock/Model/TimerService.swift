@@ -31,6 +31,9 @@ final class TimerService {
     private var tickTimer: Timer?
     private var currentAlarmID: UUID?
     
+    private var leaveNowAlarmID: UUID?
+    var leaveNowDate: Date?
+    
     // MARK: - Public API
     var onSessionExpired: ((ParkingSession) -> Void)?
     
@@ -88,7 +91,13 @@ final class TimerService {
                 UserDefaults.standard.removeObject(forKey: "activeAlarmID")
             }
         }
-        
+        if let leaveID = leaveNowAlarmID {
+            Task {
+                try? alarmManager.cancel(id: leaveID)
+                leaveNowAlarmID = nil
+                leaveNowDate = nil
+            }
+        }
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
     
@@ -108,6 +117,10 @@ final class TimerService {
                 try? alarmManager.cancel(id: alarmID)
             }
             await scheduleTimer(for: session)
+            
+            if let leaveDate = leaveNowDate {
+                await scheduleLeaveNowAlarm(at: leaveDate, session: session)
+            }
             // Restart timer
             await MainActor.run {
                 startTicking()
@@ -116,7 +129,21 @@ final class TimerService {
         
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
-    
+    func updateLeaveNowAlarm(leaveBy: Date?) {
+        Task {
+            guard let session = activeSession else { return }
+            // Cancel previous leave-alarm if any
+            if let existing = leaveNowAlarmID {
+                try? alarmManager.cancel(id: existing)
+                leaveNowAlarmID = nil
+            }
+            
+            leaveNowDate = leaveBy
+            
+            guard let leaveBy, leaveBy > Date() else { return }
+            await scheduleLeaveNowAlarm(at: leaveBy, session: session)
+        }
+    }
     // MARK: - Private Methods
     
     private func startTicking() {
@@ -148,6 +175,13 @@ final class TimerService {
             onSessionExpired?(session)
             activeSession = nil
             UserDefaults.standard.removeObject(forKey: "activeAlarmID")
+            if let leaveID = leaveNowAlarmID {
+                Task {
+                    try? alarmManager.cancel(id: leaveID)
+                }
+                leaveNowAlarmID = nil
+                leaveNowDate = nil
+            }
         }
     }
     
@@ -215,6 +249,40 @@ final class TimerService {
         } catch {
             userMessage = "Failed to schedule alarm: \(error.localizedDescription)"
             logger.error("Failed to schedule alarm: \(error.localizedDescription)")
+        }
+    }
+    // MARK: - NEW: schedule leave-now alarm
+    private func scheduleLeaveNowAlarm(at date: Date, session: ParkingSession) async {
+        let duration = date.timeIntervalSinceNow
+        guard duration > 0 else { return }
+        
+        let alert = AlarmPresentation.Alert(
+            title: "🚶 Time to head back • \(session.location)",
+            stopButton: AlarmButton(
+                text: "OK",
+                textColor: .white,
+                systemImageName: "checkmark.circle.fill"
+            )
+        )
+        let attributes = AlarmAttributes<TimerData>(
+            presentation: AlarmPresentation(
+                alert: alert,
+                countdown: AlarmPresentation.Countdown(title: "Leave Soon", pauseButton: .pauseButton),
+                paused: AlarmPresentation.Paused(title: "Paused", resumeButton: .resumeButton)
+            ),
+            metadata: TimerData(parkingTitle: "LeaveNow", location: session.location),
+            tintColor: .indigo
+        )
+        
+        let id = UUID()
+        do {
+            _ = try await alarmManager.schedule(
+                id: id,
+                configuration: .timer(duration: duration, attributes: attributes)
+            )
+            leaveNowAlarmID = id
+        } catch {
+            logger.error("LeaveNow schedule failed: \(error.localizedDescription)")
         }
     }
     // MARK: - Alarm Cleanup on Launch

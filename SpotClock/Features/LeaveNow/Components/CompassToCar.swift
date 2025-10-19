@@ -1,0 +1,46 @@
+//
+//  CompassToCar.swift
+//  SpotClock
+//
+//  Created by Gerard Gomez on 10/19/25.
+//
+
+import SwiftUI
+
+struct CompassToCar: View {
+    let bearingRadians: Double
+    let distanceMeters: Double
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(.ultraThinMaterial)
+                    .frame(width: 80, height: 80)
+                    .overlay(
+                        Circle()
+                            .strokeBorder(.white.opacity(0.12), lineWidth: 1))
+                Image(systemName: "location.north.fill")
+                    .rotationEffect(.radians(bearingRadians))
+                    .font(.title2)
+                    .foregroundColor(.primary)
+                    .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+                    .animation(.smooth, value: bearingRadians)
+            }
+            Text(distanceString(distanceMeters))
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+    }
+    private func distanceString(_ meters: Double) -> String {
+        if meters >= 1000 {
+            return String(format: "%.1f km", meters / 1000)
+        } else {
+            return "\(Int(meters)) m"
+        }
+    }
+}
+
+#Preview {
+    CompassToCar(bearingRadians: 0.80, distanceMeters: 50)
+}

@@ -61,6 +61,6 @@ struct RingProgressView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .previewData) {
     RingProgressView(lineWidth: 20)
 }

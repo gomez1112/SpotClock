@@ -19,6 +19,7 @@ struct PreviewData: PreviewModifier {
             .environment(TimerService())
             .environment(SubscriptionService())
             .environment(LocationService())
+            .environment(WalkETAService())
             
     }
 }

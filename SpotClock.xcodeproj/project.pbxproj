@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		CC2839252E9C063D008875B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2839242E9C063D008875B7 /* StoreKit.framework */; };
 		CC28392A2E9C06B6008875B7 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CC2839292E9C06B6008875B7 /* Configuration.storekit */; };
-		CC72A52B2EA49517003FBB9D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC72A52A2EA49517003FBB9D /* WidgetKit.framework */; };
-		CC72A52D2EA49517003FBB9D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC72A52C2EA49517003FBB9D /* SwiftUI.framework */; };
 		CC72A53E2EA49518003FBB9D /* SpotClockWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC72A5292EA49517003FBB9D /* SpotClockWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCFD9BF12E9D23A600872585 /* SpotClockIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = CCFD9BF02E9D23A600872585 /* SpotClockIcon.icon */; };
 /* End PBXBuildFile section */
@@ -70,6 +68,12 @@
 		CC2839282E9C0659008875B7 /* Exceptions for "SpotClock" folder in "SpotClock" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Features/AlarmLiveActivity/AlarmControls.swift,
+				Features/AlarmLiveActivity/AlarmProgressView.swift,
+				Features/AlarmLiveActivity/AppIntents.swift,
+				Features/AlarmLiveActivity/ButtonView.swift,
+				Features/AlarmLiveActivity/SpotClockWidgetBundle.swift,
+				Features/AlarmLiveActivity/SpotClockWidgetLiveActivity.swift,
 				Info.plist,
 			);
 			target = CC2838F82E9C0618008875B7 /* SpotClock */;
@@ -85,7 +89,14 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Extension/ParkingSession+Extension.swift",
+				Features/AlarmLiveActivity/AlarmControls.swift,
+				Features/AlarmLiveActivity/AlarmProgressView.swift,
+				Features/AlarmLiveActivity/AppIntents.swift,
+				Features/AlarmLiveActivity/ButtonView.swift,
+				Features/AlarmLiveActivity/SpotClockWidgetBundle.swift,
+				Features/AlarmLiveActivity/SpotClockWidgetLiveActivity.swift,
 				Features/Timer/Components/RingProgressView.swift,
+				Model/LeaveNowAdvisor.swift,
 				Model/LocationService.swift,
 				Model/ModelContainerFactory.swift,
 				Model/ParkingSession.swift,
@@ -93,6 +104,7 @@
 				Model/SessionData.swift,
 				Model/SubscriptionService.swift,
 				Model/TimerService.swift,
+				Model/WalkETAService.swift,
 			);
 			target = CC72A5282EA49517003FBB9D /* SpotClockWidgetExtension */;
 		};
@@ -155,8 +167,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC72A52D2EA49517003FBB9D /* SwiftUI.framework in Frameworks */,
-				CC72A52B2EA49517003FBB9D /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +741,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -762,6 +776,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
