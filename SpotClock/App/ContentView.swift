@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(TimerService.self) var timerManager: TimerService
     @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
-    private enum Tabs: Hashable { case timer, history, settings }
+    private enum Tabs: Hashable { case insights, timer, history, settings }
     @State private var selectedTab: Tabs = .timer
     
     var body: some View {
@@ -28,7 +28,9 @@ struct ContentView: View {
             Tab("Timer", systemImage: "timer", value: Tabs.timer) {
                 HomeView()
             }
-
+            Tab("Insights", systemImage: "chart.xyaxis.line", value: Tabs.insights) {
+                InsightsView()
+            }
             Tab("History", systemImage: "clock.arrow.circlepath", value: Tabs.history) {
                 HistoryView()
             }

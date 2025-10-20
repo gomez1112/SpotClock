@@ -38,7 +38,7 @@ struct ModelContainerFactory {
         let context = container.mainContext
 
         // Insert sample data for all models
-        context.insert(ParkingSession.sampleParkingSession)
+        ParkingSession.sampleSessions.forEach(context.insert)
         
         try context.save()
         return container
