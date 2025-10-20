@@ -11,12 +11,12 @@ import SwiftUI
 
 struct PreviewData: PreviewModifier {
     static func makeSharedContext() async throws -> ModelContainer {
-        try ModelContainerFactory.createPreviewContainer()
+        ModelContainerFactory.createPreviewContainer
     }
     func body(content: Content, context: ModelContainer) -> some View {
         content
             .modelContainer(context)
-            .environment(TimerService())
+            .environment(TimerService(container: context))
             .environment(SubscriptionService())
             .environment(LocationService())
             .environment(WalkETAService())

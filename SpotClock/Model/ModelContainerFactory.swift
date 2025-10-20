@@ -33,14 +33,20 @@ struct ModelContainerFactory {
         }
     }()
 
-    static func createPreviewContainer() throws -> ModelContainer {
-        let container = try ModelContainer(for: schema, configurations: configuration(isStoredInMemoryOnly: true))
-        let context = container.mainContext
-
-        // Insert sample data for all models
-        ParkingSession.sampleSessions.forEach(context.insert)
+    static let createPreviewContainer: ModelContainer = {
+        do {
+            let container = try ModelContainer(for: schema, configurations: configuration(isStoredInMemoryOnly: true))
+            let context = container.mainContext
+            
+            // Insert sample data for all models
+            ParkingSession.sampleSessions.forEach(context.insert)
+            
+            try context.save()
+            return container
+        } catch {
+            print(error.localizedDescription)
+            fatalError("Could not create model container: \(error.localizedDescription)")
+        }
         
-        try context.save()
-        return container
-    }
+    }()
 }

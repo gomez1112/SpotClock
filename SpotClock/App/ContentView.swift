@@ -45,7 +45,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(TimerService())
+        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
         .environment(SubscriptionService())
         .environment(LocationService())
 }

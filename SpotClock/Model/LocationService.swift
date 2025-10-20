@@ -14,6 +14,9 @@ import CoreLocation
 final class LocationService: NSObject {
     private let manager = CLLocationManager()
     
+    // ✅ FIXED: Add a continuation property to bridge the delegate callback with an async function.
+    private var locationContinuation: CheckedContinuation<CLLocation?, Error>?
+    
     var location: CLLocation?
     var authorizationStatus: CLAuthorizationStatus = .notDetermined
     var locationName: String = "Current Location"
@@ -30,37 +33,43 @@ final class LocationService: NSObject {
     func requestPermission() {
         manager.requestWhenInUseAuthorization()
         
-        // Ask for precise accuracy if user granted Reduced Accuracy
         if manager.accuracyAuthorization == .reducedAccuracy {
-            // Add “NSLocationTemporaryUsageDescriptionDictionary” → { "ParkingLocation" : "…" } to Info.plist
             manager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "ParkingLocation")
         }
     }
     
-    func getCurrentLocation() {
-        manager.requestLocation()
+    // ✅ FIXED: This new helper function reliably awaits a single location update.
+    private func awaitSingleLocationUpdate() async throws -> CLLocation? {
+        try await withCheckedThrowingContinuation { continuation in
+            self.locationContinuation = continuation
+            manager.requestLocation()
+            
+            // Add a timeout to prevent waiting forever.
+            Task {
+                try await Task.sleep(for: .seconds(10))
+                self.locationContinuation?.resume(throwing: LocationError.timeout)
+                self.locationContinuation = nil
+            }
+        }
     }
     
-    // PUBLIC: make sure we have a human-readable name (used by UI before saving a session)
+    // ✅ FIXED: Replaced unreliable Task.sleep with the robust `awaitSingleLocationUpdate` function.
     func ensureLocationName() async -> String {
-        // If we already have a readable address, return it
-        if locationName != "Current Location" { return locationName }
+        if locationName != "Current Location", locationName != "Finding Location..." { return locationName }
         
-        // If we already have coordinates, try reverse-geocoding immediately
-        if let loc = location {
-            let name = await reverseGeocode(loc)
-            self.locationName = name
-            return name
+        do {
+            self.locationName = "Finding Location..."
+            if let newLocation = try await awaitSingleLocationUpdate() {
+                self.location = newLocation
+                let name = await reverseGeocode(newLocation)
+                self.locationName = name
+                return name
+            }
+        } catch {
+            self.errorMessage = "Could not get location: \(error.localizedDescription)"
+            self.locationName = "Current Location" // Reset on failure
         }
         
-        // Otherwise trigger a one-shot and give it a moment
-        manager.requestLocation()
-        try? await Task.sleep(nanoseconds: 800_000_000) // 0.8s gentle wait without withChecked*
-        if let loc = self.location {
-            let name = await reverseGeocode(loc)
-            self.locationName = name
-            return name
-        }
         return locationName
     }
     
@@ -73,7 +82,7 @@ final class LocationService: NSObject {
                     if let item = try await request.mapItems.first {
                         if let short = item.address?.shortAddress, !short.isEmpty { return short }
                         if let full  = item.address?.fullAddress,  !full.isEmpty  { return full  }
-                        if let name  = item.name,                 !name.isEmpty  { return name  }
+                        if let name  = item.name,                !name.isEmpty  { return name  }
                         // last-ditch: coordinates
                         return String(format: "%.5f, %.5f",
                                       item.location.coordinate.latitude,
@@ -89,40 +98,44 @@ final class LocationService: NSObject {
                 let placemarks = try await CLGeocoder().reverseGeocodeLocation(location)
                 if let p = placemarks.first {
                     // Build a compact address
-                    let parts = [
-                        p.name,                // POI / street + number when available
-                        p.locality,            // city
-                        p.administrativeArea,  // state
-                        p.postalCode           // zip
-                    ].compactMap { $0 }.filter { !$0.isEmpty }
-                    if !parts.isEmpty { return parts.joined(separator: ", ") }
+                    var addressParts: [String] = []
+                    if let name = p.name { addressParts.append(name) }
+                    if let locality = p.locality { addressParts.append(locality) }
+                    if !addressParts.isEmpty { return addressParts.joined(separator: ", ") }
                 }
             } catch {
                 self.errorMessage = "Reverse geocoding (CLGeocoder) failed: \(error.localizedDescription)"
             }
         }
-        
-        
-        
-        return "Current Location"
+        return "Unnamed Location"
     }
+}
+
+enum LocationError: Error {
+    case timeout
 }
 
 // MARK: - CLLocationManagerDelegate
 extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let last = locations.last else { return }
-        let coord = last.coordinate
         Task { @MainActor in
-            let current = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
-            self.location = current
-            // Kick off a background refresh of the readable name
-            self.locationName = await self.reverseGeocode(current)
+            // ✅ FIXED: Resume the continuation with the new location and clear it.
+            self.locationContinuation?.resume(returning: last)
+            self.locationContinuation = nil
+            
+            // This part handles continuous background updates if needed elsewhere.
+            self.location = last
         }
     }
     
     nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        Task { @MainActor in self.errorMessage = "Location error: \(error.localizedDescription)" }
+        Task { @MainActor in
+            // ✅ FIXED: If the manager fails, throw the error to the awaiting function.
+            self.locationContinuation?.resume(throwing: error)
+            self.locationContinuation = nil
+            self.errorMessage = "Location error: \(error.localizedDescription)"
+        }
     }
     
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -130,7 +143,7 @@ extension LocationService: CLLocationManagerDelegate {
         Task { @MainActor in
             self.authorizationStatus = status
             if status == .authorizedWhenInUse || status == .authorizedAlways {
-                self.getCurrentLocation()
+                self.manager.requestLocation()
             }
         }
     }

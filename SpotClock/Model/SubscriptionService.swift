@@ -20,8 +20,21 @@ final class SubscriptionService {
     // MARK: - Free tier tracking
     var monthlySessionsUsed = 0
     var currentMonthStart = Date()
-    private let maxFreeSessions = 100
+    private var maxFreeSessions: Int {
+        #if DEBUG
+        return 100 // For Xcode and simulators
+        #else
+        return 3   // For production App Store builds
+        #endif
+    }
     
+    var currentSubscriptionGroupID: String {
+        #if DEBUG
+        subscriptionGroupIDTesting
+        #else
+        subscriptionGroupID
+        #endif
+    }
     let subscriptionGroupIDTesting = "7211F9ED"
     let subscriptionGroupID = "21805417"
   

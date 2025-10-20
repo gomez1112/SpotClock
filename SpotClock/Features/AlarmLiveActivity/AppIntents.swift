@@ -9,9 +9,12 @@
 import AlarmKit
 import AppIntents
 
+// ✅ FIXED: Replaced force-unwrapping with safe `guard let` statements in all intents.
+
 struct PauseIntent: LiveActivityIntent {
     func perform() throws -> some IntentResult {
-        try AlarmManager.shared.pause(id: UUID(uuidString: alarmID)!)
+        guard let uuid = UUID(uuidString: alarmID) else { return .result() }
+        try AlarmManager.shared.pause(id: uuid)
         return .result()
     }
     
@@ -32,7 +35,8 @@ struct PauseIntent: LiveActivityIntent {
 
 struct StopIntent: LiveActivityIntent {
     func perform() throws -> some IntentResult {
-        try AlarmManager.shared.stop(id: UUID(uuidString: alarmID)!)
+        guard let uuid = UUID(uuidString: alarmID) else { return .result() }
+        try AlarmManager.shared.stop(id: uuid)
         return .result()
     }
     
@@ -53,7 +57,8 @@ struct StopIntent: LiveActivityIntent {
 
 struct RepeatIntent: LiveActivityIntent {
     func perform() throws -> some IntentResult {
-        try AlarmManager.shared.countdown(id: UUID(uuidString: alarmID)!)
+        guard let uuid = UUID(uuidString: alarmID) else { return .result() }
+        try AlarmManager.shared.countdown(id: uuid)
         return .result()
     }
     
@@ -74,7 +79,8 @@ struct RepeatIntent: LiveActivityIntent {
 
 struct ResumeIntent: LiveActivityIntent {
     func perform() throws -> some IntentResult {
-        try AlarmManager.shared.resume(id: UUID(uuidString: alarmID)!)
+        guard let uuid = UUID(uuidString: alarmID) else { return .result() }
+        try AlarmManager.shared.resume(id: uuid)
         return .result()
     }
     
@@ -95,7 +101,8 @@ struct ResumeIntent: LiveActivityIntent {
 
 struct OpenAlarmAppIntent: LiveActivityIntent {
     func perform() throws -> some IntentResult {
-        try AlarmManager.shared.stop(id: UUID(uuidString: alarmID)!)
+        guard let uuid = UUID(uuidString: alarmID) else { return .result() }
+        try AlarmManager.shared.stop(id: uuid)
         return .result()
     }
     

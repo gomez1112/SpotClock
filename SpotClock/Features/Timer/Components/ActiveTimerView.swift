@@ -204,7 +204,7 @@ struct ActiveTimerView: View {
 #Preview(traits: .previewData) {
     NavigationStack {
         ActiveTimerView(session: ParkingSession(endTime: Date(), duration: 2000))
-            .environment(TimerService())
+            .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
     }
 }
 

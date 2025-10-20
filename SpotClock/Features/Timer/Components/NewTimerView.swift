@@ -20,7 +20,7 @@ struct NewTimerView: View {
     @State private var customMinutes = 0
     @State private var notes = ""
     @State private var useCustomDuration = false
-    
+    @State private var showSubscription = false
     var body: some View {
         NavigationStack {
             ZStack {
@@ -151,11 +151,24 @@ struct NewTimerView: View {
                     .fontWeight(.semibold)
                 }
             }
-            .task(locationManager.getCurrentLocation)
+            .sheet(isPresented: $showSubscription) {
+                SubscriptionView()
+            }
+            .task {
+                Task {
+                    await locationManager.ensureLocationName()
+                }
+            }
         }
     }
     
     private func startTimer() {
+        // ✅ FIXED: Re-check subscription status before starting the timer.
+        guard subscriptionManager.canStartSession else {
+            // If the user can't start a session, show the paywall and stop.
+            showSubscription = true
+            return
+        }
         let duration = useCustomDuration
         ? TimeInterval(customHours * 3600 + customMinutes * 60)
         : selectedDuration
@@ -182,6 +195,6 @@ struct NewTimerView: View {
 #Preview {
     NewTimerView()
         .environment(SubscriptionService())
-        .environment(TimerService())
+        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
         .environment(LocationService())
 }

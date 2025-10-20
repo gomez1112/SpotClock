@@ -45,17 +45,6 @@ struct HomeView: View {
             .sheet(isPresented: $showSubscription) {
                 SubscriptionView()
             }
-            .task {
-                setupExpirationHandler()
-            }
-        }
-    }
-    private func setupExpirationHandler() {
-        timerManager.onSessionExpired = { [modelContext] session in
-            Task { @MainActor in
-                modelContext.insert(session)
-                try? modelContext.save()
-            }
         }
     }
 
@@ -201,9 +190,9 @@ struct HomeView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .previewData) {
     HomeView()
         .environment(LocationService())
         .environment(SubscriptionService())
-        .environment(TimerService())
+        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
 }

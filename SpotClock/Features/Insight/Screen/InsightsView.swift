@@ -498,30 +498,20 @@ struct InsightsView: View {
         guard !sessions.isEmpty else { return 0 }
         
         let calendar = Calendar.current
+        // 1. Create a set of unique days the user parked. This is extremely fast.
+        let uniqueParkingDays: Set<Date> = Set(
+            sessions.map { calendar.startOfDay(for: $0.startTime) }
+        )
+        
         var streak = 0
         var currentDate = calendar.startOfDay(for: Date())
         
-        for _ in 0..<365 {
-            let daySessions = sessions.filter {
-                calendar.isDate($0.startTime, inSameDayAs: currentDate)
-            }
-            
-            if daySessions.isEmpty {
-                if streak == 0 {
-                    break
-                }
-                currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
-                continue
-            }
-            
-            let allSuccessful = daySessions.allSatisfy { $0.isExpired }
-            if allSuccessful {
-                streak += 1
-            } else if streak > 0 {
-                break
-            }
-            
-            currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
+        // 2. Loop backwards from today and check for consecutive days in the set.
+        while uniqueParkingDays.contains(currentDate) {
+            streak += 1
+            // Move to the previous day
+            guard let previousDay = calendar.date(byAdding: .day, value: -1, to: currentDate) else { break }
+            currentDate = previousDay
         }
         
         return streak

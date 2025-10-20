@@ -12,9 +12,9 @@ struct SubscriptionView: View {
     @Environment(SubscriptionService.self) var subscriptionManager
     @Environment(\.dismiss) private var dismiss
     @State private var isAnimating = false
-    
+
     var body: some View {
-        SubscriptionStoreView(groupID: subscriptionManager.subscriptionGroupIDTesting) {
+        SubscriptionStoreView(groupID: subscriptionManager.currentSubscriptionGroupID) {
             ScrollView {
                 VStack(spacing: 0) {
                     // Hero section with premium feel

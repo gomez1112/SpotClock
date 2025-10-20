@@ -18,7 +18,7 @@ struct SpotClockApp: App {
     private let walkETAService: WalkETAService
     
     init() {
-        let timerService = TimerService()
+        let timerService = TimerService(container: container)
         let locationService = LocationService()
         let subscriptionService = SubscriptionService()
         let walkETAService = WalkETAService()

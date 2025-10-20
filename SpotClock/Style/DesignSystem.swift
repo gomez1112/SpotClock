@@ -44,11 +44,22 @@ struct DesignSystem {
     
     static let cardBackground = Color(uiColor: .systemBackground).opacity(0.95)
     
-    static let presetDurations: [(title: String, duration: TimeInterval, icon: String)] = [
-        ("15 min", 900, "15.circle.fill"),
-        ("30 min", 1800, "30.circle.fill"),
-        ("1 hour", 3600, "clock.fill"),
-        ("2 hours", 7200, "clock.arrow.circlepath"),
-        ("4 hours", 14400, "hourglass"),
-    ]
+    static var presetDurations: [(title: String, duration: TimeInterval, icon: String)] {
+        // Define the standard list of durations for all users.
+        var durations: [(title: String, duration: TimeInterval, icon: String)] = [
+            ("15 min", 900, "15.circle.fill"),
+            ("30 min", 1800, "30.circle.fill"),
+            ("1 hour", 3600, "clock.fill"),
+            ("2 hours", 7200, "clock.arrow.circlepath"),
+            ("4 hours", 14400, "hourglass"),
+        ]
+        
+        // ✅ ADDED: This block only runs for debug builds (Xcode/Simulator/Previews).
+        // It inserts the 15-second timer at the beginning of the list.
+#if DEBUG
+        durations.insert(("15 sec", 15, "hare.fill"), at: 0)
+#endif
+        
+        return durations
+    }
 }

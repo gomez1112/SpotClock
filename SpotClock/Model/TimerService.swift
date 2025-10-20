@@ -8,6 +8,7 @@
 import os
 import Foundation
 @preconcurrency import AlarmKit
+import SwiftData
 import SwiftUI
 
 nonisolated struct TimerData: AlarmMetadata {
@@ -20,6 +21,7 @@ final class TimerService {
     private let logger = Logger(subsystem: "com.transfinite.SpotClock", category: "TimerManager")
     private var hasExpired = false
     @ObservationIgnored private let alarmManager = AlarmManager.shared
+    private let modelContext: ModelContext
     
     // Public properties for views
     var activeSession: ParkingSession?
@@ -34,15 +36,14 @@ final class TimerService {
     private var leaveNowAlarmID: UUID?
     var leaveNowDate: Date?
     
-    // MARK: - Public API
-    var onSessionExpired: ((ParkingSession) -> Void)?
-    
-    init() {
+    init(container: ModelContainer) {
+        self.modelContext = ModelContext(container)
         Task {
+            // ✅ FIXED: Call the new, safer state restoration function instead of the old cleanup.
             await cleanupPendingAlarm()
         }
     }
-    
+
     func startParking(
         duration: TimeInterval,
         location: String,
@@ -76,6 +77,13 @@ final class TimerService {
     }
     
     func stopParking() {
+        // Capture the session before it's cleared
+        if let sessionToSave = activeSession {
+            modelContext.insert(sessionToSave)
+            // It's good practice to try saving immediately
+            try? modelContext.save()
+        }
+        
         let alarmID = currentAlarmID
         currentAlarmID = nil
         
@@ -172,7 +180,8 @@ final class TimerService {
             hasExpired = true
             isRunning = false
             tickTimer?.invalidate()
-            onSessionExpired?(session)
+            modelContext.insert(session)
+            try? modelContext.save()
             activeSession = nil
             UserDefaults.standard.removeObject(forKey: "activeAlarmID")
             if let leaveID = leaveNowAlarmID {

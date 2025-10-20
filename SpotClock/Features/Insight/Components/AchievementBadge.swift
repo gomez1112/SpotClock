@@ -49,7 +49,7 @@ struct AchievementBadge: View {
     
     private var badgeCircle: some View {
         Circle()
-            .fill(achievement.isUnlocked ? achievement.color.gradient : Color.secondary.gradient)
+            .fill(achievement.isUnlocked ? achievement.color.gradient : Color.clear.gradient)
             .frame(width: 72, height: 72)
             .overlay { circleOverlay }
             .shadow(
