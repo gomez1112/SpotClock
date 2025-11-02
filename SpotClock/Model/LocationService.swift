@@ -5,7 +5,7 @@
 //  Created by Gerard Gomez on 10/12/25.
 //
 
-// LocationManager.swift
+
 import Foundation
 import CoreLocation
 @preconcurrency import MapKit
@@ -22,12 +22,16 @@ final class LocationService: NSObject {
     var locationName: String = "Current Location"
     var errorMessage: String?
     
+    // ✅ NEW: Track if we're actively updating location
+    private var isUpdatingLocation = false
+    
     override init() {
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.activityType = .other
         manager.distanceFilter = kCLDistanceFilterNone
+        manager.allowsBackgroundLocationUpdates = false
     }
     
     func requestPermission() {
@@ -37,6 +41,20 @@ final class LocationService: NSObject {
             manager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "ParkingLocation")
             hasRequestedFullAccuracy = true
         }
+    }
+    
+    // ✅ NEW: Start continuous location updates (for maps)
+    func startUpdatingLocation() {
+        guard !isUpdatingLocation else { return }
+        isUpdatingLocation = true
+        manager.startUpdatingLocation()
+    }
+    
+    // ✅ NEW: Stop continuous location updates
+    func stopUpdatingLocation() {
+        guard isUpdatingLocation else { return }
+        isUpdatingLocation = false
+        manager.stopUpdatingLocation()
     }
     
     func ensureLocationName() async -> String {
@@ -60,6 +78,7 @@ final class LocationService: NSObject {
         
         return locationName
     }
+    
     private func awaitSingleLocationUpdate() async throws -> CLLocation? {
         
         guard locationContinuation == nil else {
@@ -131,12 +150,12 @@ extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let last = locations.last else { return }
         Task { @MainActor in
-            // ✅ FIXED: Resume the continuation with the new location and clear it.
+            // Update the current location for continuous tracking
+            self.location = last
+            
+            // ✅ FIXED: Resume the continuation with the new location and clear it (for single updates).
             self.locationContinuation?.resume(returning: last)
             self.locationContinuation = nil
-            
-            // This part handles continuous background updates if needed elsewhere.
-            self.location = last
         }
     }
     
@@ -154,7 +173,7 @@ extension LocationService: CLLocationManagerDelegate {
         Task { @MainActor in
             self.authorizationStatus = status
             if status == .authorizedWhenInUse || status == .authorizedAlways {
-                if self.locationContinuation == nil {
+                if self.locationContinuation == nil && !self.isUpdatingLocation {
                     self.manager.requestLocation()
                 }
             }

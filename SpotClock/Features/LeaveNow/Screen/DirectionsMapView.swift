@@ -5,6 +5,7 @@
 //  Created by Gerard Gomez on 10/20/25.
 //
 
+
 import MapKit
 import SwiftUI
 import OSLog
@@ -28,11 +29,8 @@ struct DirectionsMapView: View {
             ZStack {
                 // Map with route
                 Map(position: $position) {
-                    // User location marker
-                    if let userLocation = locationService.location?.coordinate {
-                        Marker("You", systemImage: "person.fill", coordinate: userLocation)
-                            .tint(.blue)
-                    }
+                    // ✅ FIXED: Use UserAnnotation for proper user location tracking
+                    UserAnnotation()
                     
                     // Car location marker
                     Marker(carAddress, systemImage: "car.fill", coordinate: carLocation)
@@ -81,9 +79,10 @@ struct DirectionsMapView: View {
                 }
             }
             .task {
-                await fetchRoute()
+                // ✅ FIXED: Request fresh location before calculating route
+                await refreshLocationAndRoute()
             }
-            .alert("Couldn’t Load Directions", isPresented: $showRouteError) {
+            .alert("Couldn't Load Directions", isPresented: $showRouteError) {
                 Button("OK", role: .cancel) {}
             } message: {
                 Text(routeErrorMessage)
@@ -167,12 +166,24 @@ struct DirectionsMapView: View {
         .shadow(color: .black.opacity(0.15), radius: 20, y: 10)
     }
     
+    // MARK: - ✅ NEW: Refresh location before fetching route
+    private func refreshLocationAndRoute() async {
+        // Request a fresh location update
+        _ = await locationService.ensureLocationName()
+        
+        // Small delay to ensure location is updated
+        try? await Task.sleep(for: .milliseconds(500))
+        
+        // Now fetch the route with current location
+        await fetchRoute()
+    }
+    
     // MARK: - Fetch Route
     private func fetchRoute() async {
         guard let userLocation = locationService.location?.coordinate else {
             isLoadingRoute = false
             logger.warning("User location unavailable; cannot calculate route.")
-            routeErrorMessage = "Your current location isn’t available. Please enable Location Services and try again."
+            routeErrorMessage = "Your current location isn't available. Please enable Location Services and try again."
             showRouteError = true
             return
         }
@@ -210,19 +221,19 @@ struct DirectionsMapView: View {
         } catch {
             logger.error("Failed to calculate route: \(error.localizedDescription, privacy: .public)")
             isLoadingRoute = false
-            routeErrorMessage = "We couldn’t calculate a walking route to your car. Please try again in a moment. (\(error.localizedDescription))"
+            routeErrorMessage = "We couldn't calculate a walking route to your car. Please try again in a moment. (\(error.localizedDescription))"
             showRouteError = true
         }
     }
     
     // MARK: - Open in Maps
     private func openInMaps() {
-            let carCLLocation = CLLocation(latitude: carLocation.latitude, longitude: carLocation.longitude)
-            let carMapItem = MKMapItem(location: carCLLocation, address: nil)
-            carMapItem.name = carAddress
-            carMapItem.openInMaps(launchOptions: [
-                MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking
-            ])
+        let carCLLocation = CLLocation(latitude: carLocation.latitude, longitude: carLocation.longitude)
+        let carMapItem = MKMapItem(location: carCLLocation, address: nil)
+        carMapItem.name = carAddress
+        carMapItem.openInMaps(launchOptions: [
+            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking
+        ])
         
     }
     

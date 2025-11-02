@@ -32,7 +32,10 @@ struct ActiveTimerView: View {
     
     @State private var showDirections = false
     @State private var lastSessionEndTime: Date?
-    @State private var isRefreshing = false
+    
+    // ✅ NEW: Separate refresh timer
+    @State private var refreshTimer: Timer?
+    
     var session: ParkingSession
     
     var body: some View {
@@ -90,7 +93,6 @@ struct ActiveTimerView: View {
                         }
                     }
                     .padding(.horizontal)
-                    // RingProgressView()
                     
                     // Action buttons with improved layout
                     VStack {
@@ -123,8 +125,22 @@ struct ActiveTimerView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .scrollBounceBehavior(.basedOnSize)
-            .task(id: "\(timerService.timeRemaining)-\(locationService.location?.coordinate.latitude ?? 0)-\(locationService.location?.coordinate.longitude ?? 0)-\(session.endTime.timeIntervalSince1970)") {
-                await refreshETAAndCompass()
+            // ✅ FIXED: Don't use timeRemaining in task ID - it changes every second!
+            .task(id: session.id) {
+                await initialRefresh()
+                startRefreshTimer()
+            }
+            // ✅ FIXED: Watch for session end time changes (from extensions)
+            .onChange(of: session.endTime) { oldValue, newValue in
+                if oldValue != newValue {
+                    Task {
+                        await refreshETAAndCompass(forceUpdate: true)
+                    }
+                }
+            }
+            .onDisappear {
+                stopRefreshTimer()
+                locationService.stopUpdatingLocation()
             }
             .sheet(isPresented: $showDirections) {
                 if hasCarLocation {
@@ -138,50 +154,73 @@ struct ActiveTimerView: View {
                 }
             }
         }
-        
     }
+    
     private var hasCarLocation: Bool {
         session.latitude != 0 && session.longitude != 0
     }
     
-    // Modify refreshETAAndCompass to detect session end time changes
-    private func refreshETAAndCompass() async {
-        // Prevent concurrent calls
-        guard !isRefreshing else { return }
+    // ✅ NEW: Initial refresh when view appears
+    private func initialRefresh() async {
+        guard hasCarLocation else { return }
         
+        // Start continuous location updates
         await MainActor.run {
-            isRefreshing = true
+            locationService.startUpdatingLocation()
         }
         
-        defer {
-                isRefreshing = false
+        // Get fresh location
+        _ = await locationService.ensureLocationName()
+        
+        // Initial ETA and compass calculation
+        await refreshETAAndCompass(forceUpdate: true)
+    }
+    
+    // ✅ NEW: Timer-based refresh (every 10 seconds)
+    private func startRefreshTimer() {
+        stopRefreshTimer() // Clean up any existing timer
+        
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { _ in
+            Task { @MainActor in
+                await self.refreshETAAndCompass(forceUpdate: false)
+            }
         }
         
+        if let timer = refreshTimer {
+            RunLoop.main.add(timer, forMode: .common)
+        }
+    }
+    
+    // ✅ NEW: Stop the refresh timer
+    private func stopRefreshTimer() {
+        refreshTimer?.invalidate()
+        refreshTimer = nil
+    }
+    
+    // ✅ FIXED: Simplified refresh logic with proper force update handling
+    private func refreshETAAndCompass(forceUpdate: Bool) async {
         guard hasCarLocation else { return }
         guard let userCoord = locationService.location?.coordinate else { return }
         
-        // Check if session end time has changed (e.g., from extension)
-        let endTimeChanged = lastSessionEndTime != session.endTime
-        if endTimeChanged {
-            lastSessionEndTime = session.endTime
-        }
+        let car = CLLocationCoordinate2D(latitude: session.latitude, longitude: session.longitude)
         
-        // Update if user moved OR if session end time changed
+        // Check if user moved significantly or force update
         let shouldUpdate: Bool
-        if let lastLocation = lastUserLocation {
+        if forceUpdate {
+            shouldUpdate = true
+        } else if let lastLocation = lastUserLocation {
             let dist = GeoUtils.distanceMeters(from: lastLocation, to: userCoord)
-            shouldUpdate = dist > 10 || endTimeChanged
+            shouldUpdate = dist > 10 // User moved more than 10 meters
         } else {
             shouldUpdate = true
         }
         
         guard shouldUpdate else { return }
         
-        let car = CLLocationCoordinate2D(latitude: session.latitude, longitude: session.longitude)
-        
-        // Distance + bearing for compass
+        // Update distance and bearing for compass
         let dist = GeoUtils.distanceMeters(from: userCoord, to: car)
         let bear = GeoUtils.bearingRadians(from: userCoord, to: car)
+        
         await MainActor.run {
             distance = dist
             if let bear {
@@ -190,29 +229,34 @@ struct ActiveTimerView: View {
             lastUserLocation = userCoord
         }
         
-        // Walking ETA
+        // Update walking ETA
         if let eta = await walkETAService.etaSeconds(from: userCoord, to: car) {
             let newLeaveBy = LeaveNowAdvisor.leaveBy(expiry: session.endTime, walkingETA: eta)
+            
             await MainActor.run {
                 walkingETA = eta
                 leaveBy = newLeaveBy
             }
             
+            // Update leave-now alarm if significantly different or force update
             let delta = abs((lastScheduledLeaveBy ?? .distantPast).timeIntervalSince(newLeaveBy))
-            if (lastScheduledLeaveBy == nil || delta > 30) && !isSchedulingLeaveAlarm {
+            if (forceUpdate || lastScheduledLeaveBy == nil || delta > 30) && !isSchedulingLeaveAlarm {
                 await MainActor.run {
                     isSchedulingLeaveAlarm = true
                 }
+                
                 timerService.updateLeaveNowAlarm(leaveBy: newLeaveBy > Date() ? newLeaveBy : nil)
                 lastScheduledLeaveBy = newLeaveBy
                 
                 try? await Task.sleep(for: .milliseconds(500))
+                
                 await MainActor.run {
                     isSchedulingLeaveAlarm = false
                 }
             }
         }
     }
+    
     private var timeColor: Color {
         if timerService.timeRemaining > 600 { return .green }
         else if timerService.timeRemaining > 300 { return .orange }
@@ -236,6 +280,7 @@ struct ActiveTimerView: View {
             return String(format: "%d:%02d", minutes, seconds)
         }
     }
+    
     private func extendButton(minutes: Int, icon: String) -> some View {
         Button {
             extendHapticTick += 1
