@@ -16,6 +16,9 @@ final class WalkETAService {
     private let throttleSeconds: TimeInterval = 30
     private var lastFetch: Date = .distantPast
 
+    private var lastFromCoordinate: CLLocationCoordinate2D?
+    private var lastToCoordinate: CLLocationCoordinate2D?
+    
     /// Fetch a walking ETA (seconds) from `user` to `car` using MapKit's async directions.
     /// Throttled to avoid spamming the API if called frequently.
     func etaSeconds(
@@ -23,7 +26,9 @@ final class WalkETAService {
         to car: CLLocationCoordinate2D
     ) async -> TimeInterval? {
         let now = Date()
-        if now.timeIntervalSince(lastFetch) < throttleSeconds, lastETA > 0 {
+        
+        let coordinatesChanged = hasLocationChanged(from: lastFromCoordinate, to: user, threshold: 50) || hasLocationChanged(from: lastToCoordinate, to: car, threshold: 50)
+        if now.timeIntervalSince(lastFetch) < throttleSeconds, lastETA > 0, !coordinatesChanged {
             return lastETA
         }
 
@@ -45,6 +50,8 @@ final class WalkETAService {
             if let best = response.routes.min(by: { $0.expectedTravelTime < $1.expectedTravelTime }) {
                 lastETA = best.expectedTravelTime
                 lastFetch = now
+                lastFromCoordinate = user
+                lastToCoordinate = car
                 return lastETA
             }
             return lastETA > 0 ? lastETA : nil
@@ -52,5 +59,17 @@ final class WalkETAService {
             // Network hiccups: fall back to last good ETA if available
             return lastETA > 0 ? lastETA : nil
         }
+    }
+    private func hasLocationChanged(
+        from oldCoord: CLLocationCoordinate2D?,
+        to newCoord: CLLocationCoordinate2D,
+        threshold: Double
+    ) -> Bool {
+        guard let oldCoord else { return true }
+        
+        let oldLocation = CLLocation(latitude: oldCoord.latitude, longitude: oldCoord.longitude)
+        let newLocation = CLLocation(latitude: newCoord.latitude, longitude: newCoord.longitude)
+        
+        return oldLocation.distance(from: newLocation) > threshold
     }
 }

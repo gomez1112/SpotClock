@@ -20,20 +20,33 @@ struct CompassToCar: View {
                     .overlay(
                         Circle()
                             .strokeBorder(.white.opacity(0.12), lineWidth: 1))
-                Image(systemName: "location.north.fill")
-                    .rotationEffect(.radians(bearingRadians))
-                    .font(.title2)
-                    .foregroundColor(.primary)
-                    .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
-                    .animation(.smooth, value: bearingRadians)
+                
+                // ✅ FIXED: Show different icon when at destination
+                if distanceMeters < 5 {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(.green)
+                        .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+                } else {
+                    Image(systemName: "location.north.fill")
+                        .rotationEffect(.radians(bearingRadians))
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                        .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+                        .animation(.smooth, value: bearingRadians)
+                }
             }
             Text(distanceString(distanceMeters))
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
     }
+    
     private func distanceString(_ meters: Double) -> String {
-        if meters >= 1000 {
+        // ✅ ADD: Special message when at destination
+        if meters < 5 {
+            return "You're here!"
+        } else if meters >= 1000 {
             return String(format: "%.1f km", meters / 1000)
         } else {
             return "\(Int(meters)) m"

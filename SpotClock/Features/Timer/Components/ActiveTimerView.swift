@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 struct ActiveTimerView: View {
-
+    
     @Environment(\.modelContext) private var modelContext
     @Environment(TimerService.self) private var timerService
     @Environment(LocationService.self) private var locationService
@@ -20,13 +20,19 @@ struct ActiveTimerView: View {
     @State private var leaveBy: Date? = nil
     @State private var lastScheduledLeaveBy: Date? = nil
     
-
+    
     @State private var bearing: Double = 0.0
     @State private var distance: Double = 0.0
     
     @State private var extendHapticTick: Int = 0
     @State private var endHapticTick: Int = 0
     
+    @State private var lastUserLocation: CLLocationCoordinate2D?
+    @State private var isSchedulingLeaveAlarm = false
+    
+    @State private var showDirections = false
+    @State private var lastSessionEndTime: Date?
+    @State private var isRefreshing = false
     var session: ParkingSession
     
     var body: some View {
@@ -69,14 +75,22 @@ struct ActiveTimerView: View {
                     
                     
                     HStack {
-                        LeaveNowTile(leaveBy: leaveBy, isGoNow: (leaveBy ?? .distantPast) <= Date())
-                            .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
+                        LeaveNowTile(
+                            leaveBy: leaveBy,
+                            isGoNow: (leaveBy ?? .distantPast) <= Date()
+                        ) {
+                            if hasCarLocation {
+                                showDirections = true
+                            }
+                        }
+                        .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
+                        
                         if hasCarLocation, distance > 0 {
                             CompassToCar(bearingRadians: bearing, distanceMeters: distance)
                         }
                     }
                     .padding(.horizontal)
-                   // RingProgressView()
+                    // RingProgressView()
                     
                     // Action buttons with improved layout
                     VStack {
@@ -87,10 +101,6 @@ struct ActiveTimerView: View {
                         
                         Button(role: .destructive) {
                             endHapticTick += 1
-                            
-                            if let session = timerService.activeSession {
-                                modelContext.insert(session)
-                            }
                             timerService.stopParking()
                         } label: {
                             HStack {
@@ -113,11 +123,19 @@ struct ActiveTimerView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .scrollBounceBehavior(.basedOnSize)
-            .task(id: timerService.timeRemaining) {
+            .task(id: "\(timerService.timeRemaining)-\(locationService.location?.coordinate.latitude ?? 0)-\(locationService.location?.coordinate.longitude ?? 0)-\(session.endTime.timeIntervalSince1970)") {
                 await refreshETAAndCompass()
             }
-            .task {
-                await refreshETAAndCompass()
+            .sheet(isPresented: $showDirections) {
+                if hasCarLocation {
+                    DirectionsMapView(
+                        carLocation: CLLocationCoordinate2D(
+                            latitude: session.latitude,
+                            longitude: session.longitude
+                        ),
+                        carAddress: session.location
+                    )
+                }
             }
         }
         
@@ -126,9 +144,38 @@ struct ActiveTimerView: View {
         session.latitude != 0 && session.longitude != 0
     }
     
+    // Modify refreshETAAndCompass to detect session end time changes
     private func refreshETAAndCompass() async {
+        // Prevent concurrent calls
+        guard !isRefreshing else { return }
+        
+        await MainActor.run {
+            isRefreshing = true
+        }
+        
+        defer {
+                isRefreshing = false
+        }
+        
         guard hasCarLocation else { return }
         guard let userCoord = locationService.location?.coordinate else { return }
+        
+        // Check if session end time has changed (e.g., from extension)
+        let endTimeChanged = lastSessionEndTime != session.endTime
+        if endTimeChanged {
+            lastSessionEndTime = session.endTime
+        }
+        
+        // Update if user moved OR if session end time changed
+        let shouldUpdate: Bool
+        if let lastLocation = lastUserLocation {
+            let dist = GeoUtils.distanceMeters(from: lastLocation, to: userCoord)
+            shouldUpdate = dist > 10 || endTimeChanged
+        } else {
+            shouldUpdate = true
+        }
+        
+        guard shouldUpdate else { return }
         
         let car = CLLocationCoordinate2D(latitude: session.latitude, longitude: session.longitude)
         
@@ -137,7 +184,10 @@ struct ActiveTimerView: View {
         let bear = GeoUtils.bearingRadians(from: userCoord, to: car)
         await MainActor.run {
             distance = dist
-            bearing = bear
+            if let bear {
+                bearing = bear
+            }
+            lastUserLocation = userCoord
         }
         
         // Walking ETA
@@ -148,11 +198,18 @@ struct ActiveTimerView: View {
                 leaveBy = newLeaveBy
             }
             
-            // Schedule or reschedule leave-now alarm if changed materially (≥ 30s delta)
             let delta = abs((lastScheduledLeaveBy ?? .distantPast).timeIntervalSince(newLeaveBy))
-            if lastScheduledLeaveBy == nil || delta > 30 {
+            if (lastScheduledLeaveBy == nil || delta > 30) && !isSchedulingLeaveAlarm {
+                await MainActor.run {
+                    isSchedulingLeaveAlarm = true
+                }
                 timerService.updateLeaveNowAlarm(leaveBy: newLeaveBy > Date() ? newLeaveBy : nil)
                 lastScheduledLeaveBy = newLeaveBy
+                
+                try? await Task.sleep(for: .milliseconds(500))
+                await MainActor.run {
+                    isSchedulingLeaveAlarm = false
+                }
             }
         }
     }

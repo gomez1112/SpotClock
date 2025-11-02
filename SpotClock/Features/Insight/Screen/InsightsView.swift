@@ -18,6 +18,12 @@ struct InsightsView: View {
     @State private var selectedAchievement: Achievement?
     @State private var showNewTimer = false
     
+    @State private var cachedTopLocations: [LocationData] = []
+    @State private var cachedWeeklyData: [WeeklyData] = []
+    @State private var cachedTimeDistribution: [TimeDistributionData] = []
+    @State private var lastComputedTimeframe: Timeframe?
+    @State private var lastFilteredCount = 0
+    
     enum Timeframe: String, CaseIterable {
         case week = "Week"
         case month = "Month"
@@ -28,41 +34,49 @@ struct InsightsView: View {
     var body: some View {
         NavigationStack {
                 ScrollView {
-                    LazyVStack(spacing: 28) {
+                    VStack(spacing: 28) {
                         // Elegant timeframe picker
                         timeframePicker
                             .padding(.horizontal, 20)
                             .padding(.top, 8)
+                            .onChange(of: selectedTimeframe) { _, newValue in
+                                recomputeCachedValues()
+                            }
                         
                         if filteredSessions.isEmpty {
                             emptyStateView
                                 .padding(.top, 60)
+                                .id("empty-\(sessions.count)")
                         } else {
-                            // Hero celebration section
-                            heroSection
-                                .padding(.horizontal, 20)
-                            
-                            // Quick stats cards
-                            quickStatsSection
-                                .padding(.horizontal, 20)
-                            
-                            // Smart insights with beautiful cards
-                            insightsSection
-                                .padding(.horizontal, 20)
-                            
-                            // Stunning visual charts
-                            analyticsSection
-                                .padding(.horizontal, 20)
-                            
-                            // Interactive heatmap
-                            heatmapSection
-                                .padding(.horizontal, 20)
-                            
-                            // Achievement showcase
-                            achievementsSection
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, 40)
+                            Group {
+                                // Hero celebration section
+                                heroSection
+                                    .padding(.horizontal, 20)
+                                
+                                // Quick stats cards
+                                quickStatsSection
+                                    .padding(.horizontal, 20)
+                                
+                                // Smart insights with beautiful cards
+                                insightsSection
+                                    .padding(.horizontal, 20)
+                                
+                                // Stunning visual charts
+                                analyticsSection
+                                    .padding(.horizontal, 20)
+                                
+                                // Interactive heatmap
+                                heatmapSection
+                                    .padding(.horizontal, 20)
+                                
+                                // Achievement showcase
+                                achievementsSection
+                                    .padding(.horizontal, 20)
+                                    .padding(.bottom, 40)
+                            }
+                            .id("content-\(filteredSessions.count)")
                         }
+                            
                     }
                 }
                 .scrollIndicators(.hidden)
@@ -72,9 +86,89 @@ struct InsightsView: View {
             .sheet(isPresented: $showNewTimer) {
                 NewTimerView()
             }
+            .task(recomputeCachedValues)
+            .onChange(of: filteredSessions.count) { oldValue, newValue in
+                if oldValue != newValue {
+                    recomputeCachedValues()
+                    lastFilteredCount = newValue
+                }
+            }
         }
     }
+    private func recomputeCachedValues() {
+        guard lastComputedTimeframe != selectedTimeframe else { return }
+        
+        cachedTopLocations = computeTopLocations()
+        cachedWeeklyData = computeWeeklyData()
+        cachedTimeDistribution = computeTimeDistribution()
+        lastComputedTimeframe = selectedTimeframe
+    }
+    private func computeTopLocations() -> [LocationData] {
+        var locationDict: [String: [ParkingSession]] = [:]
+        
+        for session in filteredSessions where !session.location.isEmpty {
+            locationDict[session.location, default: []].append(session)
+        }
+        
+        let locations = locationDict.map { location, sessions in
+            let avgLat = sessions.map { $0.latitude }.reduce(0, +) / Double(sessions.count)
+            let avgLon = sessions.map { $0.longitude }.reduce(0, +) / Double(sessions.count)
+            let avgDuration = sessions.map { $0.duration }.reduce(0, +) / Double(sessions.count)
+            
+            return LocationData(
+                name: location,
+                visits: sessions.count,
+                coordinate: CLLocationCoordinate2D(latitude: avgLat, longitude: avgLon),
+                averageDuration: avgDuration
+            )
+        }
+        
+        return locations.sorted { $0.visits > $1.visits }
+    }
+    private func computeWeeklyData() -> [WeeklyData] {
+        let calendar = Calendar.current
+        let now = Date()
+        var data: [WeeklyData] = []
+        
+        for dayOffset in (0..<7).reversed() {
+            guard let date = calendar.date(byAdding: .day, value: -dayOffset, to: now) else { continue }
+            
+            let daySessions = filteredSessions.filter {
+                calendar.isDate($0.startTime, inSameDayAs: date)
+            }
+            
+            let totalHours = daySessions.reduce(0.0) { $0 + $1.duration / 3600 }
+            let dayName = date.formatted(.dateTime.weekday(.abbreviated))
+            data.append(WeeklyData(day: dayName, hours: totalHours, date: date))
+        }
+        
+        return data
+    }
     
+    private func computeTimeDistribution() -> [TimeDistributionData] {
+        var morning = 0
+        var afternoon = 0
+        var evening = 0
+        var night = 0
+        
+        for session in filteredSessions {
+            let hour = Calendar.current.component(.hour, from: session.startTime)
+            
+            switch hour {
+                case 6..<12: morning += 1
+                case 12..<18: afternoon += 1
+                case 18..<24: evening += 1
+                default: night += 1
+            }
+        }
+        
+        return [
+            TimeDistributionData(period: "Morning", count: morning, color: .yellow),
+            TimeDistributionData(period: "Afternoon", count: afternoon, color: .orange),
+            TimeDistributionData(period: "Evening", count: evening, color: .purple),
+            TimeDistributionData(period: "Night", count: night, color: .blue)
+        ].filter { $0.count > 0 }
+    }
     // MARK: - Timeframe Picker
     private var timeframePicker: some View {
         Picker("Timeframe", selection: $selectedTimeframe) {
@@ -506,12 +600,15 @@ struct InsightsView: View {
         var streak = 0
         var currentDate = calendar.startOfDay(for: Date())
         
+        let maxIterations = 1000
+        var iterations = 0
         // 2. Loop backwards from today and check for consecutive days in the set.
-        while uniqueParkingDays.contains(currentDate) {
+        while uniqueParkingDays.contains(currentDate) && iterations < maxIterations {
             streak += 1
             // Move to the previous day
             guard let previousDay = calendar.date(byAdding: .day, value: -1, to: currentDate) else { break }
             currentDate = previousDay
+            iterations += 1
         }
         
         return streak
@@ -528,76 +625,15 @@ struct InsightsView: View {
     }
     
     private var weeklyData: [WeeklyData] {
-        let calendar = Calendar.current
-        let now = Date()
-        var data: [WeeklyData] = []
-        
-        for dayOffset in (0..<7).reversed() {
-            guard let date = calendar.date(byAdding: .day, value: -dayOffset, to: now) else { continue }
-            
-            let daySessions = filteredSessions.filter {
-                calendar.isDate($0.startTime, inSameDayAs: date)
-            }
-            
-            let totalHours = daySessions.reduce(0.0) { $0 + $1.duration / 3600 }
-            
-            let dayName = date.formatted(.dateTime.weekday(.abbreviated))
-            data.append(WeeklyData(day: dayName, hours: totalHours, date: date))
-        }
-        
-        return data
+        cachedWeeklyData
     }
     
     private var topLocations: [LocationData] {
-        var locationDict: [String: [ParkingSession]] = [:]
-        
-        for session in filteredSessions where !session.location.isEmpty {
-            locationDict[session.location, default: []].append(session)
-        }
-        
-        let locations = locationDict.map { location, sessions in
-            let avgLat = sessions.map { $0.latitude }.reduce(0, +) / Double(sessions.count)
-            let avgLon = sessions.map { $0.longitude }.reduce(0, +) / Double(sessions.count)
-            let avgDuration = sessions.map { $0.duration }.reduce(0, +) / Double(sessions.count)
-            
-            return LocationData(
-                name: location,
-                visits: sessions.count,
-                coordinate: CLLocationCoordinate2D(latitude: avgLat, longitude: avgLon),
-                averageDuration: avgDuration
-            )
-        }
-        
-        return locations.sorted { $0.visits > $1.visits }
+        cachedTopLocations
     }
     
     private var timeDistribution: [TimeDistributionData] {
-        var morning = 0
-        var afternoon = 0
-        var evening = 0
-        var night = 0
-        
-        for session in filteredSessions {
-            let hour = Calendar.current.component(.hour, from: session.startTime)
-            
-            switch hour {
-                case 6..<12:
-                    morning += 1
-                case 12..<18:
-                    afternoon += 1
-                case 18..<24:
-                    evening += 1
-                default:
-                    night += 1
-            }
-        }
-        
-        return [
-            TimeDistributionData(period: "Morning", count: morning, color: .yellow),
-            TimeDistributionData(period: "Afternoon", count: afternoon, color: .orange),
-            TimeDistributionData(period: "Evening", count: evening, color: .purple),
-            TimeDistributionData(period: "Night", count: night, color: .blue)
-        ].filter { $0.count > 0 }
+        cachedTimeDistribution
     }
     
     private var achievements: [Achievement] {

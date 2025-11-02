@@ -14,9 +14,14 @@ enum GeoUtils {
         let b = CLLocation(latitude: to.latitude, longitude: to.longitude)
         return a.distance(from: b)
     }
-
+    
     /// Bearing from `from` to `to` in radians, measured clockwise from due north.
-    static func bearingRadians(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
+    /// Returns nil if the two coordinates are essentially the same location.
+    static func bearingRadians(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double? {
+        // ✅ ADD: Check if coordinates are too close
+        let distance = distanceMeters(from: from, to: to)
+        guard distance > 5 else { return nil } // Within 5 meters, bearing is meaningless
+        
         let φ1 = from.latitude  * .pi / 180
         let φ2 = to.latitude    * .pi / 180
         let Δλ = (to.longitude - from.longitude) * .pi / 180

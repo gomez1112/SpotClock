@@ -21,6 +21,10 @@ struct NewTimerView: View {
     @State private var notes = ""
     @State private var useCustomDuration = false
     @State private var showSubscription = false
+    
+    @State private var showErrorAlert = false
+    @State private var errorMessage = ""
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -154,6 +158,11 @@ struct NewTimerView: View {
             .sheet(isPresented: $showSubscription) {
                 SubscriptionView()
             }
+            .alert("Unable to Start Timer", isPresented: $showErrorAlert) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
             .task {
                 Task {
                     await locationManager.ensureLocationName()
@@ -172,22 +181,41 @@ struct NewTimerView: View {
         let duration = useCustomDuration
         ? TimeInterval(customHours * 3600 + customMinutes * 60)
         : selectedDuration
-        guard duration > 0 else { return }
+        guard duration > 0 else {
+            errorMessage = "Please select a duration greater than 0."
+            showErrorAlert = true
+            return
+        }
         
         Task { @MainActor in
             let name = await locationManager.ensureLocationName()
-            let loc = locationManager.location
+            let location = locationManager.location
             
+            guard location != nil else {
+                errorMessage = "Unable to get your location. Please enable location services"
+                showErrorAlert = true
+                return
+            }
+            guard let location = locationManager.location else {
+                errorMessage = "Unable to get your location. Please enable location services"
+                showErrorAlert = true
+                return
+            }
             await timerManager.startParking(
                 duration: duration,
                 location: name,
-                latitude: loc?.coordinate.latitude ?? 0,
-                longitude: loc?.coordinate.longitude ?? 0,
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude,
                 notes: notes
             )
-            
-            subscriptionManager.recordSession()
-            dismiss()
+            if timerManager.isRunning {
+                subscriptionManager.recordSession()
+                dismiss()
+            } else {
+                errorMessage = timerManager.userMessage ?? "Failed to start timer. Please try again."
+                showErrorAlert = true
+            }
+
         }
     }
 }

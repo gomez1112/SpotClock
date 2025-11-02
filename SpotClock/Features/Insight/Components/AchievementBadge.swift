@@ -14,6 +14,8 @@ struct AchievementBadge: View {
     @State private var didUnlockAnimation = false
     @State private var ringPulse = false
     @State private var glowPulse = false
+    @State private var wasUnlocked = false
+    
     @Namespace private var badgeNamespace
     
     var body: some View {
@@ -28,7 +30,13 @@ struct AchievementBadge: View {
         .modifier(CardGlassEffectModifier(achievement: achievement))
         .modifier(CardInteractionModifier(isPressed: $isPressed))
         .onChange(of: achievement.isUnlocked) { _, newValue in
-            handleUnlockChange(newValue)
+            if !wasUnlocked && newValue {
+                handleUnlockChange(newValue)
+            }
+            wasUnlocked = newValue
+        }
+        .onAppear {
+            wasUnlocked = achievement.isUnlocked
         }
     }
     
@@ -245,26 +253,29 @@ struct AchievementBadge: View {
         }
         
         // Start achievement unlock sequence
-        didUnlockAnimation = true
+        didUnlockAnimation = false
         ringPulse = false
-        glowPulse = true
+        glowPulse = false
         
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
-            // triggers bounce via symbolEffect value binding
-        }
-        
-        // Drive the ring expansion with stagger
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 second
+            try? await Task.sleep(for: .milliseconds(50))
+            didUnlockAnimation = true
+            glowPulse = true
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                // triggers bounce via symbolEffect value binding
+            }
+            try? await Task.sleep(for: .milliseconds(100))
             ringPulse = true
-        }
-        
-        // Reset animations after completion
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 seconds
+            
+            try? await Task.sleep(for: .seconds(1.5))
             didUnlockAnimation = false
             ringPulse = false
+            
+            // ✅ FIXED: Reset glow too
+            try? await Task.sleep(for: .milliseconds(100))
+            glowPulse = false
         }
+        
     }
 }
 

@@ -5,10 +5,10 @@
 //  Created by Gerard Gomez on 10/12/25.
 //
 
-
 import SwiftUI
 import SwiftData
 import MapKit
+import OSLog
 
 struct HistoryView: View {
     @Environment(\.modelContext) private var modelContext
@@ -148,6 +148,9 @@ struct ImprovedSessionRow: View {
     let session: ParkingSession
     let onMapTap: () -> Void
     @Environment(\.modelContext) private var modelContext
+    @State private var showDeleteError = false
+    @State private var deleteErrorMessage = ""
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "SpotClock", category: "History")
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -234,10 +237,22 @@ struct ImprovedSessionRow: View {
             Button(role: .destructive) {
                 withAnimation {
                     modelContext.delete(session)
+                    do {
+                        try modelContext.save()
+                    } catch {
+                        logger.error("Failed to delete session: \(error.localizedDescription, privacy: .public)")
+                        deleteErrorMessage = error.localizedDescription
+                        showDeleteError = true
+                    }
                 }
             } label: {
                 Label("Delete", systemImage: "trash")
             }
+        }
+        .alert("Couldn’t Delete Session", isPresented: $showDeleteError) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(deleteErrorMessage)
         }
     }
     

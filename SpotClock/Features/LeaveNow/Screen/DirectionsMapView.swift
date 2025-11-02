@@ -1,3 +1,14 @@
+//
+//  DirectionsMapView.swift
+//  SpotClock
+//
+//  Created by Gerard Gomez on 10/20/25.
+//
+
+import MapKit
+import SwiftUI
+import OSLog
+
 struct DirectionsMapView: View {
     let carLocation: CLLocationCoordinate2D
     let carAddress: String
@@ -8,6 +19,9 @@ struct DirectionsMapView: View {
     @State private var route: MKRoute?
     @State private var position: MapCameraPosition = .automatic
     @State private var isLoadingRoute = true
+    @State private var showRouteError = false
+    @State private var routeErrorMessage = ""
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "SpotClock", category: "Directions")
     
     var body: some View {
         NavigationStack {
@@ -68,6 +82,11 @@ struct DirectionsMapView: View {
             }
             .task {
                 await fetchRoute()
+            }
+            .alert("Couldn’t Load Directions", isPresented: $showRouteError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(routeErrorMessage)
             }
         }
     }
@@ -152,6 +171,9 @@ struct DirectionsMapView: View {
     private func fetchRoute() async {
         guard let userLocation = locationService.location?.coordinate else {
             isLoadingRoute = false
+            logger.warning("User location unavailable; cannot calculate route.")
+            routeErrorMessage = "Your current location isn’t available. Please enable Location Services and try again."
+            showRouteError = true
             return
         }
         
@@ -178,8 +200,7 @@ struct DirectionsMapView: View {
                 
                 // Set camera to show entire route
                 let rect = firstRoute.polyline.boundingMapRect
-                let padding = UIEdgeInsets(top: 100, left: 50, bottom: 300, right: 50)
-                position = .rect(rect.inset(
+                position = .rect(rect.insetBy(
                     dx: -rect.size.width * 0.2,
                     dy: -rect.size.height * 0.2
                 ))
@@ -187,19 +208,22 @@ struct DirectionsMapView: View {
             
             isLoadingRoute = false
         } catch {
-            print("Failed to calculate route: \(error.localizedDescription)")
+            logger.error("Failed to calculate route: \(error.localizedDescription, privacy: .public)")
             isLoadingRoute = false
+            routeErrorMessage = "We couldn’t calculate a walking route to your car. Please try again in a moment. (\(error.localizedDescription))"
+            showRouteError = true
         }
     }
     
     // MARK: - Open in Maps
     private func openInMaps() {
-        let carMapItem = MKMapItem(placemark: MKPlacemark(coordinate: carLocation))
-        carMapItem.name = carAddress
+            let carCLLocation = CLLocation(latitude: carLocation.latitude, longitude: carLocation.longitude)
+            let carMapItem = MKMapItem(location: carCLLocation, address: nil)
+            carMapItem.name = carAddress
+            carMapItem.openInMaps(launchOptions: [
+                MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking
+            ])
         
-        carMapItem.openInMaps(launchOptions: [
-            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking
-        ])
     }
     
     // MARK: - Formatting Helpers
@@ -230,3 +254,4 @@ struct DirectionsMapView: View {
     )
     .environment(LocationService())
 }
+

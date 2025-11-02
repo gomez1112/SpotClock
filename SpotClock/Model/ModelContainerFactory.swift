@@ -8,9 +8,11 @@
 
 import Foundation
 import SwiftData
+import OSLog
 
 @MainActor
 struct ModelContainerFactory {
+    private static let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "SpotClock", category: "ModelContainer")
     static let models: [any PersistentModel.Type] = [ParkingSession.self]
     static let schema = Schema(models)
     static func configuration(isStoredInMemoryOnly: Bool) -> ModelConfiguration {
@@ -24,10 +26,10 @@ struct ModelContainerFactory {
                 configurations: configuration(isStoredInMemoryOnly: false)
             )
         } catch {
-            // Log the full error, not just localizedDescription
-            print("ModelContainer creation failed: \(error)")
+            // Log the full error using OSLog
+            logger.fault("ModelContainer creation failed: \(String(describing: error), privacy: .public)")
             if let sdError = error as? SwiftDataError {
-                print("SwiftDataError: \(sdError)") // often reveals the specific case
+                logger.error("SwiftDataError: \(String(describing: sdError), privacy: .public)")
             }
             fatalError("Could not create model container: \(error.localizedDescription)")
         }
@@ -44,9 +46,10 @@ struct ModelContainerFactory {
             try context.save()
             return container
         } catch {
-            print(error.localizedDescription)
+            logger.error("Preview ModelContainer creation failed: \(error.localizedDescription, privacy: .public)")
             fatalError("Could not create model container: \(error.localizedDescription)")
         }
         
     }()
 }
+

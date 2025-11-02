@@ -16,7 +16,7 @@ final class LocationService: NSObject {
     
     // ✅ FIXED: Add a continuation property to bridge the delegate callback with an async function.
     private var locationContinuation: CheckedContinuation<CLLocation?, Error>?
-    
+    private var hasRequestedFullAccuracy = false
     var location: CLLocation?
     var authorizationStatus: CLAuthorizationStatus = .notDetermined
     var locationName: String = "Current Location"
@@ -33,29 +33,14 @@ final class LocationService: NSObject {
     func requestPermission() {
         manager.requestWhenInUseAuthorization()
         
-        if manager.accuracyAuthorization == .reducedAccuracy {
+        if manager.accuracyAuthorization == .reducedAccuracy && !hasRequestedFullAccuracy {
             manager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "ParkingLocation")
+            hasRequestedFullAccuracy = true
         }
     }
     
-    // ✅ FIXED: This new helper function reliably awaits a single location update.
-    private func awaitSingleLocationUpdate() async throws -> CLLocation? {
-        try await withCheckedThrowingContinuation { continuation in
-            self.locationContinuation = continuation
-            manager.requestLocation()
-            
-            // Add a timeout to prevent waiting forever.
-            Task {
-                try await Task.sleep(for: .seconds(10))
-                self.locationContinuation?.resume(throwing: LocationError.timeout)
-                self.locationContinuation = nil
-            }
-        }
-    }
-    
-    // ✅ FIXED: Replaced unreliable Task.sleep with the robust `awaitSingleLocationUpdate` function.
     func ensureLocationName() async -> String {
-        if locationName != "Current Location", locationName != "Finding Location..." { return locationName }
+        // Always fetch fresh location for accurate parking location tracking
         
         do {
             self.locationName = "Finding Location..."
@@ -65,12 +50,37 @@ final class LocationService: NSObject {
                 self.locationName = name
                 return name
             }
+        } catch is LocationError {
+            self.errorMessage = "Location request timed out"
+            self.locationName = "Current Location"
         } catch {
             self.errorMessage = "Could not get location: \(error.localizedDescription)"
-            self.locationName = "Current Location" // Reset on failure
+            self.locationName = "Current Location"
         }
         
         return locationName
+    }
+    private func awaitSingleLocationUpdate() async throws -> CLLocation? {
+        
+        guard locationContinuation == nil else {
+            throw LocationError.requestInProgress
+        }
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            self.locationContinuation = continuation
+            manager.requestLocation()
+            
+            // ✅ FIXED: Capture continuation weakly to avoid double-resume
+            Task { [weak self] in
+                try await Task.sleep(for: .seconds(10))
+                
+                // ✅ FIXED: Only resume if continuation still exists
+                if let cont = self?.locationContinuation {
+                    self?.locationContinuation = nil
+                    cont.resume(throwing: LocationError.timeout)
+                }
+            }
+        }
     }
     
     // Reverse-geocode with iOS-18 MapKit first, then clean iOS-17 fallback.
@@ -113,6 +123,7 @@ final class LocationService: NSObject {
 
 enum LocationError: Error {
     case timeout
+    case requestInProgress
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -143,7 +154,9 @@ extension LocationService: CLLocationManagerDelegate {
         Task { @MainActor in
             self.authorizationStatus = status
             if status == .authorizedWhenInUse || status == .authorizedAlways {
-                self.manager.requestLocation()
+                if self.locationContinuation == nil {
+                    self.manager.requestLocation()
+                }
             }
         }
     }

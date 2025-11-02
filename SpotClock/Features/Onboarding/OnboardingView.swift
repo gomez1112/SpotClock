@@ -204,11 +204,17 @@ struct OnboardingView: View {
                     notificationToastColor = .red
                 }
                 withAnimation(.spring(duration: 0.35)) { showNotificationToast = true }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                    withAnimation(.easeInOut(duration: 0.3)) { showNotificationToast = false }
-                    UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
-                    withAnimation { isPresented = false }
+                
+                try? await Task.sleep(for: .seconds(1.2))
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    showNotificationToast = false
                 }
+                try? await Task.sleep(for: .milliseconds(100))
+                UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+                
+                UserDefaults.standard.synchronize()
+                
+                withAnimation { isPresented = false }
             } catch {
                 notificationToastText = "Alarms permission error"
                 notificationToastColor = .red

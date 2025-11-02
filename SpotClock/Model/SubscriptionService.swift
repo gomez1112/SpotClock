@@ -20,6 +20,9 @@ final class SubscriptionService {
     // MARK: - Free tier tracking
     var monthlySessionsUsed = 0
     var currentMonthStart = Date()
+    private var transactionTask: Task<Void, Never>?
+    var activeSubscriptionGroupID: String = ""
+    
     private var maxFreeSessions: Int {
         #if DEBUG
         return 100 // For Xcode and simulators
@@ -28,30 +31,37 @@ final class SubscriptionService {
         #endif
     }
     
-    var currentSubscriptionGroupID: String {
-        #if DEBUG
-        subscriptionGroupIDTesting
-        #else
-        subscriptionGroupID
-        #endif
-    }
     let subscriptionGroupIDTesting = "7211F9ED"
     let subscriptionGroupID = "21805417"
   
     
     init() {
+        #if DEBUG
+        activeSubscriptionGroupID = subscriptionGroupIDTesting
+        #else
+        activeSubscriptionGroupID = subscriptionGroupID
+        #endif
         loadSessionCount()
         Task { await refreshEntitlements() }
         
-        // ✅ FIXED: Use Task.detached to avoid hanging async sequence
-        Task.detached { [weak self] in
+        // ✅ FIXED: Store the task and make it properly cancellable
+        transactionTask = Task.detached { [weak self] in
             for await result in Transaction.updates {
+                guard let self else { return }
                 guard case .verified(let tx) = result else { continue }
-                guard tx.subscriptionGroupID == self?.subscriptionGroupID else { continue }
-                await self?.refreshEntitlements(using: tx)
+                
+                // ✅ FIXED: Use the dynamic subscriptionGroupID property
+                let groupID = await self.activeSubscriptionGroupID
+                guard tx.subscriptionGroupID == groupID else { continue }
+                
+                await self.refreshEntitlements(using: tx)
                 await tx.finish()
             }
         }
+    }
+    
+    isolated deinit {
+        transactionTask?.cancel()
     }
     
     // MARK: - UI helpers
@@ -117,7 +127,7 @@ final class SubscriptionService {
     /// Returns true when the transaction is from our sub group and currently active.
     private func isActivePro(_ tx: StoreKit.Transaction) -> Bool {
         guard tx.productType == .autoRenewable,
-              tx.subscriptionGroupID == subscriptionGroupID else { return false }
+              tx.subscriptionGroupID == activeSubscriptionGroupID else { return false }
         // active if not revoked and not expired
         if let revocationDate = tx.revocationDate, revocationDate <= Date() { return false }
         if let expiration = tx.expirationDate, expiration <= Date() { return false }
@@ -149,5 +159,6 @@ final class SubscriptionService {
             UserDefaults.standard.set(encoded, forKey: "sessionData")
         }
     }
+    
 }
 
