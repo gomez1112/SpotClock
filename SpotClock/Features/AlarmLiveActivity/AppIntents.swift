@@ -18,8 +18,8 @@ struct PauseIntent: LiveActivityIntent {
         return .result()
     }
     
-    static var title: LocalizedStringResource = "Pause"
-    static var description = IntentDescription("Pause a countdown")
+    static let title: LocalizedStringResource = "Pause"
+    static let description = IntentDescription("Pause a countdown")
     
     @Parameter(title: "alarmID")
     var alarmID: String
@@ -40,8 +40,8 @@ struct StopIntent: LiveActivityIntent {
         return .result()
     }
     
-    static var title: LocalizedStringResource = "Stop"
-    static var description = IntentDescription("Stop an alert")
+    static let title: LocalizedStringResource = "Stop"
+    static let description = IntentDescription("Stop an alert")
     
     @Parameter(title: "alarmID")
     var alarmID: String
@@ -62,8 +62,8 @@ struct RepeatIntent: LiveActivityIntent {
         return .result()
     }
     
-    static var title: LocalizedStringResource = "Repeat"
-    static var description = IntentDescription("Repeat a countdown")
+    static let title: LocalizedStringResource = "Repeat"
+    static let description = IntentDescription("Repeat a countdown")
     
     @Parameter(title: "alarmID")
     var alarmID: String
@@ -84,8 +84,8 @@ struct ResumeIntent: LiveActivityIntent {
         return .result()
     }
     
-    static var title: LocalizedStringResource = "Resume"
-    static var description = IntentDescription("Resume a countdown")
+    static let title: LocalizedStringResource = "Resume"
+    static let description = IntentDescription("Resume a countdown")
     
     @Parameter(title: "alarmID")
     var alarmID: String
@@ -106,9 +106,9 @@ struct OpenAlarmAppIntent: LiveActivityIntent {
         return .result()
     }
     
-    static var title: LocalizedStringResource = "Open App"
-    static var description = IntentDescription("Opens the Sample app")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Open App"
+    static let description = IntentDescription("Opens the Sample app")
+    static let openAppWhenRun = true
     
     @Parameter(title: "alarmID")
     var alarmID: String

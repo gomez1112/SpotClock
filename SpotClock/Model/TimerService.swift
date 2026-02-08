@@ -17,6 +17,7 @@ nonisolated struct TimerData: AlarmMetadata {
 }
 
 
+@MainActor
 @Observable
 final class TimerService {
     private let logger = Logger(subsystem: "com.transfinite.SpotClock", category: "TimerManager")
@@ -77,6 +78,12 @@ final class TimerService {
             notes: notes
         )
         
+        // Require alarm authorization before creating a persistent session.
+        guard await checkForAuthorization() else {
+            userMessage = "Alarm permission required. Enable in Settings."
+            return
+        }
+        
         // ✅ FIXED: Save session to database immediately so it persists across app kills
         modelContext.insert(session)
         do {
@@ -90,10 +97,6 @@ final class TimerService {
             isRunning = true
             
             // Schedule the alarm
-            guard await checkForAuthorization() else {
-                userMessage = "Alarm permission required. Enable in Settings."
-                return
-            }
             await scheduleTimer(for: session)
             
             // Start UI ticker
@@ -105,9 +108,10 @@ final class TimerService {
     }
     
     func stopParking() {
-        // ✅ FIXED: Session already saved to database in startParking, just update it
-        if activeSession != nil {
-            // Session already exists in database, save any updates
+        // ✅ FIXED: Record actual end time and persist.
+        if let session = activeSession {
+            session.endTime = Date()
+            session.duration = max(0, session.endTime.timeIntervalSince(session.startTime))
             try? modelContext.save()
         }
         
@@ -148,6 +152,11 @@ final class TimerService {
         session.endTime = session.endTime.addingTimeInterval(additionalTime)
         session.duration += additionalTime
         session.wasExtended = true
+        do {
+            try modelContext.save()
+        } catch {
+            logger.error("Failed to save extended session: \(error.localizedDescription)")
+        }
         
         // Stop current timer
         tickTimer?.invalidate()
@@ -371,7 +380,8 @@ final class TimerService {
     
     // MARK: - Alarm Cleanup on Launch
     private func cleanupPendingAlarm() async {
-        // ✅ FIXED: Also cleanup any stale leave-now alarms
+        // Only clean up if we don't have a valid active session restored.
+        guard activeSession == nil else { return }
         if let stored = UserDefaults.standard.string(forKey: "activeAlarmID"),
            let uuid = UUID(uuidString: stored) {
             do {
@@ -445,4 +455,3 @@ extension AlarmButton {
         AlarmButton(text: "Start", textColor: .black, systemImageName: "play.fill")
     }
 }
-

@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 @preconcurrency import MapKit
 
+@MainActor
 @Observable
 final class LocationService: NSObject {
     private let manager = CLLocationManager()
@@ -92,11 +93,12 @@ final class LocationService: NSObject {
             // ✅ FIXED: Capture continuation weakly to avoid double-resume
             Task { [weak self] in
                 try await Task.sleep(for: .seconds(10))
-                
-                // ✅ FIXED: Only resume if continuation still exists
-                if let cont = self?.locationContinuation {
-                    self?.locationContinuation = nil
-                    cont.resume(throwing: LocationError.timeout)
+                await MainActor.run {
+                    // ✅ FIXED: Only resume if continuation still exists
+                    if let cont = self?.locationContinuation {
+                        self?.locationContinuation = nil
+                        cont.resume(throwing: LocationError.timeout)
+                    }
                 }
             }
         }
@@ -180,5 +182,4 @@ extension LocationService: CLLocationManagerDelegate {
         }
     }
 }
-
 

@@ -90,18 +90,19 @@ struct InsightsView: View {
             .onChange(of: filteredSessions.count) { oldValue, newValue in
                 if oldValue != newValue {
                     recomputeCachedValues()
-                    lastFilteredCount = newValue
                 }
             }
         }
     }
     private func recomputeCachedValues() {
-        guard lastComputedTimeframe != selectedTimeframe else { return }
+        let filteredCount = filteredSessions.count
+        guard lastComputedTimeframe != selectedTimeframe || lastFilteredCount != filteredCount else { return }
         
         cachedTopLocations = computeTopLocations()
         cachedWeeklyData = computeWeeklyData()
         cachedTimeDistribution = computeTimeDistribution()
         lastComputedTimeframe = selectedTimeframe
+        lastFilteredCount = filteredCount
     }
     private func computeTopLocations() -> [LocationData] {
         var locationDict: [String: [ParkingSession]] = [:]

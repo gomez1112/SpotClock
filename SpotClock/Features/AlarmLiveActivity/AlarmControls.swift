@@ -12,6 +12,10 @@ struct AlarmControls: View {
     
     var presentation: AlarmPresentation
     var state: AlarmPresentationState
+
+    private var stopButton: AlarmButton {
+        AlarmButton(text: "Stop", textColor: .white, systemImageName: "stop.circle.fill")
+    }
     
     var body: some View {
         HStack(spacing: 4) {
@@ -23,7 +27,7 @@ struct AlarmControls: View {
                 default:
                     EmptyView()
             }
-            ButtonView(config: presentation.alert.stopButton, intent: StopIntent(alarmID: state.alarmID.uuidString), tint: .red)
+            ButtonView(config: stopButton, intent: StopIntent(alarmID: state.alarmID.uuidString), tint: .red)
             .minimumScaleFactor(0.1)
         }
     }
