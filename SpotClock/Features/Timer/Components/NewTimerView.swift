@@ -6,6 +6,7 @@
 //
 
 import MapKit
+import SwiftData
 import SwiftUI
 
 struct NewTimerView: View {
@@ -13,6 +14,7 @@ struct NewTimerView: View {
     @Environment(TimerService.self) private var timerManager
     @Environment(LocationService.self) private var locationManager
     @Environment(SubscriptionService.self) private var subscriptionManager
+    @Query(sort: \ParkingSession.startTime, order: .reverse) private var sessions: [ParkingSession]
     
     @State private var startTapped = false
     @State private var selectedDuration: TimeInterval = 3600
@@ -24,6 +26,7 @@ struct NewTimerView: View {
     
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
+    @State private var isStartingTimer = false
     
     var body: some View {
         NavigationStack {
@@ -61,6 +64,49 @@ struct NewTimerView: View {
                         .padding()
                         .background(DesignSystem.cardBackground)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
+
+                        if !smartSuggestions.isEmpty {
+                            VStack(alignment: .leading, spacing: 16) {
+                                Label("Smart Suggestions", systemImage: "sparkles")
+                                    .font(.headline)
+
+                                Text("Based on your recent parking history around this time.")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+
+                                VStack(spacing: 10) {
+                                    ForEach(smartSuggestions) { suggestion in
+                                        Button {
+                                            useCustomDuration = false
+                                            selectedDuration = suggestion.duration
+                                        } label: {
+                                            HStack(spacing: 12) {
+                                                Image(systemName: selectedDuration == suggestion.duration && !useCustomDuration ? "checkmark.circle.fill" : "clock.arrow.2.circlepath")
+                                                    .foregroundStyle(selectedDuration == suggestion.duration && !useCustomDuration ? .blue : .secondary)
+
+                                                VStack(alignment: .leading, spacing: 4) {
+                                                    Text(suggestion.title)
+                                                        .font(.subheadline.bold())
+                                                        .foregroundStyle(.primary)
+                                                    Text(suggestion.detail)
+                                                        .font(.caption)
+                                                        .foregroundStyle(.secondary)
+                                                }
+
+                                                Spacer()
+                                            }
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 12)
+                                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
+                                }
+                            }
+                            .padding()
+                            .background(DesignSystem.cardBackground)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                        }
                         
                         // Duration Selection
                         VStack(alignment: .leading, spacing: 16) {
@@ -151,6 +197,7 @@ struct NewTimerView: View {
                         startTapped.toggle()
                         startTimer()
                     }
+                    .disabled(isStartingTimer)
                     .sensoryFeedback(.impact(weight: .medium), trigger: startTapped)
                     .fontWeight(.semibold)
                 }
@@ -164,11 +211,13 @@ struct NewTimerView: View {
                 Text(errorMessage)
             }
             .task {
-                Task {
-                    await locationManager.ensureLocationName()
-                }
+                _ = await locationManager.ensureLocationName()
             }
         }
+    }
+
+    private var smartSuggestions: [ParkingDurationSuggestion] {
+        ParkingRecommendationEngine.suggestions(from: sessions)
     }
     
     private func startTimer() {
@@ -188,19 +237,17 @@ struct NewTimerView: View {
         }
         
         Task { @MainActor in
+            isStartingTimer = true
+            defer { isStartingTimer = false }
+
             let name = await locationManager.ensureLocationName()
-            let location = locationManager.location
-            
-            guard location != nil else {
-                errorMessage = "Unable to get your location. Please enable location services"
-                showErrorAlert = true
-                return
-            }
+
             guard let location = locationManager.location else {
-                errorMessage = "Unable to get your location. Please enable location services"
+                errorMessage = locationManager.errorMessage ?? "Unable to get your location. Please enable location services."
                 showErrorAlert = true
                 return
             }
+
             await timerManager.startParking(
                 duration: duration,
                 location: name,
@@ -220,9 +267,6 @@ struct NewTimerView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .previewData) {
     NewTimerView()
-        .environment(SubscriptionService())
-        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
-        .environment(LocationService())
 }

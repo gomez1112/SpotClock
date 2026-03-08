@@ -423,6 +423,12 @@ final class TimerService {
                     self.timeRemaining = session.timeRemaining
                     self.isRunning = true
                     self.currentAlarmID = alarmID
+
+                    if alarmID == nil {
+                        logger.notice("Restored session without alarm ID. Scheduling a replacement alarm.")
+                        await scheduleTimer(for: session)
+                    }
+
                     self.startTicking()
                     
                     logger.notice("Restored active session: \(session.id)")

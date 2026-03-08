@@ -17,10 +17,13 @@ struct InsightsView: View {
     @State private var pulseAnimation = false
     @State private var selectedAchievement: Achievement?
     @State private var showNewTimer = false
+    @State private var selectedWeeklyDate: Date?
+    @State private var selectedTimeDistributionValue: Int?
     
     @State private var cachedTopLocations: [LocationData] = []
     @State private var cachedWeeklyData: [WeeklyData] = []
     @State private var cachedTimeDistribution: [TimeDistributionData] = []
+    @State private var cachedInsights: [Insight] = []
     @State private var lastComputedTimeframe: Timeframe?
     @State private var lastFilteredCount = 0
     
@@ -86,6 +89,9 @@ struct InsightsView: View {
             .sheet(isPresented: $showNewTimer) {
                 NewTimerView()
             }
+            .sheet(item: $selectedAchievement) { achievement in
+                AchievementDetailView(achievement: achievement)
+            }
             .task(recomputeCachedValues)
             .onChange(of: filteredSessions.count) { oldValue, newValue in
                 if oldValue != newValue {
@@ -101,13 +107,15 @@ struct InsightsView: View {
         cachedTopLocations = computeTopLocations()
         cachedWeeklyData = computeWeeklyData()
         cachedTimeDistribution = computeTimeDistribution()
+        cachedInsights = generateInsights()
         lastComputedTimeframe = selectedTimeframe
         lastFilteredCount = filteredCount
     }
     private func computeTopLocations() -> [LocationData] {
         var locationDict: [String: [ParkingSession]] = [:]
         
-        for session in filteredSessions where !session.location.isEmpty {
+        for session in filteredSessions
+        where !session.location.isEmpty && session.latitude != 0 && session.longitude != 0 {
             locationDict[session.location, default: []].append(session)
         }
         
@@ -321,8 +329,7 @@ struct InsightsView: View {
             }
             .padding(.horizontal, 4)
             
-            let insights = generateInsights()
-            if insights.isEmpty {
+            if cachedInsights.isEmpty {
                 ContentUnavailableView {
                     Label("No Insights Yet", systemImage: "lightbulb.fill")
                         .symbolRenderingMode(.multicolor)
@@ -330,7 +337,7 @@ struct InsightsView: View {
                     Text("Keep parking to unlock personalized insights")
                 }
             } else {
-                ForEach(insights) { insight in
+                ForEach(cachedInsights) { insight in
                     InsightCard(insight: insight)
                 }
             }
@@ -365,50 +372,101 @@ struct InsightsView: View {
                         .padding(.top, 20)
                     
                     Chart(weeklyData) { data in
+                        let isSelected = isSelectedWeeklyEntry(data)
+                        let hasSelection = selectedWeeklyDate != nil
+                        
                         BarMark(
-                            x: .value("Day", data.day),
+                            x: .value("Day", data.date, unit: .day),
                             y: .value("Hours", data.hours)
                         )
                         .foregroundStyle(
-                            LinearGradient(
-                                colors: [.blue, .blue.opacity(0.5)],
+                            isSelected
+                            ? LinearGradient(
+                                colors: [.indigo, .blue],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            : LinearGradient(
+                                colors: [.blue.opacity(hasSelection ? 0.3 : 0.7), .blue.opacity(hasSelection ? 0.15 : 0.4)],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
                         )
                         .cornerRadius(8)
+
+                        if isSelected {
+                            RuleMark(x: .value("Selected Day", data.date, unit: .day))
+                                .foregroundStyle(.clear)
+                                .annotation(position: .top, overflowResolution: .init(x: .fit(to: .chart), y: .fit(to: .chart))) {
+                                    VStack(spacing: 4) {
+                                        Text(formatWeeklySelectionValue(data.hours))
+                                            .font(.subheadline.weight(.bold))
+                                            .foregroundStyle(.indigo)
+                                        Text(data.date.formatted(.dateTime.weekday(.abbreviated)))
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .fill(Color(.systemBackground))
+                                            .shadow(color: .black.opacity(0.12), radius: 6, y: 2)
+                                    }
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .strokeBorder(.indigo.opacity(0.2), lineWidth: 1)
+                                    )
+                                }
+                        }
                     }
+                    .chartXSelection(value: $selectedWeeklyDate)
                     .chartXAxis {
-                        AxisMarks(values: .automatic) { _ in
-                            AxisValueLabel()
+                        AxisMarks(values: weeklyData.map(\.date)) { value in
+                            AxisValueLabel(format: .dateTime.weekday(.abbreviated))
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                     }
                     .chartYAxis {
-                        AxisMarks(position: .leading) { value in
+                        AxisMarks(position: .leading, values: weeklyChartAxisValues) { value in
                             AxisValueLabel {
                                 if let hours = value.as(Double.self) {
-                                    Text("\(Int(hours))h")
+                                    Text(formatChartAxisHours(hours))
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
                             }
                         }
                     }
+                    .chartYScale(domain: 0...weeklyChartUpperBound)
                     .frame(height: 200)
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
+
+                    if let selectedWeeklyEntry {
+                        HStack(spacing: 6) {
+                            Circle()
+                                .fill(.indigo)
+                                .frame(width: 8, height: 8)
+                            Text(selectedWeeklyEntry.date.formatted(.dateTime.weekday(.wide)))
+                                .font(.subheadline.weight(.medium))
+                            Text("•")
+                                .foregroundStyle(.tertiary)
+                            Text(formatWeeklySelectionValue(selectedWeeklyEntry.hours))
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.indigo)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
+                        .transition(.opacity)
+                    }
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(.ultraThinMaterial)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                                .strokeBorder(.white.opacity(0.1), lineWidth: 1)
-                        )
+                        .fill(Color(.secondarySystemGroupedBackground))
                 )
-                .shadow(color: .black.opacity(0.05), radius: 15, y: 8)
+                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
             }
             
             // Time distribution donut chart
@@ -422,11 +480,16 @@ struct InsightsView: View {
                     HStack(spacing: 30) {
                         // Donut chart
                         Chart(timeDistribution) { data in
+                            let isSelected = isSelectedTimeDistribution(data)
+                            let hasSelection = selectedTimeDistributionValue != nil
+                            
                             SectorMark(
                                 angle: .value("Count", data.count),
                                 innerRadius: .ratio(0.618),
-                                angularInset: 2
+                                outerRadius: .ratio(isSelected ? 1.0 : 0.92),
+                                angularInset: isSelected ? 3 : 1.5
                             )
+                            .opacity(hasSelection ? (isSelected ? 1 : 0.4) : 0.85)
                             .foregroundStyle(
                                 LinearGradient(
                                     colors: [data.color, data.color.opacity(0.7)],
@@ -436,22 +499,52 @@ struct InsightsView: View {
                             )
                             .cornerRadius(4)
                         }
+                        .chartAngleSelection(value: $selectedTimeDistributionValue)
+                        .chartBackground { _ in
+                            VStack(spacing: 4) {
+                                if let selected = selectedTimeDistribution {
+                                    Text(selected.period)
+                                        .font(.caption.weight(.bold))
+                                        .foregroundStyle(selected.color)
+                                    Text("\(selected.count) sessions")
+                                        .font(.system(.caption2, design: .rounded).weight(.medium))
+                                        .foregroundStyle(.secondary)
+                                } else {
+                                    Image(systemName: "hand.tap")
+                                        .font(.caption)
+                                        .foregroundStyle(.tertiary)
+                                    Text("Tap a slice")
+                                        .font(.caption2)
+                                        .foregroundStyle(.tertiary)
+                                }
+                            }
+                        }
                         .frame(width: 140, height: 140)
                         Spacer()
                         // Legend
                         VStack(alignment: .leading, spacing: 12) {
                             ForEach(timeDistribution) { data in
+                                let isSelected = isSelectedTimeDistribution(data)
+                                let hasSelection = selectedTimeDistributionValue != nil
+                                
                                 HStack(spacing: 8) {
                                     RoundedRectangle(cornerRadius: 4)
-                                        .fill(data.color)
+                                        .fill(data.color.opacity(isSelected || !hasSelection ? 1 : 0.4))
                                         .frame(width: 12, height: 12)
                                     
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(data.period)
-                                            .font(.subheadline.weight(.semibold))
+                                            .font(.subheadline.weight(isSelected ? .bold : .semibold))
                                         Text("\(data.count) sessions")
                                             .font(.caption2)
                                             .foregroundStyle(.secondary)
+                                    }
+                                    .opacity(hasSelection && !isSelected ? 0.5 : 1)
+                                }
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    withAnimation(.snappy(duration: 0.25)) {
+                                        selectTimeDistribution(data)
                                     }
                                 }
                             }
@@ -462,13 +555,9 @@ struct InsightsView: View {
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(.ultraThinMaterial)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                                .strokeBorder(.white.opacity(0.1), lineWidth: 1)
-                        )
+                        .fill(Color(.secondarySystemGroupedBackground))
                 )
-                .shadow(color: .black.opacity(0.05), radius: 15, y: 8)
+                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
             }
             
             // Top locations
@@ -489,9 +578,9 @@ struct InsightsView: View {
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(.ultraThinMaterial)
+                        .fill(Color(.secondarySystemGroupedBackground))
                 )
-                .shadow(color: .black.opacity(0.05), radius: 15, y: 8)
+                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
             }
         }
     }
@@ -549,13 +638,11 @@ struct InsightsView: View {
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                 ForEach(achievements) { achievement in
-                    AchievementBadge(achievement: achievement)
-                        .onTapGesture {
-                            if achievement.isUnlocked {
-                                selectedAchievement = achievement
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            }
-                        }
+                    AchievementBadge(achievement: achievement) {
+                        guard achievement.isUnlocked else { return }
+                        selectedAchievement = achievement
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    }
                 }
             }
         }
@@ -628,6 +715,45 @@ struct InsightsView: View {
     private var weeklyData: [WeeklyData] {
         cachedWeeklyData
     }
+
+    private var selectedWeeklyEntry: WeeklyData? {
+        guard let selectedWeeklyDate else { return nil }
+        return weeklyData.first {
+            Calendar.current.isDate($0.date, equalTo: selectedWeeklyDate, toGranularity: .day)
+        }
+    }
+
+    private var weeklyChartUpperBound: Double {
+        let maxHours = weeklyData.map(\.hours).max() ?? 0
+
+        if maxHours <= 1 {
+            return 1
+        } else if maxHours <= 2 {
+            return 2
+        } else if maxHours <= 4 {
+            return 4
+        } else {
+            return ceil(maxHours)
+        }
+    }
+
+    private var weeklyChartAxisValues: [Double] {
+        let upperBound = weeklyChartUpperBound
+        let step: Double
+
+        if upperBound <= 1 {
+            step = 0.25
+        } else if upperBound <= 2 {
+            step = 0.5
+        } else if upperBound <= 4 {
+            step = 1
+        } else {
+            step = max(1, ceil(upperBound / 4))
+        }
+
+        let count = Int((upperBound / step).rounded())
+        return (0...count).map { Double($0) * step }
+    }
     
     private var topLocations: [LocationData] {
         cachedTopLocations
@@ -635,6 +761,28 @@ struct InsightsView: View {
     
     private var timeDistribution: [TimeDistributionData] {
         cachedTimeDistribution
+    }
+
+    private var selectedTimeDistribution: TimeDistributionData? {
+        guard let selectedTimeDistributionValue else { return nil }
+
+        var runningTotal = 0
+        for item in timeDistribution {
+            runningTotal += item.count
+            if selectedTimeDistributionValue <= runningTotal {
+                return item
+            }
+        }
+
+        return nil
+    }
+
+    private var selectedTimeDistributionDetail: String {
+        if let selectedTimeDistribution {
+            return "\(selectedTimeDistribution.count) sessions"
+        } else {
+            return "Select a category"
+        }
     }
     
     private var achievements: [Achievement] {
@@ -828,6 +976,115 @@ struct InsightsView: View {
             return "\(hours)h \(minutes)m"
         } else {
             return "\(minutes)m"
+        }
+    }
+
+    private func formatChartAxisHours(_ hours: Double) -> String {
+        if hours == 0 {
+            return "0h"
+        } else if hours < 1 {
+            let minutes = Int((hours * 60).rounded())
+            return "\(minutes)m"
+        } else if hours < 10 {
+            return String(format: "%.1fh", hours)
+        } else {
+            return "\(Int(hours.rounded()))h"
+        }
+    }
+
+    private func formatWeeklySelectionValue(_ hours: Double) -> String {
+        if hours < 1 {
+            return "\(Int((hours * 60).rounded())) min"
+        } else {
+            return String(format: "%.1f hr", hours)
+        }
+    }
+
+    private func isSelectedWeeklyEntry(_ data: WeeklyData) -> Bool {
+        guard let selectedWeeklyEntry else { return false }
+        return selectedWeeklyEntry.id == data.id
+    }
+
+    private func isSelectedTimeDistribution(_ data: TimeDistributionData) -> Bool {
+        selectedTimeDistribution?.id == data.id
+    }
+
+    private func selectTimeDistribution(_ data: TimeDistributionData) {
+        if selectedTimeDistribution?.id == data.id {
+            selectedTimeDistributionValue = nil
+            return
+        }
+
+        var runningTotal = 0
+        for item in timeDistribution {
+            runningTotal += item.count
+            if item.id == data.id {
+                selectedTimeDistributionValue = max(1, runningTotal)
+                return
+            }
+        }
+    }
+}
+
+private struct AchievementDetailView: View {
+    let achievement: Achievement
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 24) {
+                Spacer()
+
+                ZStack {
+                    Circle()
+                        .fill(achievement.color.opacity(0.16))
+                        .frame(width: 140, height: 140)
+
+                    Image(systemName: achievement.icon)
+                        .font(.system(size: 56, weight: .semibold))
+                        .foregroundStyle(achievement.color)
+                }
+
+                VStack(spacing: 10) {
+                    Text(achievement.title)
+                        .font(.title.bold())
+                        .multilineTextAlignment(.center)
+
+                    Text(achievement.description)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+
+                    Text(unlockedText)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(achievement.color)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(achievement.color.opacity(0.12), in: Capsule())
+                }
+                .padding(.horizontal, 24)
+
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Achievement")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
+        }
+        .presentationDetents([.medium])
+    }
+
+    private var unlockedText: String {
+        if achievement.isUnlocked {
+            return "Unlocked \(achievement.date.formatted(.dateTime.month().day().year()))"
+        } else {
+            return "Locked"
         }
     }
 }

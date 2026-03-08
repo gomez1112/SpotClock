@@ -59,8 +59,23 @@ final class LocationService: NSObject {
     }
     
     func ensureLocationName() async -> String {
+        guard await locationServicesAreEnabled() else {
+            errorMessage = "Location Services are turned off."
+            locationName = "Location Unavailable"
+            return locationName
+        }
+
+        if authorizationStatus == .denied || authorizationStatus == .restricted {
+            errorMessage = "Location access is disabled for SpotClock."
+            locationName = "Location Permission Needed"
+            return locationName
+        }
+
+        if authorizationStatus == .notDetermined {
+            requestPermission()
+        }
+
         // Always fetch fresh location for accurate parking location tracking
-        
         do {
             self.locationName = "Finding Location..."
             if let newLocation = try await awaitSingleLocationUpdate() {
@@ -79,9 +94,14 @@ final class LocationService: NSObject {
         
         return locationName
     }
+
+    private nonisolated func locationServicesAreEnabled() async -> Bool {
+        await Task.detached(priority: .userInitiated) {
+            CLLocationManager.locationServicesEnabled()
+        }.value
+    }
     
     private func awaitSingleLocationUpdate() async throws -> CLLocation? {
-        
         guard locationContinuation == nil else {
             throw LocationError.requestInProgress
         }
@@ -145,6 +165,8 @@ final class LocationService: NSObject {
 enum LocationError: Error {
     case timeout
     case requestInProgress
+    case permissionDenied
+    case servicesDisabled
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -182,4 +204,3 @@ extension LocationService: CLLocationManagerDelegate {
         }
     }
 }
-

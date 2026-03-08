@@ -10,6 +10,7 @@ import UIKit
 
 struct AchievementBadge: View {
     let achievement: Achievement
+    var action: (() -> Void)? = nil
     @State private var isPressed = false
     @State private var didUnlockAnimation = false
     @State private var ringPulse = false
@@ -28,7 +29,7 @@ struct AchievementBadge: View {
         .frame(maxWidth: .infinity)
         .background { cardBackground }
         .modifier(CardGlassEffectModifier(achievement: achievement))
-        .modifier(CardInteractionModifier(isPressed: $isPressed))
+        .modifier(CardInteractionModifier(isPressed: $isPressed, action: action))
         .onChange(of: achievement.isUnlocked) { _, newValue in
             if !wasUnlocked && newValue {
                 handleUnlockChange(newValue)
@@ -241,7 +242,7 @@ struct AchievementBadge: View {
     }
     
     private var cardInteractionEffects: some View {
-        modifier(CardInteractionModifier(isPressed: $isPressed))
+        modifier(CardInteractionModifier(isPressed: $isPressed, action: action))
     }
     
     private func handleUnlockChange(_ newValue: Bool) {
@@ -296,6 +297,7 @@ private struct CardGlassEffectModifier: ViewModifier {
 
 private struct CardInteractionModifier: ViewModifier {
     @Binding var isPressed: Bool
+    let action: (() -> Void)?
     
     func body(content: Content) -> some View {
         content
@@ -316,6 +318,8 @@ private struct CardInteractionModifier: ViewModifier {
                         isPressed = false
                     }
                 }
+
+                action?()
             }
             .animation(.spring(response: 0.4, dampingFraction: 0.8), value: isPressed)
     }

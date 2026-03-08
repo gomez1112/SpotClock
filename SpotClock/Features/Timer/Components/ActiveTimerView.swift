@@ -39,119 +39,117 @@ struct ActiveTimerView: View {
     var session: ParkingSession
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 16) {
-                    Spacer(minLength: 8)
+        ScrollView {
+            VStack(spacing: 16) {
+                Spacer(minLength: 8)
+                
+                // Time remaining with enhanced visual hierarchy
+                VStack {
+                    Text("Time Remaining")
+                        .font(.headline)
+                        .foregroundStyle(.secondary)
+                        .textCase(.uppercase)
+                        .tracking(1.2)
                     
-                    // Time remaining with enhanced visual hierarchy
-                    VStack {
-                        Text("Time Remaining")
-                            .font(.headline)
-                            .foregroundStyle(.secondary)
-                            .textCase(.uppercase)
-                            .tracking(1.2)
-                        
-                        // Large timer display
-                        Text(formatTimeRemaining(timerService.timeRemaining))
-                            .font(.system(size: 64, weight: .bold, design: .rounded))
-                            .foregroundStyle(timeColor)
-                            .monospacedDigit()
-                            .contentTransition(.numericText())
-                            .animation(.smooth, value: timerService.timeRemaining)
-                        
-                        // Status indicator
-                        HStack {
-                            Circle()
-                                .fill(timeColor)
-                                .frame(width: 8, height: 8)
-                            Text(statusText)
-                                .font(.subheadline)
-                                .foregroundStyle(timeColor)
-                        }
-                        .padding()
-                        .background(timeColor.opacity(0.1), in: Capsule())
-                    }
-                    .padding()
+                    // Large timer display
+                    Text(formatTimeRemaining(timerService.timeRemaining))
+                        .font(.system(size: 64, weight: .bold, design: .rounded))
+                        .foregroundStyle(timeColor)
+                        .monospacedDigit()
+                        .contentTransition(.numericText())
+                        .animation(.smooth, value: timerService.timeRemaining)
                     
-                    DualRingView(outerProgress: CGFloat(timerService.timeRemaining / max(1, session.duration)), innerProgress: LeaveNowAdvisor.innerRingProgress(leaveBy: leaveBy, sessionStart: session.startTime, sessionDuration: session.duration))
-                    
-                    
+                    // Status indicator
                     HStack {
-                        LeaveNowTile(
-                            leaveBy: leaveBy,
-                            isGoNow: (leaveBy ?? .distantPast) <= Date()
-                        ) {
-                            if hasCarLocation {
-                                showDirections = true
-                            }
-                        }
-                        .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
-                        
-                        if hasCarLocation, distance > 0 {
-                            CompassToCar(bearingRadians: bearing, distanceMeters: distance)
-                        }
-                    }
-                    .padding(.horizontal)
-                    
-                    // Action buttons with improved layout
-                    VStack {
-                        HStack {
-                            extendButton(minutes: 15, icon: "15.circle.fill")
-                            extendButton(minutes: 30, icon: "30.circle.fill")
-                        }
-                        
-                        Button(role: .destructive) {
-                            endHapticTick += 1
-                            timerService.stopParking()
-                        } label: {
-                            HStack {
-                                Image(systemName: "stop.circle.fill")
-                                    .font(.title3)
-                                Text("End Parking")
-                                    .font(.headline)
-                            }
-                            .foregroundStyle(.white)
-                            .padding(.vertical)
-                            .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
-                        }
-                        .tint(.red)
-                        .buttonSizing(.flexible)
-                        .buttonStyle(.borderedProminent)
-                        .sensoryFeedback(.success, trigger: endHapticTick)
+                        Circle()
+                            .fill(timeColor)
+                            .frame(width: 8, height: 8)
+                        Text(statusText)
+                            .font(.subheadline)
+                            .foregroundStyle(timeColor)
                     }
                     .padding()
+                    .background(timeColor.opacity(0.1), in: Capsule())
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .scrollBounceBehavior(.basedOnSize)
-            // ✅ FIXED: Don't use timeRemaining in task ID - it changes every second!
-            .task(id: session.id) {
-                await initialRefresh()
-                startRefreshTimer()
-            }
-            // ✅ FIXED: Watch for session end time changes (from extensions)
-            .onChange(of: session.endTime) { oldValue, newValue in
-                if oldValue != newValue {
-                    Task {
-                        await refreshETAAndCompass(forceUpdate: true)
+                .padding()
+                
+                DualRingView(outerProgress: CGFloat(timerService.timeRemaining / max(1, session.duration)), innerProgress: LeaveNowAdvisor.innerRingProgress(leaveBy: leaveBy, sessionStart: session.startTime, sessionDuration: session.duration))
+                
+                
+                HStack {
+                    LeaveNowTile(
+                        leaveBy: leaveBy,
+                        isGoNow: (leaveBy ?? .distantPast) <= Date()
+                    ) {
+                        if hasCarLocation {
+                            showDirections = true
+                        }
+                    }
+                    .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
+                    
+                    if hasCarLocation, distance > 0 {
+                        CompassToCar(bearingRadians: bearing, distanceMeters: distance)
                     }
                 }
+                .padding(.horizontal)
             }
-            .onDisappear {
-                stopRefreshTimer()
-                locationService.stopUpdatingLocation()
-            }
-            .sheet(isPresented: $showDirections) {
-                if hasCarLocation {
-                    DirectionsMapView(
-                        carLocation: CLLocationCoordinate2D(
-                            latitude: session.latitude,
-                            longitude: session.longitude
-                        ),
-                        carAddress: session.location
-                    )
+            
+            // Action buttons with improved layout
+            VStack {
+                HStack {
+                    extendButton(minutes: 15, icon: "15.circle.fill")
+                    extendButton(minutes: 30, icon: "30.circle.fill")
                 }
+                
+                Button(role: .destructive) {
+                    endHapticTick += 1
+                    timerService.stopParking()
+                } label: {
+                    HStack {
+                        Image(systemName: "stop.circle.fill")
+                            .font(.title3)
+                        Text("End Parking")
+                            .font(.headline)
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.vertical)
+                    .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
+                }
+                .tint(.red)
+                .buttonSizing(.flexible)
+                .buttonStyle(.borderedProminent)
+                .sensoryFeedback(.success, trigger: endHapticTick)
+            }
+            .padding()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .scrollBounceBehavior(.basedOnSize)
+        // ✅ FIXED: Don't use timeRemaining in task ID - it changes every second!
+        .task(id: session.id) {
+            await initialRefresh()
+            startRefreshTimer()
+        }
+        // ✅ FIXED: Watch for session end time changes (from extensions)
+        .onChange(of: session.endTime) { oldValue, newValue in
+            if oldValue != newValue {
+                Task {
+                    await refreshETAAndCompass(forceUpdate: true)
+                }
+            }
+        }
+        .onDisappear {
+            stopRefreshTimer()
+            locationService.stopUpdatingLocation()
+        }
+        .sheet(isPresented: $showDirections) {
+            if hasCarLocation {
+                DirectionsMapView(
+                    carLocation: CLLocationCoordinate2D(
+                        latitude: session.latitude,
+                        longitude: session.longitude
+                    ),
+                    carAddress: session.location
+                )
             }
         }
     }
@@ -306,7 +304,5 @@ struct ActiveTimerView: View {
 #Preview(traits: .previewData) {
     NavigationStack {
         ActiveTimerView(session: ParkingSession(endTime: Date(), duration: 2000))
-            .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
     }
 }
-
