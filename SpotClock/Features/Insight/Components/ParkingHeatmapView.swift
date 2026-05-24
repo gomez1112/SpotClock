@@ -10,29 +10,15 @@ import SwiftUI
 
 struct ParkingHeatmapView: View {
     let locations: [LocationData]
-    @State private var region: MKCoordinateRegion
+    @State private var position: MapCameraPosition
     
     init(locations: [LocationData]) {
         self.locations = locations
-        
-        if !locations.isEmpty {
-            let avgLat = locations.map { $0.coordinate.latitude }.reduce(0, +) / Double(locations.count)
-            let avgLon = locations.map { $0.coordinate.longitude }.reduce(0, +) / Double(locations.count)
-            
-            _region = State(initialValue: MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: avgLat, longitude: avgLon),
-                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            ))
-        } else {
-            _region = State(initialValue: MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            ))
-        }
+        _position = State(initialValue: Self.cameraPosition(for: locations))
     }
     
     var body: some View {
-        Map(position: .constant(.region(region))) {
+        Map(position: $position) {
             ForEach(locations) { location in
                 Annotation(
                     location.name,
@@ -77,6 +63,30 @@ struct ParkingHeatmapView: View {
             }
         }
         .mapStyle(.standard(elevation: .realistic))
+        .onChange(of: locationChangeToken, initial: true) { _, _ in
+            position = Self.cameraPosition(for: locations)
+        }
+    }
+    
+    private static func cameraPosition(for locations: [LocationData]) -> MapCameraPosition {
+        guard !locations.isEmpty else {
+            return .region(
+                MKCoordinateRegion(
+                    center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+                    span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                )
+            )
+        }
+        
+        let avgLat = locations.map(\.coordinate.latitude).reduce(0, +) / Double(locations.count)
+        let avgLon = locations.map(\.coordinate.longitude).reduce(0, +) / Double(locations.count)
+        
+        return .region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: avgLat, longitude: avgLon),
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            )
+        )
     }
     
     private func colorForFrequency(_ visits: Int) -> Color {
@@ -94,6 +104,14 @@ struct ParkingHeatmapView: View {
             default:
                 return .red
         }
+    }
+
+    private var locationChangeToken: String {
+        locations
+            .map { location in
+                "\(location.id.uuidString)-\(location.coordinate.latitude)-\(location.coordinate.longitude)-\(location.visits)"
+            }
+            .joined(separator: "|")
     }
 }
 

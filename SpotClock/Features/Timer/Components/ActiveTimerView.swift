@@ -8,6 +8,7 @@
 import MapKit
 import SwiftData
 import SwiftUI
+import UIKit
 
 struct ActiveTimerView: View {
     
@@ -26,12 +27,14 @@ struct ActiveTimerView: View {
     
     @State private var extendHapticTick: Int = 0
     @State private var endHapticTick: Int = 0
+    @State private var copyHapticTick: Int = 0
     
     @State private var lastUserLocation: CLLocationCoordinate2D?
     @State private var isSchedulingLeaveAlarm = false
     
     @State private var showDirections = false
     @State private var lastSessionEndTime: Date?
+    @State private var copiedDetailsMessage: String?
     
     // ✅ NEW: Separate refresh timer
     @State private var refreshTimer: Timer?
@@ -119,6 +122,32 @@ struct ActiveTimerView: View {
                 .buttonSizing(.flexible)
                 .buttonStyle(.borderedProminent)
                 .sensoryFeedback(.success, trigger: endHapticTick)
+                .accessibilityHint("Ends the current parking timer.")
+
+                Button {
+                    copyParkingDetails()
+                } label: {
+                    HStack {
+                        Image(systemName: "doc.on.doc")
+                            .font(.title3)
+                        Text("Copy Parking Details")
+                            .font(.headline)
+                    }
+                    .foregroundStyle(.blue)
+                    .padding(.vertical)
+                }
+                .buttonSizing(.flexible)
+                .buttonStyle(.bordered)
+                .sensoryFeedback(.success, trigger: copyHapticTick)
+                .accessibilityHint("Copies your parking location, expiry time, and notes.")
+
+                if let copiedDetailsMessage {
+                    Text(copiedDetailsMessage)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .transition(.opacity)
+                        .accessibilityLabel(copiedDetailsMessage)
+                }
             }
             .padding()
         }
@@ -152,6 +181,7 @@ struct ActiveTimerView: View {
                 )
             }
         }
+        .accessibilityElement(children: .contain)
     }
     
     private var hasCarLocation: Bool {
@@ -266,6 +296,32 @@ struct ActiveTimerView: View {
         else if timerService.timeRemaining > 300 { return "Heads Up" }
         else { return "Time Running Out!" }
     }
+
+    private func copyParkingDetails() {
+        UIPasteboard.general.string = parkingDetailsText
+        copyHapticTick += 1
+        copiedDetailsMessage = "Parking details copied."
+
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(2))
+            copiedDetailsMessage = nil
+        }
+    }
+
+    private var parkingDetailsText: String {
+        var details = [
+            "SpotClock Parking Details",
+            "Location: \(session.location.isEmpty ? "Unknown Location" : session.location)",
+            "Expires: \(session.endTime.formatted(date: .abbreviated, time: .shortened))",
+            "Time Remaining: \(formatTimeRemaining(timerService.timeRemaining))"
+        ]
+
+        if !session.notes.isEmpty {
+            details.append("Notes: \(session.notes)")
+        }
+
+        return details.joined(separator: "\n")
+    }
     
     private func formatTimeRemaining(_ timeInterval: TimeInterval) -> String {
         let hours = Int(timeInterval) / 3600
@@ -298,6 +354,7 @@ struct ActiveTimerView: View {
         .buttonSizing(.flexible)
         .buttonStyle(.borderedProminent)
         .sensoryFeedback(.impact(weight: .light), trigger: extendHapticTick)
+        .accessibilityLabel("Extend parking by \(minutes) minutes")
     }
 }
 

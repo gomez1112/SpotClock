@@ -42,6 +42,24 @@ struct LeaveNowTile: View {
         }
         .buttonStyle(.plain)
         .transition(.asymmetric(insertion: .scale.combined(with: .opacity), removal: .opacity))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(accessibilityTitle)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint("Opens walking directions back to your car.")
+    }
+
+    private var accessibilityTitle: String {
+        if isGoNow {
+            return "Leave now"
+        }
+        return "Leave by"
+    }
+
+    private var accessibilityValue: String {
+        if isGoNow {
+            return "Start heading back now."
+        }
+        return leaveBy?.formatted(date: .omitted, time: .shortened) ?? "Time not available"
     }
 }
 
@@ -51,4 +69,3 @@ struct LeaveNowTile: View {
 #Preview {
     LeaveNowTile(leaveBy: Date(), isGoNow: false, action: {})
 }
-

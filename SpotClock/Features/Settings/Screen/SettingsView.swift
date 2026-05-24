@@ -6,6 +6,7 @@
 //
 
 
+import SwiftData
 import SwiftUI
 import StoreKit
 import AlarmKit

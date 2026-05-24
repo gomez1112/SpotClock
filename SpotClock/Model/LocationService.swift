@@ -33,9 +33,11 @@ final class LocationService: NSObject {
         manager.activityType = .other
         manager.distanceFilter = kCLDistanceFilterNone
         manager.allowsBackgroundLocationUpdates = false
+        authorizationStatus = manager.authorizationStatus
     }
     
     func requestPermission() {
+        authorizationStatus = manager.authorizationStatus
         manager.requestWhenInUseAuthorization()
         
         if manager.accuracyAuthorization == .reducedAccuracy && !hasRequestedFullAccuracy {

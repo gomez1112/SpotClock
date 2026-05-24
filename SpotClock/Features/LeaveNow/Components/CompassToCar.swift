@@ -31,7 +31,7 @@ struct CompassToCar: View {
                     Image(systemName: "location.north.fill")
                         .rotationEffect(.radians(bearingRadians))
                         .font(.title2)
-                        .foregroundColor(.primary)
+                        .foregroundStyle(.primary)
                         .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
                         .animation(.smooth, value: bearingRadians)
                 }
@@ -40,6 +40,9 @@ struct CompassToCar: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Car compass")
+        .accessibilityValue(distanceMeters < 5 ? "You are at your car." : "\(distanceString(distanceMeters)) away")
     }
     
     private func distanceString(_ meters: Double) -> String {

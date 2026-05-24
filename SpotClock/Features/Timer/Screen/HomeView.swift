@@ -16,6 +16,7 @@ struct HomeView: View {
     @State private var showNewTimer = false
     @State private var showSubscription = false
     @State private var pulseAnimation = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     
     var body: some View {
         NavigationStack {
@@ -69,10 +70,11 @@ struct HomeView: View {
                     )
                     .frame(width: 200, height: 200)
                     .blur(radius: 20)
-                    .scaleEffect(pulseAnimation ? 1.1 : 0.9)
+                    .scaleEffect(reduceMotion ? 1 : (pulseAnimation ? 1.1 : 0.9))
                     .animation(
-                        .easeInOut(duration: 2.0)
-                        .repeatForever(autoreverses: true),
+                        reduceMotion
+                        ? .default
+                        : .easeInOut(duration: 2.0).repeatForever(autoreverses: true),
                         value: pulseAnimation
                     )
                 
@@ -120,6 +122,8 @@ struct HomeView: View {
                     .padding(.vertical, 10)
                     .background(.ultraThinMaterial, in: Capsule())
                     .padding(.top, 8)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(subscriptionManager.sessionsRemaining) free parking timers remaining this month")
                 }
             }
             
@@ -150,6 +154,8 @@ struct HomeView: View {
                 .tint(.blue)
                 .buttonSizing(.flexible)
                 .buttonStyle(.borderedProminent)
+                .accessibilityLabel(subscriptionManager.canStartSession ? "Start parking timer" : "Upgrade to start more parking timers")
+                .accessibilityHint(subscriptionManager.canStartSession ? "Opens timer setup." : "Opens the subscription screen.")
                 // Upgrade prompt for free users at limit
                 if !subscriptionManager.hasProAccess && subscriptionManager.sessionsRemaining == 0 {
                     Button {
@@ -182,6 +188,7 @@ struct HomeView: View {
                         )
                     }
                     .buttonStyle(.plain)
+                    .accessibilityHint("Opens subscription options.")
                 }
             }
             .padding(.horizontal, 28)
