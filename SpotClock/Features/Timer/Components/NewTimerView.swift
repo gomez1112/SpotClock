@@ -32,12 +32,9 @@ struct NewTimerView: View {
         NavigationStack {
             ZStack {
                 AppBackground()
-                    .ignoresSafeArea()
-                    .opacity(0.2)
                 
                 ScrollView {
                     VStack(spacing: 24) {
-                        // Location Card
                         VStack(alignment: .leading, spacing: 12) {
                             Label("Parking Location", systemImage: "location.fill")
                                 .font(.headline)
@@ -52,7 +49,7 @@ struct NewTimerView: View {
                                         .font(.subheadline.bold())
                                     
                                     if let location = locationManager.location {
-                                        Text("\(location.coordinate.latitude, specifier: "%.4f"), \(location.coordinate.longitude, specifier: "%.4f")")
+                                        Text(coordinateText(for: location.coordinate))
                                             .font(.caption)
                                             .foregroundStyle(.secondary)
                                     }
@@ -62,8 +59,7 @@ struct NewTimerView: View {
                             }
                         }
                         .padding()
-                        .background(DesignSystem.cardBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
 
                         if !smartSuggestions.isEmpty {
                             VStack(alignment: .leading, spacing: 16) {
@@ -104,11 +100,9 @@ struct NewTimerView: View {
                                 }
                             }
                             .padding()
-                            .background(DesignSystem.cardBackground)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
                         }
                         
-                        // Duration Selection
                         VStack(alignment: .leading, spacing: 16) {
                             Label("Duration", systemImage: "timer")
                                 .font(.headline)
@@ -165,10 +159,8 @@ struct NewTimerView: View {
                             }
                         }
                         .padding()
-                        .background(DesignSystem.cardBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
                         
-                        // Notes (Optional)
                         VStack(alignment: .leading, spacing: 12) {
                             Label("Notes (Optional)", systemImage: "note.text")
                                 .font(.headline)
@@ -177,10 +169,10 @@ struct NewTimerView: View {
                                 .textFieldStyle(.roundedBorder)
                         }
                         .padding()
-                        .background(DesignSystem.cardBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
                     }
-                    .padding()
+                    .padding(DesignSystem.screenPadding)
+                    .appContentWidth()
                 }
             }
             .navigationTitle("New Timer")
@@ -218,6 +210,12 @@ struct NewTimerView: View {
 
     private var smartSuggestions: [ParkingDurationSuggestion] {
         ParkingRecommendationEngine.suggestions(from: sessions)
+    }
+
+    private func coordinateText(for coordinate: CLLocationCoordinate2D) -> String {
+        let latitude = coordinate.latitude.formatted(.number.precision(.fractionLength(4)))
+        let longitude = coordinate.longitude.formatted(.number.precision(.fractionLength(4)))
+        return "\(latitude), \(longitude)"
     }
     
     private func startTimer() {

@@ -47,11 +47,7 @@ struct InsightCard: View {
             Spacer()
         }
         .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(.ultraThinMaterial)
-        )
-        .shadow(color: insight.color.opacity(0.12), radius: 16, x: 0, y: 10)
+        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 20)
         .scaleEffect(appeared ? 1 : 0.98)
         .opacity(appeared ? 1 : 0)
         .animation(reduceMotion ? .default : .spring(response: 0.5, dampingFraction: 0.8), value: appeared)

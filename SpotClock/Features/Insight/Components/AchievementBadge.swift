@@ -300,28 +300,30 @@ private struct CardInteractionModifier: ViewModifier {
     let action: (() -> Void)?
     
     func body(content: Content) -> some View {
-        content
-            .scaleEffect(isPressed ? 0.96 : 1)
-            .rotation3DEffect(
-                .degrees(isPressed ? 2 : 0),
-                axis: (x: 1, y: 0, z: 0),
-                perspective: 0.5
-            )
-            .onTapGesture {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                    isPressed.toggle()
-                }
-                
-                // Reset after brief moment
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                        isPressed = false
-                    }
-                }
-
-                action?()
+        Button {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                isPressed.toggle()
             }
-            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: isPressed)
+
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(150))
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                    isPressed = false
+                }
+            }
+
+            action?()
+        } label: {
+            content
+                .scaleEffect(isPressed ? 0.96 : 1)
+                .rotation3DEffect(
+                    .degrees(isPressed ? 2 : 0),
+                    axis: (x: 1, y: 0, z: 0),
+                    perspective: 0.5
+                )
+        }
+        .buttonStyle(.plain)
+        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: isPressed)
     }
 }
 

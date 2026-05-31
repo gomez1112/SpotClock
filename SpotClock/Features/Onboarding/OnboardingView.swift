@@ -19,7 +19,6 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            // Animated gradient background
             LinearGradient(
                 colors: backgroundColors,
                 startPoint: .topLeading,
@@ -63,16 +62,16 @@ struct OnboardingView: View {
                     Spacer()
                     
                     if currentPage < 3 {
-                        Button("Skip") {
-                            withAnimation {
-                                currentPage = 3
-                            }
+                    Button("Skip") {
+                        withAnimation {
+                            currentPage = 3
                         }
-                        .font(.subheadline.bold())
-                        .foregroundStyle(.white.opacity(0.8))
-                        .padding(.horizontal, 24)
-                        .padding(.top, 16)
                     }
+                    .font(.subheadline.bold())
+                    .foregroundStyle(.white.opacity(0.8))
+                    .padding(.horizontal, 24)
+                    .padding(.top, 16)
+                }
                 }
                 
                 Spacer()
@@ -104,6 +103,7 @@ struct OnboardingView: View {
                     }
                     .padding(.horizontal, 32)
                     .padding(.bottom, 50)
+                    .appContentWidth()
                 }
             }
         }
@@ -119,10 +119,10 @@ struct OnboardingView: View {
     
     private var backgroundColors: [Color] {
         switch currentPage {
-            case 0: return [.blue, .blue.opacity(0.7)]
-            case 1: return [.orange, .orange.opacity(0.7)]
-            case 2: return [.purple, .purple.opacity(0.7)]
-            default: return [.green, .green.opacity(0.7)]
+            case 0: return [DesignSystem.brandBlue, DesignSystem.brandTeal]
+            case 1: return [DesignSystem.warmAccent, DesignSystem.brandBlue]
+            case 2: return [DesignSystem.brandIndigo, DesignSystem.brandTeal]
+            default: return [DesignSystem.brandTeal, DesignSystem.brandBlue]
         }
     }
     
@@ -173,6 +173,7 @@ struct OnboardingView: View {
                 )
             }
             .padding(.horizontal, 32)
+            .appContentWidth()
             
             Spacer()
             
@@ -189,6 +190,7 @@ struct OnboardingView: View {
             }
             .padding(.horizontal, 32)
             .padding(.bottom, 50)
+            .appContentWidth()
         }
     }
     

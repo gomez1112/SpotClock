@@ -24,84 +24,23 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    if subscriptionManager.hasProAccess {
-                        HStack {
-                            Image(systemName: "crown.fill")
-                                .foregroundStyle(.yellow)
-                            Text("Pro Member")
-                                .font(.headline)
-                            Spacer()
-                            Text("Active")
-                                .font(.caption)
-                                .foregroundStyle(.green)
-                        }
-                    } else {
-                        Button {
-                            showSubscription = true
-                        } label: {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Upgrade to Pro")
-                                        .font(.headline)
-                                    Text("Unlimited parking timers")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                                Image(systemName: "crown.fill")
-                                    .foregroundStyle(.yellow)
-                            }
-                        }
-                    }
-                } header: {
-                    Text("Subscription")
-                } footer: {
-                    if !subscriptionManager.hasProAccess {
-                        Text("Free: \(subscriptionManager.sessionsRemaining) timers left this month")
-                    }
-                }
-                
-                Section("About") {
-                    HStack {
-                        Text("Version")
-                        Spacer()
-                        if let version = getAppVersionAndBuild.version {
-                            Text(version)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    
-                    Link(destination: URL(string: "https://transfinite.us/policies/")!) {
-                        Label("Privacy Policy", systemImage: "hand.raised")
-                    }
-                    
-                    Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
-                        Label("Terms of Service", systemImage: "doc.text")
-                    }
-                }
-                
-                Section {
-                    Button {
-                        Task {
-                            await subscriptionManager.restorePurchases()
-                        }
-                    } label: {
-                        Label("Restore Purchases", systemImage: "arrow.clockwise")
-                    }
-                    
-                    Button(role: .destructive) {
-                        requestNotificationPermission()
-                    } label: {
-                        Label("Enable Alarms", systemImage: "alarm")
-                    }
+            ZStack {
+                AppBackground()
 
-                }
+                ScrollView {
+                    VStack(spacing: 20) {
+                        subscriptionSection
+                        actionsSection
+                        aboutSection
 
-                #if DEBUG
-                developerToolsSection
-                #endif
+                        #if DEBUG
+                        developerToolsSection
+                        #endif
+                    }
+                    .padding(DesignSystem.screenPadding)
+                    .appContentWidth()
+                }
+                .scrollIndicators(.hidden)
             }
             .navigationTitle("Settings")
             .sheet(isPresented: $showSubscription) {
@@ -113,6 +52,128 @@ struct SettingsView: View {
                 Text(alertMessage)
             }
         }
+    }
+
+    private var subscriptionSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            AppSectionHeader(title: "Subscription", systemImage: "crown.fill", tint: DesignSystem.warmAccent)
+
+            if subscriptionManager.hasProAccess {
+                HStack(spacing: 14) {
+                    Image(systemName: "checkmark.seal.fill")
+                        .font(.title2)
+                        .foregroundStyle(.green)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Pro Member")
+                            .font(.headline)
+                        Text("Unlimited timers are active.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                }
+            } else {
+                Button {
+                    showSubscription = true
+                } label: {
+                    HStack(spacing: 14) {
+                        Image(systemName: "crown.fill")
+                            .font(.title2)
+                            .foregroundStyle(DesignSystem.warmAccent)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Upgrade to Pro")
+                                .font(.headline)
+                            Text("\(subscriptionManager.sessionsRemaining) free timers left this month")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption.bold())
+                            .foregroundStyle(.secondary)
+                    }
+                    .contentShape(.rect)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(20)
+        .appCard(fill: DesignSystem.elevatedCardBackground)
+    }
+
+    private var actionsSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            AppSectionHeader(title: "Actions", systemImage: "slider.horizontal.3", tint: DesignSystem.brandBlue)
+
+            Button {
+                Task {
+                    await subscriptionManager.restorePurchases()
+                }
+            } label: {
+                settingsRow(title: "Restore Purchases", subtitle: "Recover an active App Store subscription.", systemImage: "arrow.clockwise")
+            }
+            .buttonStyle(.plain)
+
+            Divider()
+
+            Button {
+                requestNotificationPermission()
+            } label: {
+                settingsRow(title: "Enable Alarms", subtitle: "Allow full-screen parking timer alerts.", systemImage: "alarm")
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(20)
+        .appCard(fill: DesignSystem.elevatedCardBackground)
+    }
+
+    private var aboutSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            AppSectionHeader(title: "About", systemImage: "info.circle.fill", tint: DesignSystem.brandTeal)
+
+            HStack {
+                settingsRow(title: "Version", subtitle: getAppVersionAndBuild.version ?? "Unknown", systemImage: "number")
+                Spacer()
+            }
+
+            Divider()
+
+            Link(destination: privacyPolicyURL) {
+                settingsRow(title: "Privacy Policy", subtitle: "How SpotClock handles app data.", systemImage: "hand.raised")
+            }
+            .buttonStyle(.plain)
+
+            Divider()
+
+            Link(destination: termsURL) {
+                settingsRow(title: "Terms of Service", subtitle: "Apple standard end user license agreement.", systemImage: "doc.text")
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(20)
+        .appCard(fill: DesignSystem.elevatedCardBackground)
+    }
+
+    private func settingsRow(title: String, subtitle: String, systemImage: String) -> some View {
+        HStack(spacing: 14) {
+            Image(systemName: systemImage)
+                .font(.headline)
+                .foregroundStyle(DesignSystem.brandBlue)
+                .frame(width: 36, height: 36)
+                .background(DesignSystem.brandBlue.opacity(0.1), in: .circle)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                Text(subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+        }
+        .contentShape(.rect)
     }
     
     private func requestNotificationPermission() {
@@ -137,7 +198,9 @@ struct SettingsView: View {
 
     #if DEBUG
     private var developerToolsSection: some View {
-        Section {
+        VStack(alignment: .leading, spacing: 14) {
+            AppSectionHeader(title: "Developer Tools", systemImage: "hammer.fill", tint: DesignSystem.brandIndigo)
+
             LabeledContent("Generated Sessions") {
                 Text("\(DebugSampleDataSeeder.generatedSessionCount)")
                     .foregroundStyle(.secondary)
@@ -189,11 +252,13 @@ struct SettingsView: View {
                 Label("Clear Sample Data", systemImage: "trash")
             }
             .disabled(isRunningDeveloperAction)
-        } header: {
-            Text("Developer Tools")
-        } footer: {
+
             Text("Debug builds only. Generated sessions are tracked separately so clearing them won’t delete your real history.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
         }
+        .padding(20)
+        .appCard(fill: DesignSystem.elevatedCardBackground)
     }
 
     private func runDeveloperAction(_ action: @escaping @MainActor () throws -> Void) {
@@ -219,6 +284,14 @@ struct SettingsView: View {
         let version = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
         let build = bundle.infoDictionary?["CFBundleVersion"] as? String
         return (version, build)
+    }
+
+    private var privacyPolicyURL: URL {
+        URL(string: "https://transfinite.us/policies/") ?? URL(filePath: "/")
+    }
+
+    private var termsURL: URL {
+        URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") ?? URL(filePath: "/")
     }
 }
 

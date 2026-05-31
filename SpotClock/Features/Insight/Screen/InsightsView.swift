@@ -36,11 +36,12 @@ struct InsightsView: View {
     
     var body: some View {
         NavigationStack {
+            ZStack {
+                AppBackground()
+
                 ScrollView {
                     VStack(spacing: 28) {
-                        // Elegant timeframe picker
                         timeframePicker
-                            .padding(.horizontal, 20)
                             .padding(.top, 8)
                             .onChange(of: selectedTimeframe) { _, newValue in
                                 recomputeCachedValues()
@@ -52,37 +53,28 @@ struct InsightsView: View {
                                 .id("empty-\(sessions.count)")
                         } else {
                             Group {
-                                // Hero celebration section
                                 heroSection
-                                    .padding(.horizontal, 20)
                                 
-                                // Quick stats cards
                                 quickStatsSection
-                                    .padding(.horizontal, 20)
                                 
-                                // Smart insights with beautiful cards
                                 insightsSection
-                                    .padding(.horizontal, 20)
                                 
-                                // Stunning visual charts
                                 analyticsSection
-                                    .padding(.horizontal, 20)
                                 
-                                // Interactive heatmap
                                 heatmapSection
-                                    .padding(.horizontal, 20)
                                 
-                                // Achievement showcase
                                 achievementsSection
-                                    .padding(.horizontal, 20)
                                     .padding(.bottom, 40)
                             }
                             .id("content-\(filteredSessions.count)")
                         }
                             
                     }
+                    .padding(.horizontal, DesignSystem.screenPadding)
+                    .appContentWidth(DesignSystem.maxWideContentWidth)
                 }
                 .scrollIndicators(.hidden)
+            }
         
             .navigationTitle("Insights")
             .navigationBarTitleDisplayMode(.large)
@@ -208,7 +200,7 @@ struct InsightsView: View {
     // MARK: - Hero Section
     private var heroSection: some View {
         ZStack {
-            Color.indigo
+            DesignSystem.primaryGradient
             
             VStack(spacing: 24) {
                 // Main celebration
@@ -276,18 +268,8 @@ struct InsightsView: View {
             }
             .padding(32)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .strokeBorder(
-                    LinearGradient(
-                        colors: [.white.opacity(0.3), .white.opacity(0.1)],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    lineWidth: 1.5
-                )
-        )
+        .clipShape(.rect(cornerRadius: 28))
+        .shadow(color: DesignSystem.brandBlue.opacity(0.22), radius: 20, y: 12)
     }
     
     // MARK: - Quick Stats
@@ -319,15 +301,7 @@ struct InsightsView: View {
     // MARK: - Insights Section
     private var insightsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Image(systemName: "sparkles")
-                    .font(.title3)
-                    .foregroundStyle(.indigo)
-                
-                Text("Smart Insights")
-                    .font(.title2.bold())
-            }
-            .padding(.horizontal, 4)
+            AppSectionHeader(title: "Smart Insights", systemImage: "sparkles", tint: DesignSystem.brandIndigo)
             
             if cachedInsights.isEmpty {
                 ContentUnavailableView {
@@ -347,21 +321,7 @@ struct InsightsView: View {
     // MARK: - Analytics Section
     private var analyticsSection: some View {
         VStack(alignment: .leading, spacing: 20) {
-            HStack {
-                Image(systemName: "chart.line.uptrend.xyaxis")
-                    .font(.title3)
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.blue, .purple],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                
-                Text("Analytics")
-                    .font(.title2.bold())
-            }
-            .padding(.horizontal, 4)
+            AppSectionHeader(title: "Analytics", systemImage: "chart.line.uptrend.xyaxis", tint: DesignSystem.brandBlue)
             
             // Duration trend chart
             if !weeklyData.isEmpty {
@@ -462,11 +422,7 @@ struct InsightsView: View {
                         .transition(.opacity)
                     }
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color(.secondarySystemGroupedBackground))
-                )
-                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                .appCard()
             }
             
             // Time distribution donut chart
@@ -527,37 +483,36 @@ struct InsightsView: View {
                                 let isSelected = isSelectedTimeDistribution(data)
                                 let hasSelection = selectedTimeDistributionValue != nil
                                 
-                                HStack(spacing: 8) {
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .fill(data.color.opacity(isSelected || !hasSelection ? 1 : 0.4))
-                                        .frame(width: 12, height: 12)
-                                    
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(data.period)
-                                            .font(.subheadline.weight(isSelected ? .bold : .semibold))
-                                        Text("\(data.count) sessions")
-                                            .font(.caption2)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                    .opacity(hasSelection && !isSelected ? 0.5 : 1)
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
+                                Button {
                                     withAnimation(.snappy(duration: 0.25)) {
                                         selectTimeDistribution(data)
                                     }
+                                } label: {
+                                    HStack(spacing: 8) {
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .fill(data.color.opacity(isSelected || !hasSelection ? 1 : 0.4))
+                                            .frame(width: 12, height: 12)
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(data.period)
+                                                .font(.subheadline.weight(isSelected ? .bold : .semibold))
+                                                .foregroundStyle(.primary)
+                                            Text("\(data.count) sessions")
+                                                .font(.caption2)
+                                                .foregroundStyle(.secondary)
+                                        }
+                                        .opacity(hasSelection && !isSelected ? 0.5 : 1)
+                                    }
+                                    .contentShape(.rect)
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color(.secondarySystemGroupedBackground))
-                )
-                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                .appCard()
             }
             
             // Top locations
@@ -576,11 +531,7 @@ struct InsightsView: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color(.secondarySystemGroupedBackground))
-                )
-                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                .appCard()
             }
         }
     }
@@ -588,26 +539,12 @@ struct InsightsView: View {
     // MARK: - Heatmap Section
     private var heatmapSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Image(systemName: "map.fill")
-                    .font(.title3)
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.green, .cyan],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                
-                Text("Parking Hotspots")
-                    .font(.title2.bold())
-            }
-            .padding(.horizontal, 4)
+            AppSectionHeader(title: "Parking Hotspots", systemImage: "map.fill", tint: DesignSystem.brandTeal)
             
             if !topLocations.isEmpty {
                 ParkingHeatmapView(locations: topLocations)
                     .frame(height: 280)
-                    .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                    .clipShape(.rect(cornerRadius: 24))
                     .overlay(
                         RoundedRectangle(cornerRadius: 24, style: .continuous)
                             .strokeBorder(.white.opacity(0.1), lineWidth: 1)
@@ -620,21 +557,7 @@ struct InsightsView: View {
     // MARK: - Achievements Section
     private var achievementsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Image(systemName: "trophy.fill")
-                    .font(.title3)
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.yellow, .orange],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                
-                Text("Achievements")
-                    .font(.title2.bold())
-            }
-            .padding(.horizontal, 4)
+            AppSectionHeader(title: "Achievements", systemImage: "trophy.fill", tint: DesignSystem.warmAccent)
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                 ForEach(achievements) { achievement in
@@ -930,7 +853,7 @@ struct InsightsView: View {
         insights.append(Insight(
             icon: "hourglass",
             title: "Average Stay",
-            description: String(format: "You typically park for %.1f hours", avgDurationHours),
+            description: "You typically park for \(formatDecimalHours(avgDurationHours)) hours",
             color: .purple
         ))
         
@@ -986,7 +909,7 @@ struct InsightsView: View {
             let minutes = Int((hours * 60).rounded())
             return "\(minutes)m"
         } else if hours < 10 {
-            return String(format: "%.1fh", hours)
+            return "\(formatDecimalHours(hours))h"
         } else {
             return "\(Int(hours.rounded()))h"
         }
@@ -996,8 +919,12 @@ struct InsightsView: View {
         if hours < 1 {
             return "\(Int((hours * 60).rounded())) min"
         } else {
-            return String(format: "%.1f hr", hours)
+            return "\(formatDecimalHours(hours)) hr"
         }
+    }
+
+    private func formatDecimalHours(_ hours: Double) -> String {
+        hours.formatted(.number.precision(.fractionLength(1)))
     }
 
     private func isSelectedWeeklyEntry(_ data: WeeklyData) -> Bool {

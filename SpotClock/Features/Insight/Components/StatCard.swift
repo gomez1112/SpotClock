@@ -47,15 +47,7 @@ struct StatCard: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 20)
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(.ultraThinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .strokeBorder(.white.opacity(0.1), lineWidth: 1)
-                )
-        )
-        .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
+        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 20)
     }
 }
 

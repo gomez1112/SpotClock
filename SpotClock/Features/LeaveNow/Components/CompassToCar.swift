@@ -50,7 +50,8 @@ struct CompassToCar: View {
         if meters < 5 {
             return "You're here!"
         } else if meters >= 1000 {
-            return String(format: "%.1f km", meters / 1000)
+            let kilometers = (meters / 1000).formatted(.number.precision(.fractionLength(1)))
+            return "\(kilometers) km"
         } else {
             return "\(Int(meters)) m"
         }
