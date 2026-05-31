@@ -46,15 +46,13 @@ struct ActiveTimerView: View {
             VStack(spacing: 16) {
                 Spacer(minLength: 8)
                 
-                // Time remaining with enhanced visual hierarchy
-                VStack {
+                VStack(spacing: 12) {
                     Text("Time Remaining")
                         .font(.headline)
                         .foregroundStyle(.secondary)
                         .textCase(.uppercase)
                         .tracking(1.2)
                     
-                    // Large timer display
                     Text(formatTimeRemaining(timerService.timeRemaining))
                         .font(.system(size: 64, weight: .bold, design: .rounded))
                         .foregroundStyle(timeColor)
@@ -74,9 +72,12 @@ struct ActiveTimerView: View {
                     .padding()
                     .background(timeColor.opacity(0.1), in: Capsule())
                 }
-                .padding()
+                .frame(maxWidth: .infinity)
+                .padding(24)
+                .appCard(fill: DesignSystem.elevatedCardBackground)
                 
                 DualRingView(outerProgress: CGFloat(timerService.timeRemaining / max(1, session.duration)), innerProgress: LeaveNowAdvisor.innerRingProgress(leaveBy: leaveBy, sessionStart: session.startTime, sessionDuration: session.duration))
+                    .padding(.vertical, 12)
                 
                 
                 HStack {
@@ -94,11 +95,12 @@ struct ActiveTimerView: View {
                         CompassToCar(bearingRadians: bearing, distanceMeters: distance)
                     }
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 4)
             }
+            .padding(DesignSystem.screenPadding)
+            .appContentWidth()
             
-            // Action buttons with improved layout
-            VStack {
+            VStack(spacing: 14) {
                 HStack {
                     extendButton(minutes: 15, icon: "15.circle.fill")
                     extendButton(minutes: 30, icon: "30.circle.fill")
@@ -149,7 +151,8 @@ struct ActiveTimerView: View {
                         .accessibilityLabel(copiedDetailsMessage)
                 }
             }
-            .padding()
+            .padding(DesignSystem.screenPadding)
+            .appContentWidth()
         }
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
@@ -329,10 +332,14 @@ struct ActiveTimerView: View {
         let seconds = Int(timeInterval) % 60
         
         if hours > 0 {
-            return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+            return "\(hours):\(twoDigit(minutes)):\(twoDigit(seconds))"
         } else {
-            return String(format: "%d:%02d", minutes, seconds)
+            return "\(minutes):\(twoDigit(seconds))"
         }
+    }
+
+    private func twoDigit(_ value: Int) -> String {
+        value < 10 ? "0\(value)" : "\(value)"
     }
     
     private func extendButton(minutes: Int, icon: String) -> some View {

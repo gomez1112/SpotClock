@@ -17,32 +17,22 @@ struct SubscriptionView: View {
         SubscriptionStoreView(groupID: subscriptionManager.activeSubscriptionGroupID) {
             ScrollView {
                 VStack(spacing: 0) {
-                    // Hero section with premium feel
                     heroSection
                         .padding(.top, 40)
                         .padding(.bottom, 32)
                     
-                    // Value propositions
                     valuePropositionSection
                         .padding(.horizontal, 24)
                         .padding(.bottom, 32)
                     
-                    // Feature comparison
                     featureComparisonSection
                         .padding(.horizontal, 24)
                         .padding(.bottom, 40)
                 }
+                .appContentWidth()
             }
             .containerBackground(for: .subscriptionStoreFullHeight) {
-                LinearGradient(
-                    colors: [
-                        Color(.systemBackground),
-                        Color.blue.opacity(0.05),
-                        Color.purple.opacity(0.05)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
+                DesignSystem.appBackground
                 .ignoresSafeArea()
             }
         }
@@ -64,20 +54,8 @@ struct SubscriptionView: View {
             ZStack {
                 // Glow effect
                 Circle()
-                    .fill(
-                        RadialGradient(
-                            colors: [
-                                Color.yellow.opacity(0.4),
-                                Color.orange.opacity(0.2),
-                                Color.clear
-                            ],
-                            center: .center,
-                            startRadius: 30,
-                            endRadius: 80
-                        )
-                    )
+                    .fill(DesignSystem.warmAccent.opacity(0.16))
                     .frame(width: 160, height: 160)
-                    .blur(radius: 20)
                     .scaleEffect(isAnimating ? 1.1 : 0.9)
                     .animation(
                         .easeInOut(duration: 2)
@@ -90,7 +68,7 @@ struct SubscriptionView: View {
                     Circle()
                         .fill(
                             LinearGradient(
-                                colors: [.yellow.opacity(0.2), .orange.opacity(0.15)],
+                                colors: [DesignSystem.warmAccent.opacity(0.2), DesignSystem.brandTeal.opacity(0.12)],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
@@ -100,13 +78,8 @@ struct SubscriptionView: View {
                     Image(systemName: "crown.fill")
                         .font(.system(size: 50, weight: .semibold))
                         .foregroundStyle(
-                            LinearGradient(
-                                colors: [.yellow, .orange],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
+                            DesignSystem.warmAccent
                         )
-                        .shadow(color: .yellow.opacity(0.5), radius: 15, y: 8)
                 }
             }
             .onAppear { isAnimating = true }
@@ -114,7 +87,7 @@ struct SubscriptionView: View {
             // Title
             VStack(spacing: 12) {
                 Text("SpotClock Pro")
-                    .font(.system(size: 38, weight: .bold, design: .rounded))
+                    .font(.largeTitle.bold())
                     .foregroundStyle(.primary)
                 
                 Text("Never worry about parking tickets again")
@@ -159,22 +132,7 @@ struct SubscriptionView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(20)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(.ultraThinMaterial)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .strokeBorder(
-                                LinearGradient(
-                                    colors: [.green.opacity(0.3), .blue.opacity(0.2)],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ),
-                                lineWidth: 1.5
-                            )
-                    )
-            )
-            .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
+            .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 20)
         }
     }
     

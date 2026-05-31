@@ -39,7 +39,9 @@ struct ContentView: View {
                 SettingsView()
             }
         }
+        .tabViewStyle(.sidebarAdaptable)
         .tabBarMinimizeBehavior(.onScrollDown)
+        .tint(DesignSystem.brandBlue)
     }
 }
 

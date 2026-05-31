@@ -11,11 +11,9 @@
 
 import SwiftUI
 
-/// A gentle, ADA-friendly background with depth.
-/// Uses system background + a soft radial highlight + subtle grain via material.
 struct AppBackground: View {
     var body: some View {
-        Color(.systemBackground)
+        DesignSystem.appBackground
             .ignoresSafeArea()
     }
 }

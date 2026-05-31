@@ -21,17 +21,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Enhanced background with subtle gradient
-                LinearGradient(
-                    colors: [
-                        Color(.systemBackground),
-                        Color(.systemBackground).opacity(0.95),
-                        Color.blue.opacity(0.03)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea()
+                AppBackground()
                 
                 if timerManager.isRunning, let session = timerManager.activeSession {
                     ActiveTimerView(session: session)
@@ -40,6 +30,7 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("SpotClock")
+            .navigationBarTitleDisplayMode(.large)
             .sheet(isPresented: $showNewTimer) {
                 NewTimerView()
             }
@@ -50,150 +41,111 @@ struct HomeView: View {
     }
 
     private var idleView: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            
-            // Hero icon with animated glow
-            ZStack {
-                // Animated glow effect
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            colors: [
-                                Color.blue.opacity(pulseAnimation ? 0.3 : 0.15),
-                                Color.blue.opacity(0)
-                            ],
-                            center: .center,
-                            startRadius: 50,
-                            endRadius: 100
-                        )
-                    )
-                    .frame(width: 200, height: 200)
-                    .blur(radius: 20)
-                    .scaleEffect(reduceMotion ? 1 : (pulseAnimation ? 1.1 : 0.9))
-                    .animation(
-                        reduceMotion
-                        ? .default
-                        : .easeInOut(duration: 2.0).repeatForever(autoreverses: true),
-                        value: pulseAnimation
-                    )
-                
-                // Main icon with subtle shadow
-                Image(systemName: "parkingsign.circle.fill")
-                    .symbolRenderingMode(.hierarchical)
-                    .font(.system(size: 100, weight: .semibold))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.blue, .blue.opacity(0.8)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .shadow(color: .blue.opacity(0.3), radius: 20, y: 10)
-            }
-            .onAppear { pulseAnimation = true }
-            
-            Spacer()
-                .frame(height: 40)
-            
-            // Title and subtitle
-            VStack(spacing: 12) {
-                Text("Ready to Park")
-                    .font(.system(size: 34, weight: .bold, design: .rounded))
-                    .foregroundStyle(.primary)
-                
-                Text("Start a timer to never get a parking ticket again")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
-                
-                // Session counter for free users
-                if !subscriptionManager.hasProAccess {
-                    HStack(spacing: 8) {
-                        Image(systemName: "timer.circle.fill")
-                            .font(.subheadline)
-                            .foregroundStyle(.blue)
-                        Text("\(subscriptionManager.sessionsRemaining) free timers remaining this month")
+        ScrollView {
+            VStack(spacing: 24) {
+                VStack(spacing: 24) {
+                    ZStack {
+                        Circle()
+                            .fill(DesignSystem.brandTeal.opacity(pulseAnimation ? 0.18 : 0.08))
+                            .frame(width: 176, height: 176)
+                            .scaleEffect(reduceMotion ? 1 : (pulseAnimation ? 1.04 : 0.96))
+                            .animation(
+                                reduceMotion
+                                ? .default
+                                : .smooth(duration: 1.8).repeatForever(autoreverses: true),
+                                value: pulseAnimation
+                            )
+
+                        Image(systemName: "parkingsign.circle.fill")
+                            .symbolRenderingMode(.hierarchical)
+                            .font(.system(size: 92, weight: .semibold))
+                            .foregroundStyle(DesignSystem.primaryGradient)
+                    }
+                    .onAppear { pulseAnimation = true }
+
+                    VStack(spacing: 10) {
+                        Text("Ready to Park")
+                            .font(.largeTitle.bold())
+                            .foregroundStyle(.primary)
+
+                        Text("Start a timer, save your spot, and get back before time runs out.")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+
+                    if !subscriptionManager.hasProAccess {
+                        Label("\(subscriptionManager.sessionsRemaining) free timers remaining this month", systemImage: "timer.circle.fill")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                            .background(DesignSystem.elevatedCardBackground, in: .capsule)
+                            .overlay(
+                                Capsule()
+                                    .strokeBorder(DesignSystem.cardStroke(), lineWidth: 1)
+                            )
+                            .accessibilityLabel("\(subscriptionManager.sessionsRemaining) free parking timers remaining this month")
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                    .background(.ultraThinMaterial, in: Capsule())
-                    .padding(.top, 8)
-                    .accessibilityElement(children: .combine)
-                    .accessibilityLabel("\(subscriptionManager.sessionsRemaining) free parking timers remaining this month")
                 }
-            }
-            
-            Spacer()
-            
-            // Action buttons
-            VStack(spacing: 16) {
-                Button {
-                    let generator = UIImpactFeedbackGenerator(style: .medium)
-                    generator.impactOccurred()
-                    
-                    if subscriptionManager.canStartSession {
-                        showNewTimer = true
-                    } else {
-                        showSubscription = true
-                    }
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "play.circle.fill")
-                            .font(.title3)
-                        Text("Start Parking Timer")
-                            .font(.headline)
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.vertical)
-                    .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
-                }
-                .tint(.blue)
-                .buttonSizing(.flexible)
-                .buttonStyle(.borderedProminent)
-                .accessibilityLabel(subscriptionManager.canStartSession ? "Start parking timer" : "Upgrade to start more parking timers")
-                .accessibilityHint(subscriptionManager.canStartSession ? "Opens timer setup." : "Opens the subscription screen.")
-                // Upgrade prompt for free users at limit
-                if !subscriptionManager.hasProAccess && subscriptionManager.sessionsRemaining == 0 {
+                .frame(maxWidth: .infinity)
+                .padding(28)
+                .appCard(fill: DesignSystem.elevatedCardBackground)
+
+                VStack(spacing: 16) {
                     Button {
-                        showSubscription = true
-                    } label: {
-                        VStack(spacing: 6) {
-                            HStack(spacing: 8) {
-                                Image(systemName: "crown.fill")
-                                    .foregroundStyle(.yellow)
-                                Text("Upgrade to Pro")
-                                    .font(.headline)
-                            }
-                            Text("Get unlimited parking timers")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.impactOccurred()
+                        
+                        if subscriptionManager.canStartSession {
+                            showNewTimer = true
+                        } else {
+                            showSubscription = true
                         }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14)
-                                .strokeBorder(
-                                    LinearGradient(
-                                        colors: [.yellow.opacity(0.5), .orange.opacity(0.3)],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    ),
-                                    lineWidth: 1.5
-                                )
-                        )
+                    } label: {
+                        Label("Start Parking Timer", systemImage: "play.circle.fill")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 6)
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityHint("Opens subscription options.")
+                    .tint(DesignSystem.brandBlue)
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.borderedProminent)
+                    .accessibilityLabel(subscriptionManager.canStartSession ? "Start parking timer" : "Upgrade to start more parking timers")
+                    .accessibilityHint(subscriptionManager.canStartSession ? "Opens timer setup." : "Opens the subscription screen.")
+
+                    if !subscriptionManager.hasProAccess && subscriptionManager.sessionsRemaining == 0 {
+                        Button {
+                            showSubscription = true
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "crown.fill")
+                                    .foregroundStyle(DesignSystem.warmAccent)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Upgrade to Pro")
+                                        .font(.headline)
+                                    Text("Get unlimited parking timers")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption.bold())
+                                    .foregroundStyle(.secondary)
+                            }
+                            .padding()
+                            .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens subscription options.")
+                    }
                 }
             }
-            .padding(.horizontal, 28)
-            .padding(.bottom, 50)
+            .padding(DesignSystem.screenPadding)
+            .appContentWidth()
         }
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

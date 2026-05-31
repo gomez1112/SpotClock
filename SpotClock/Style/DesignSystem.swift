@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct DesignSystem {
+    static let maxContentWidth: CGFloat = 760
+    static let maxWideContentWidth: CGFloat = 1040
+    static let screenPadding: CGFloat = 20
+    static let cardCornerRadius: CGFloat = 24
+
+    static let brandBlue = Color(red: 0.08, green: 0.32, blue: 0.88)
+    static let brandTeal = Color(red: 0.04, green: 0.58, blue: 0.56)
+    static let brandIndigo = Color(red: 0.26, green: 0.24, blue: 0.72)
+    static let warmAccent = Color(red: 0.95, green: 0.58, blue: 0.18)
+
     static let primaryGradient = LinearGradient(
-        colors: [Color(red: 0.3, green: 0.4, blue: 0.9), Color(red: 0.5, green: 0.3, blue: 0.8)],
+        colors: [brandBlue, brandTeal],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
@@ -42,7 +52,22 @@ struct DesignSystem {
         ]
     )
     
-    static let cardBackground = Color(uiColor: .systemBackground).opacity(0.95)
+    static let cardBackground = Color(.secondarySystemGroupedBackground)
+    static let elevatedCardBackground = Color(.systemBackground)
+
+    static let appBackground = LinearGradient(
+        colors: [
+            Color(.systemGroupedBackground),
+            Color(.systemBackground),
+            brandTeal.opacity(0.08)
+        ],
+        startPoint: .top,
+        endPoint: .bottom
+    )
+
+    static func cardStroke(_ opacity: Double = 0.08) -> Color {
+        Color.primary.opacity(opacity)
+    }
     
     static var presetDurations: [(title: String, duration: TimeInterval, icon: String)] {
         // Define the standard list of durations for all users.

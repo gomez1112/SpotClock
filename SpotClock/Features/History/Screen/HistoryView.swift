@@ -19,16 +19,7 @@ struct HistoryView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                LinearGradient(
-                    colors: [
-                        Color(.systemBackground),
-                        Color(.systemBackground).opacity(0.95),
-                        Color.purple.opacity(0.03)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea()
+                AppBackground()
                 
                 if sessions.isEmpty {
                     emptyState
@@ -47,30 +38,12 @@ struct HistoryView: View {
         VStack(spacing: 24) {
             ZStack {
                 Circle()
-                    .fill(
-                        RadialGradient(
-                            colors: [
-                                Color.purple.opacity(0.15),
-                                Color.purple.opacity(0)
-                            ],
-                            center: .center,
-                            startRadius: 50,
-                            endRadius: 100
-                        )
-                    )
-                    .frame(width: 200, height: 200)
-                    .blur(radius: 20)
+                    .fill(DesignSystem.brandIndigo.opacity(0.12))
+                    .frame(width: 160, height: 160)
                 
                 Image(systemName: "clock.arrow.circlepath")
-                    .font(.system(size: 80, weight: .semibold))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.purple, .purple.opacity(0.7)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .shadow(color: .purple.opacity(0.3), radius: 20, y: 10)
+                    .font(.system(size: 72, weight: .semibold))
+                    .foregroundStyle(DesignSystem.brandIndigo)
             }
             
             VStack(spacing: 12) {
@@ -85,6 +58,7 @@ struct HistoryView: View {
             }
         }
         .padding()
+        .appContentWidth()
     }
     
     private var sessionsList: some View {
@@ -118,6 +92,7 @@ struct HistoryView: View {
                 }
             }
             .padding(.vertical, 16)
+            .appContentWidth()
         }
         .scrollContentBackground(.hidden)
     }
@@ -223,15 +198,7 @@ struct ImprovedSessionRow: View {
             }
         }
         .padding(20)
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(.ultraThinMaterial)
-                .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .strokeBorder(.white.opacity(0.1), lineWidth: 1)
-        )
+        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 20)
         .padding(.horizontal, 20)
         .contextMenu {
             Button(role: .destructive) {

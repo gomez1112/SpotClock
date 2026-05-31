@@ -56,6 +56,7 @@ struct OnboardingPageView: View {
             Spacer()
         }
         .padding()
+        .appContentWidth()
     }
 }
 

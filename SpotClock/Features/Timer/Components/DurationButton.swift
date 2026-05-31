@@ -23,10 +23,15 @@ struct DurationButton: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(isSelected ? DesignSystem.primaryGradient : LinearGradient(colors: [Color.gray.opacity(0.2)], startPoint: .leading, endPoint: .trailing))
+            .background(isSelected ? DesignSystem.primaryGradient : LinearGradient(colors: [DesignSystem.cardBackground], startPoint: .leading, endPoint: .trailing))
             .foregroundStyle(isSelected ? .white : .primary)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .strokeBorder(isSelected ? .clear : DesignSystem.cardStroke(), lineWidth: 1)
+            )
+            .clipShape(.rect(cornerRadius: 14))
         }
+        .buttonStyle(.plain)
     }
 }
 
