@@ -35,32 +35,35 @@ struct HistoryView: View {
     }
     
     private var emptyState: some View {
-        VStack(spacing: 24) {
-            ZStack {
-                Circle()
-                    .fill(DesignSystem.brandIndigo.opacity(0.12))
-                    .frame(width: 160, height: 160)
-                
-                Image(systemName: "clock.arrow.circlepath")
-                    .font(.system(size: 72, weight: .semibold))
-                    .foregroundStyle(DesignSystem.brandIndigo)
+        ScrollView {
+            VStack(spacing: 24) {
+                ZStack {
+                    Circle()
+                        .fill(DesignSystem.brandIndigo.opacity(0.12))
+                        .frame(width: 160, height: 160)
+
+                    Image(systemName: "clock.arrow.circlepath")
+                        .font(.system(size: 72, weight: .semibold))
+                        .foregroundStyle(DesignSystem.brandIndigo)
+                }
+
+                VStack(spacing: 12) {
+                    Text("No Parking History")
+                        .font(.title.bold())
+
+                    Text("Your parking sessions will appear here.\nStart your first timer to get going!")
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 40)
+                }
             }
-            
-            VStack(spacing: 12) {
-                Text("No Parking History")
-                    .font(.title.bold())
-                
-                Text("Your parking sessions will appear here.\nStart your first timer to get going!")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-            }
+            .padding()
+            .appContentWidth()
         }
-        .padding()
-        .appContentWidth()
+        .scrollBounceBehavior(.basedOnSize)
     }
-    
+
     private var sessionsList: some View {
         ScrollView {
             LazyVStack(spacing: 16) {

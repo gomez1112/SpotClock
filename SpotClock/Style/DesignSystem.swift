@@ -11,6 +11,8 @@ import SwiftUI
 struct DesignSystem {
     static let maxContentWidth: CGFloat = 760
     static let maxWideContentWidth: CGFloat = 1040
+    static let maxRouteSummaryWidth: CGFloat = 460
+    static let overlaidRouteSummaryHeightFraction: CGFloat = 0.45
     static let screenPadding: CGFloat = 20
     static let cardCornerRadius: CGFloat = 24
 

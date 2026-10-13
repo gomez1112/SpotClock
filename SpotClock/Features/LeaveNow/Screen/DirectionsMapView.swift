@@ -10,6 +10,7 @@ import MapKit
 import SwiftUI
 import OSLog
 
+@available(iOS 27.1, *)
 struct DirectionsMapView: View {
     let carLocation: CLLocationCoordinate2D
     let carAddress: String
@@ -26,17 +27,26 @@ struct DirectionsMapView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                // Map with route
+            ArrangementView {
+                DirectionsSummaryPanel {
+                    if isLoadingRoute {
+                        routeLoadingCard
+                    } else if let route {
+                        routeInfoCard(route: route)
+                    } else {
+                        Text(routeErrorMessage)
+                            .font(.body)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .appCard(fill: DesignSystem.elevatedCardBackground)
+                    }
+                }
+                .overlayArrangementEdge(.bottom)
+            } secondary: {
                 Map(position: $position) {
-                    // ✅ FIXED: Use UserAnnotation for proper user location tracking
                     UserAnnotation()
-                    
-                    // Car location marker
                     Marker(carAddress, systemImage: "car.fill", coordinate: carLocation)
                         .tint(.red)
-                    
-                    // Route polyline
                     if let route {
                         MapPolyline(route.polyline)
                             .stroke(.blue, lineWidth: 5)
@@ -48,24 +58,14 @@ struct DirectionsMapView: View {
                     MapCompass()
                     MapScaleView()
                 }
-                
-                // Route info overlay
-                VStack {
-                    Spacer()
-                    
-                    if isLoadingRoute {
-                        routeLoadingCard
-                    } else if let route {
-                        routeInfoCard(route: route)
-                    }
-                }
-                .padding()
             }
+            .arrangementViewStyle(.overlay)
+            .background { AppBackground() }
             .navigationTitle("Directions to Car")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") {
+                    Button("Close", systemImage: "xmark") {
                         dismiss()
                     }
                 }
@@ -94,7 +94,7 @@ struct DirectionsMapView: View {
     private var routeLoadingCard: some View {
         HStack(spacing: 12) {
             ProgressView()
-            Text("Calculating route...")
+            Text("Calculating route…")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -184,16 +184,11 @@ struct DirectionsMapView: View {
         
         let request = MKDirections.Request()
         
-        if #available(iOS 26.0, *) {
-            let userCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-            let carCLLocation = CLLocation(latitude: carLocation.latitude, longitude: carLocation.longitude)
-            request.source = MKMapItem(location: userCLLocation, address: nil)
-            request.destination = MKMapItem(location: carCLLocation, address: nil)
-        } else {
-            request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation))
-            request.destination = MKMapItem(placemark: MKPlacemark(coordinate: carLocation))
-        }
-        
+        let userCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let carCLLocation = CLLocation(latitude: carLocation.latitude, longitude: carLocation.longitude)
+        request.source = MKMapItem(location: userCLLocation, address: nil)
+        request.destination = MKMapItem(location: carCLLocation, address: nil)
+
         request.transportType = .walking
         
         do {
@@ -253,10 +248,30 @@ struct DirectionsMapView: View {
     }
 }
 
-#Preview {
-    DirectionsMapView(
-        carLocation: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        carAddress: "Downtown Plaza Garage"
-    )
-    .environment(LocationService())
+// The panel stays over the map when flat and moves below/beside it when folded.
+// Its own scroll view keeps route actions reachable at accessibility text sizes.
+@available(iOS 27.1, *)
+private struct DirectionsSummaryPanel<Content: View>: View {
+    @Environment(\.overlayArrangementZIndex) private var overlayZIndex
+    var content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollView {
+                content
+                    .frame(maxWidth: .infinity)
+            }
+            .defaultScrollAnchor(.bottom, for: .alignment)
+            .scrollBounceBehavior(.basedOnSize)
+            .frame(maxWidth: DesignSystem.maxRouteSummaryWidth)
+            // Measure this arrangement region, which can be only half the display.
+            .frame(height: geometry.size.height * (overlayZIndex == 1 ? DesignSystem.overlaidRouteSummaryHeightFraction : 1))
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        }
+        .padding(DesignSystem.screenPadding)
+    }
 }

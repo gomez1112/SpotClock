@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct RingProgressView: View {
+    // This view is shared with the widget, which does not include the app's styles.
+    static let maximumDiameter: CGFloat = 240
     var lineWidth: CGFloat = 20
     @Environment(TimerService.self) private var timerManager
     var body: some View {
         ZStack {
             Circle()
                 .stroke(.quaternary, lineWidth: 24)
-                .frame(width: 240, height: 240)
             
             Circle()
                 .trim(from: 0, to: progress)
@@ -23,7 +24,6 @@ struct RingProgressView: View {
                     timeGradient,
                     style: StrokeStyle(lineWidth: 24, lineCap: .round)
                 )
-                .frame(width: 240, height: 240)
                 .rotationEffect(.degrees(-90))
                 .animation(.smooth, value: timerManager.timeRemaining)
             // Inner content
@@ -38,7 +38,9 @@ struct RingProgressView: View {
             }
         }
         .shadow(color: timeColor.opacity(0.2), radius: 20, y: 10)
-        .padding()
+        .padding(12)
+        .aspectRatio(1, contentMode: .fit)
+        .frame(maxWidth: Self.maximumDiameter)
     }
     private var timeColor: Color {
         if timerManager.timeRemaining > 600 { return .green }

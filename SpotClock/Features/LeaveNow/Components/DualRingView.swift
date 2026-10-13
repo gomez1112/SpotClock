@@ -22,7 +22,8 @@ struct DualRingView: View {
                 .shadow(color: .indigo.opacity(0.25), radius: 8, y: 4)
                 .animation(.smooth(duration: 0.35), value: innerProgress)
         }
-        .frame(width: 240, height: 240)
+        .aspectRatio(1, contentMode: .fit)
+        .frame(maxWidth: RingProgressView.maximumDiameter)
     }
 }
 

@@ -13,50 +13,28 @@ struct OnboardingPageView: View {
     let description: String
     let accentColor: Color
     
-    @State private var animate = false
-    
     var body: some View {
-        VStack(spacing: 40) {
-            Spacer()
-            
-            ZStack {
-                Circle()
-                    .fill(.white.opacity(animate ? 0.2 : 0.1))
-                    .frame(width: 200, height: 200)
-                    .blur(radius: 30)
-                    .scaleEffect(animate ? 1.2 : 0.9)
-                
+        ScrollView {
+            VStack(spacing: 24) {
                 Image(systemName: icon)
-                    .font(.system(size: 90, weight: .semibold))
+                    .font(.largeTitle.scaled(by: 2.5))
                     .foregroundStyle(.white)
-                    .shadow(color: .black.opacity(0.2), radius: 20, y: 10)
-                    .scaleEffect(animate ? 1 : 0.9)
-            }
-            .onAppear {
-                withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                    animate = true
-                }
-            }
-            
-            VStack(spacing: 20) {
+                    .accessibilityHidden(true)
+
                 Text(title)
-                    .font(.system(size: 36, weight: .bold, design: .rounded))
+                    .font(.largeTitle.bold())
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
-                    .shadow(color: .black.opacity(0.1), radius: 10, y: 5)
-                
+
                 Text(description)
                     .font(.title3)
-                    .foregroundStyle(.white.opacity(0.9))
+                    .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
             }
-            
-            Spacer()
-            Spacer()
+            .padding(DesignSystem.screenPadding)
+            .appContentWidth()
         }
-        .padding()
-        .appContentWidth()
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 
@@ -100,9 +78,4 @@ struct PermissionCard: View {
                 )
         )
     }
-}
-
-#Preview {
-    OnboardingPageView(icon: "house", title: "House", description: "I love this house", accentColor: .accentColor)
-        .environment(LocationService())
 }

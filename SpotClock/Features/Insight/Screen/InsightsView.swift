@@ -11,6 +11,8 @@ import MapKit
 import SwiftData
 
 struct InsightsView: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Query private var sessions: [ParkingSession]
     @State private var selectedTimeframe: Timeframe = .month
     @State private var showBadgeAnimation = false
@@ -274,7 +276,10 @@ struct InsightsView: View {
     
     // MARK: - Quick Stats
     private var quickStatsSection: some View {
-        HStack(spacing: 12) {
+        let layout = horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(HStackLayout(spacing: 12))
+            : AnyLayout(VStackLayout(spacing: 12))
+        return layout {
             StatCard(
                 icon: "clock.fill",
                 value: "\(Int(totalHoursParked))h",
@@ -433,7 +438,10 @@ struct InsightsView: View {
                         .padding(.horizontal, 20)
                         .padding(.top, 20)
                     
-                    HStack(spacing: 30) {
+                    let distributionLayout = horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize
+                        ? AnyLayout(HStackLayout(spacing: 24))
+                        : AnyLayout(VStackLayout(spacing: 24))
+                    distributionLayout {
                         // Donut chart
                         Chart(timeDistribution) { data in
                             let isSelected = isSelectedTimeDistribution(data)
@@ -476,7 +484,6 @@ struct InsightsView: View {
                             }
                         }
                         .frame(width: 140, height: 140)
-                        Spacer()
                         // Legend
                         VStack(alignment: .leading, spacing: 12) {
                             ForEach(timeDistribution) { data in
@@ -559,7 +566,7 @@ struct InsightsView: View {
         VStack(alignment: .leading, spacing: 16) {
             AppSectionHeader(title: "Achievements", systemImage: "trophy.fill", tint: DesignSystem.warmAccent)
             
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: dynamicTypeSize.isAccessibilitySize ? 1 : 2), spacing: 16) {
                 ForEach(achievements) { achievement in
                     AchievementBadge(achievement: achievement) {
                         guard achievement.isUnlocked else { return }
@@ -998,7 +1005,7 @@ private struct AchievementDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
+                    Button("Done", systemImage: "checkmark") {
                         dismiss()
                     }
                 }

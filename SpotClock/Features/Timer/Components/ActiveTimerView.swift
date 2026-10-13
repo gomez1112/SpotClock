@@ -10,12 +10,14 @@ import SwiftData
 import SwiftUI
 import UIKit
 
+@available(iOS 27.1, *)
 struct ActiveTimerView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Environment(TimerService.self) private var timerService
     @Environment(LocationService.self) private var locationService
     @Environment(WalkETAService.self) private var walkETAService
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
     @State private var walkingETA: TimeInterval? = nil
     @State private var leaveBy: Date? = nil
@@ -35,6 +37,8 @@ struct ActiveTimerView: View {
     @State private var showDirections = false
     @State private var lastSessionEndTime: Date?
     @State private var copiedDetailsMessage: String?
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @ScaledMetric(relativeTo: .largeTitle) private var countdownFontSize = 64.0
     
     // ✅ NEW: Separate refresh timer
     @State private var refreshTimer: Timer?
@@ -42,6 +46,59 @@ struct ActiveTimerView: View {
     var session: ParkingSession
     
     var body: some View {
+        parkingLayout
+            .background { AppBackground() }
+            .navigationBarTitleDisplayMode(.inline)
+            .task(id: session.id) {
+                await initialRefresh()
+                startRefreshTimer()
+            }
+            .onChange(of: session.endTime) { oldValue, newValue in
+                if oldValue != newValue {
+                    Task {
+                        await refreshETAAndCompass(forceUpdate: true)
+                    }
+                }
+            }
+            .onDisappear {
+                stopRefreshTimer()
+                locationService.stopUpdatingLocation()
+            }
+            .sheet(isPresented: $showDirections) {
+                if hasCarLocation {
+                    DirectionsMapView(
+                        carLocation: CLLocationCoordinate2D(
+                            latitude: session.latitude,
+                            longitude: session.longitude
+                        ),
+                        carAddress: session.location
+                    )
+                }
+            }
+            .accessibilityElement(children: .contain)
+    }
+
+    @ViewBuilder
+    private var parkingLayout: some View {
+        if hasCarLocation {
+            ArrangementView {
+                timerContent
+                    .splitArrangementLayoutSize(minWidth: 300)
+            } secondary: {
+                ParkingLocationView(session: session) {
+                    showDirections = true
+                }
+                .splitArrangementLayoutSize(minWidth: 280)
+            }
+            // Compact displays keep the timer full height; the inner display can
+            // place the map beside it or above/below it around either fold axis.
+            .arrangementViewStyle(.split.axes(arrangementAxes))
+        } else {
+            timerContent
+        }
+    }
+
+    private var timerContent: some View {
         ScrollView {
             VStack(spacing: 16) {
                 Spacer(minLength: 8)
@@ -54,7 +111,9 @@ struct ActiveTimerView: View {
                         .tracking(1.2)
                     
                     Text(formatTimeRemaining(timerService.timeRemaining))
-                        .font(.system(size: 64, weight: .bold, design: .rounded))
+                        .font(.system(size: countdownFontSize, weight: .bold, design: .rounded))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                         .foregroundStyle(timeColor)
                         .monospacedDigit()
                         .contentTransition(.numericText())
@@ -80,19 +139,12 @@ struct ActiveTimerView: View {
                     .padding(.vertical, 12)
                 
                 
-                HStack {
-                    LeaveNowTile(
-                        leaveBy: leaveBy,
-                        isGoNow: (leaveBy ?? .distantPast) <= Date()
-                    ) {
-                        if hasCarLocation {
-                            showDirections = true
-                        }
+                ViewThatFits(in: .horizontal) {
+                    HStack {
+                        returnToCarControls
                     }
-                    .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
-                    
-                    if hasCarLocation, distance > 0 {
-                        CompassToCar(bearingRadians: bearing, distanceMeters: distance)
+                    VStack(spacing: 16) {
+                        returnToCarControls
                     }
                 }
                 .padding(.horizontal, 4)
@@ -101,94 +153,96 @@ struct ActiveTimerView: View {
             .appContentWidth()
             
             VStack(spacing: 14) {
-                HStack {
+                let extensionLayout = dynamicTypeSize.isAccessibilitySize
+                    ? AnyLayout(VStackLayout(spacing: 12))
+                    : AnyLayout(HStackLayout(spacing: 12))
+                extensionLayout {
                     extendButton(minutes: 15, icon: "15.circle.fill")
                     extendButton(minutes: 30, icon: "30.circle.fill")
                 }
-                
-                Button(role: .destructive) {
-                    endHapticTick += 1
-                    timerService.stopParking()
-                } label: {
-                    HStack {
-                        Image(systemName: "stop.circle.fill")
-                            .font(.title3)
-                        Text("End Parking")
-                            .font(.headline)
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.vertical)
-                    .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
-                }
-                .tint(.red)
-                .buttonSizing(.flexible)
-                .buttonStyle(.borderedProminent)
-                .sensoryFeedback(.success, trigger: endHapticTick)
-                .accessibilityHint("Ends the current parking timer.")
 
-                Button {
-                    copyParkingDetails()
-                } label: {
-                    HStack {
-                        Image(systemName: "doc.on.doc")
-                            .font(.title3)
-                        Text("Copy Parking Details")
-                            .font(.headline)
-                    }
-                    .foregroundStyle(.blue)
-                    .padding(.vertical)
-                }
-                .buttonSizing(.flexible)
-                .buttonStyle(.bordered)
-                .sensoryFeedback(.success, trigger: copyHapticTick)
-                .accessibilityHint("Copies your parking location, expiry time, and notes.")
-
-                if let copiedDetailsMessage {
-                    Text(copiedDetailsMessage)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .transition(.opacity)
-                        .accessibilityLabel(copiedDetailsMessage)
-                }
+                parkingActions
             }
             .padding(DesignSystem.screenPadding)
             .appContentWidth()
         }
-        .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
-        // ✅ FIXED: Don't use timeRemaining in task ID - it changes every second!
-        .task(id: session.id) {
-            await initialRefresh()
-            startRefreshTimer()
-        }
-        // ✅ FIXED: Watch for session end time changes (from extensions)
-        .onChange(of: session.endTime) { oldValue, newValue in
-            if oldValue != newValue {
-                Task {
-                    await refreshETAAndCompass(forceUpdate: true)
-                }
-            }
-        }
-        .onDisappear {
-            stopRefreshTimer()
-            locationService.stopUpdatingLocation()
-        }
-        .sheet(isPresented: $showDirections) {
-            if hasCarLocation {
-                DirectionsMapView(
-                    carLocation: CLLocationCoordinate2D(
-                        latitude: session.latitude,
-                        longitude: session.longitude
-                    ),
-                    carAddress: session.location
-                )
-            }
-        }
-        .accessibilityElement(children: .contain)
     }
-    
+
+    @ViewBuilder
+    private var returnToCarControls: some View {
+        LeaveNowTile(
+            leaveBy: leaveBy,
+            isGoNow: (leaveBy ?? .distantPast) <= Date()
+        ) {
+            if hasCarLocation {
+                showDirections = true
+            }
+        }
+        .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
+
+        if hasCarLocation, distance > 0 {
+            CompassToCar(bearingRadians: bearing, distanceMeters: distance)
+        }
+    }
+
+    @ViewBuilder
+    private var parkingActions: some View {
+        Button(role: .destructive) {
+            endHapticTick += 1
+            timerService.stopParking()
+    } label: {
+        HStack {
+            Image(systemName: "stop.circle.fill")
+                .font(.title3)
+            Text("End Parking")
+                .font(.headline)
+        }
+        .foregroundStyle(.white)
+        .padding(.vertical)
+        .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
+    }
+    .tint(.red)
+    .buttonSizing(.flexible)
+    .buttonStyle(.borderedProminent)
+    .sensoryFeedback(.success, trigger: endHapticTick)
+    .accessibilityHint("Ends the current parking timer.")
+
+    Button {
+        copyParkingDetails()
+    } label: {
+        HStack {
+            Image(systemName: "doc.on.doc")
+                .font(.title3)
+            Text("Copy Parking Details")
+                .font(.headline)
+        }
+        .foregroundStyle(.blue)
+        .padding(.vertical)
+    }
+    .buttonSizing(.flexible)
+    .buttonStyle(.bordered)
+    .sensoryFeedback(.success, trigger: copyHapticTick)
+    .accessibilityHint("Copies your parking location, expiry time, and notes.")
+
+    if let copiedDetailsMessage {
+        Text(copiedDetailsMessage)
+            .font(.footnote)
+            .foregroundStyle(.secondary)
+            .transition(.opacity)
+            .accessibilityLabel(copiedDetailsMessage)
+    }
+    }
+
     private var hasCarLocation: Bool {
         session.latitude != 0 && session.longitude != 0
+    }
+
+    private var arrangementAxes: Axis.Set {
+        if horizontalSizeClass == .regular {
+            return [.horizontal, .vertical]
+        }
+        return .horizontal
     }
     
     // ✅ NEW: Initial refresh when view appears
@@ -362,11 +416,5 @@ struct ActiveTimerView: View {
         .buttonStyle(.borderedProminent)
         .sensoryFeedback(.impact(weight: .light), trigger: extendHapticTick)
         .accessibilityLabel("Extend parking by \(minutes) minutes")
-    }
-}
-
-#Preview(traits: .previewData) {
-    NavigationStack {
-        ActiveTimerView(session: ParkingSession(endTime: Date(), duration: 2000))
     }
 }

@@ -10,6 +10,7 @@ import SwiftData
 import SwiftUI
 
 struct NewTimerView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.dismiss) private var dismiss
     @Environment(TimerService.self) private var timerManager
     @Environment(LocationService.self) private var locationManager
@@ -107,7 +108,7 @@ struct NewTimerView: View {
                             Label("Duration", systemImage: "timer")
                                 .font(.headline)
                             
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                            LazyVGrid(columns: durationColumns, spacing: 12) {
                                 ForEach(DesignSystem.presetDurations, id: \.title) { preset in
                                     DurationButton(
                                         title: preset.title,
@@ -179,13 +180,13 @@ struct NewTimerView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("Cancel", systemImage: "xmark") {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Start") {
+                    Button("Start", systemImage: "play.fill") {
                         startTapped.toggle()
                         startTimer()
                     }
@@ -210,6 +211,10 @@ struct NewTimerView: View {
 
     private var smartSuggestions: [ParkingDurationSuggestion] {
         ParkingRecommendationEngine.suggestions(from: sessions)
+    }
+
+    private var durationColumns: [GridItem] {
+        Array(repeating: GridItem(.flexible()), count: dynamicTypeSize.isAccessibilitySize ? 1 : 2)
     }
 
     private func coordinateText(for coordinate: CLLocationCoordinate2D) -> String {
