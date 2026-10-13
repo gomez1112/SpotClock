@@ -1,0 +1,45 @@
+{
+  "baseTerritory": "USA",
+  "prices": [
+    {
+      "customerPrice": "19.99",
+      "territory": "BGR"
+    },
+    {
+      "customerPrice": "20",
+      "territory": "CHE"
+    },
+    {
+      "customerPrice": "19.99",
+      "territory": "COG"
+    },
+    {
+      "customerPrice": "349000",
+      "territory": "IDN"
+    },
+    {
+      "customerPrice": "69.9",
+      "territory": "ISR"
+    },
+    {
+      "customerPrice": "29000",
+      "territory": "KOR"
+    },
+    {
+      "customerPrice": "19.99",
+      "territory": "MAR"
+    },
+    {
+      "customerPrice": "19.99",
+      "territory": "MUS"
+    },
+    {
+      "customerPrice": "899.99",
+      "territory": "TUR"
+    },
+    {
+      "customerPrice": "19.99",
+      "territory": "USA"
+    }
+  ]
+}

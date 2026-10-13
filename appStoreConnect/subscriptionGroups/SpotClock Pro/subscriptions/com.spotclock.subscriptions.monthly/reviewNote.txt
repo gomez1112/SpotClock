@@ -1,0 +1,1 @@
+It is simple subscription using StoreKit 2 native subscription view.

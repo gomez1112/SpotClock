@@ -1,0 +1,13 @@
+{
+  "baseTerritory": "USA",
+  "prices": [
+    {
+      "customerPrice": "39.99",
+      "territory": "TUR"
+    },
+    {
+      "customerPrice": "0.99",
+      "territory": "USA"
+    }
+  ]
+}

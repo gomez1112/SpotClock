@@ -1,0 +1,3797 @@
+{
+  "appId": "6753944720",
+  "derived": {
+    "appStoreVersionScreenshotSets": {
+      "IOS:1.3.0:en-US:APP_IPAD_PRO_3GEN_129": {
+        "screenshots": [
+          {
+            "fileName": "Rotato Image 1485.png",
+            "fileSize": 1536426,
+            "id": "b1c8e0fe-76f2-476e-9232-33408432004f",
+            "renditionChecksum": "fed10eace3bc71f0805675432904f316",
+            "sourceFileChecksum": "073751224d8a21ad8c43f1e5bbb0809a"
+          }
+        ],
+        "setID": "fa157740-f894-427e-85ac-1b58d3282168"
+      },
+      "IOS:1.3.0:en-US:APP_IPHONE_65": {
+        "screenshots": [
+          {
+            "fileName": "Rotato Image E850.png",
+            "fileSize": 612241,
+            "id": "1650b846-ee07-418b-b485-ba1d4f4e9f8e",
+            "renditionChecksum": "579b497de4e5e4b2094e75877441799f",
+            "sourceFileChecksum": "a56f0bc1ea6805a8e84abf99a3e7ff61"
+          },
+          {
+            "fileName": "Rotato Image F8F5.png",
+            "fileSize": 653565,
+            "id": "8e3ba2b3-e6b5-4feb-90f3-6c6dc69f39cf",
+            "renditionChecksum": "830326af9f0caed84a11d2de3b77d379",
+            "sourceFileChecksum": "c7b97b868e60c10c3acca60bfb33d841"
+          },
+          {
+            "fileName": "Rotato Image 63AF.png",
+            "fileSize": 892669,
+            "id": "a6fa26c5-b5bb-4ca5-9c80-51f264934be1",
+            "renditionChecksum": "79c1ecf375798a90cd626dea7bca5aa0",
+            "sourceFileChecksum": "bdaab2f36b4866423159e4f8862e75f8"
+          },
+          {
+            "fileName": "Rotato Image C061.png",
+            "fileSize": 754522,
+            "id": "d2430206-d73b-4cec-a1de-73e438a6c682",
+            "renditionChecksum": "c49f282cbcad7a8fd40eab5bd101fb18",
+            "sourceFileChecksum": "23d2ebb45de30d7b9486b82aa8c2d7c6"
+          },
+          {
+            "fileName": "Rotato Image BB16.png",
+            "fileSize": 787921,
+            "id": "a0a9f829-60a8-4314-9669-26e3c4d7f877",
+            "renditionChecksum": "d24b37349d098aac042079a25a45cd12",
+            "sourceFileChecksum": "0baead16e6880c28608e392ad355ec2a"
+          },
+          {
+            "fileName": "Rotato Image 70BB.png",
+            "fileSize": 351868,
+            "id": "b023fad9-1110-4328-a2d0-8d13fad20a6d",
+            "renditionChecksum": "d01307588b9e1f309928202d3f88bcd2",
+            "sourceFileChecksum": "9f6247646752393ae90b14c2176793e6"
+          }
+        ],
+        "setID": "467ac083-b249-4b24-818a-7c647627d9d0"
+      }
+    },
+    "pricing": {
+      "automaticPrices": [
+        {
+          "customerPrice": "0",
+          "territory": "AFG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "AGO"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "AIA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ALB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ARE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ARG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ARM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ATG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "AUS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "AUT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "AZE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BEL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BEN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BFA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BGR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BHR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BHS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BIH"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BLR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BLZ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BMU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BOL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BRA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BRB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BRN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BTN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "BWA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CAN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CHE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CHL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CHN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CIV"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CMR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "COD"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "COG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "COL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CPV"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CRI"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CYM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CYP"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "CZE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "DEU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "DMA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "DNK"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "DOM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "DZA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ECU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "EGY"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ESP"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "EST"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "FIN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "FJI"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "FRA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "FSM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GAB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GBR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GEO"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GHA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GMB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GNB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GRC"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GRD"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GTM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "GUY"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "HKG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "HND"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "HRV"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "HUN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "IDN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "IND"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "IRL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "IRQ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ISL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ISR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ITA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "JAM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "JOR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "JPN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KAZ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KEN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KGZ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KHM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KNA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KOR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "KWT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LAO"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LBN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LBR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LBY"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LCA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LKA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LTU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LUX"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "LVA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MAC"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MAR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MDA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MDG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MDV"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MEX"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MKD"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MLI"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MLT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MMR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MNE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MNG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MOZ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MRT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MSR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MUS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MWI"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "MYS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NAM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NER"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NGA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NIC"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NLD"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NOR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NPL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NRU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "NZL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "OMN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PAK"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PAN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PER"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PHL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PLW"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PNG"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "POL"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PRT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "PRY"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "QAT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ROU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "RUS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "RWA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SAU"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SEN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SGP"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SLB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SLE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SLV"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SRB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "STP"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SUR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SVK"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SVN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SWE"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SWZ"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "SYC"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TCA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TCD"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "THA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TJK"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TKM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TON"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TTO"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TUN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TUR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TWN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "TZA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "UGA"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "UKR"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "URY"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "UZB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "VCT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "VEN"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "VGB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "VNM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "VUT"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "XKS"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "YEM"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ZAF"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ZMB"
+        },
+        {
+          "customerPrice": "0",
+          "territory": "ZWE"
+        }
+      ]
+    },
+    "subscriptionReviewScreenshots": {
+      "com.spotclock.subscriptions.monthly": {
+        "fileName": "SOURCE",
+        "fileSize": 767934,
+        "id": "f1b87d94-677a-4400-865f-edb3d9cc0007",
+        "renditionChecksum": "376983bbe01cdf6327254fed47a56f50",
+        "sourceFileChecksum": "ef670c19b8686852fcc54ad486ace852"
+      },
+      "com.spotclock.subscriptions.weekly": {
+        "fileName": "SOURCE",
+        "fileSize": 738959,
+        "id": "8922156a-601c-4234-90c0-7a3b59257f25",
+        "renditionChecksum": "35bc16ddbdeda62c043c2b05b868bae6",
+        "sourceFileChecksum": "862e20a2f50c6e6b54400a0885d0859a"
+      },
+      "com.spotclock.subscriptions.yearly": {
+        "fileName": "SOURCE",
+        "fileSize": 804586,
+        "id": "2d94a63d-3aa6-4a3f-90f5-d5931000ebfc",
+        "renditionChecksum": "841367b6f4ac8cf2c50fd9c1563e8726",
+        "sourceFileChecksum": "e15035910b032f7a30cd33f8687b6e4a"
+      }
+    }
+  },
+  "formatVersion": 1,
+  "gitignore": "created",
+  "resources": {
+    "ageRatingDeclaration": {
+      "fields": {
+        "advertising": false,
+        "ageAssurance": false,
+        "ageRatingOverrideV2": "NONE",
+        "alcoholTobaccoOrDrugUseOrReferences": "NONE",
+        "contests": "NONE",
+        "gambling": false,
+        "gamblingSimulated": "NONE",
+        "gunsOrOtherWeapons": "NONE",
+        "healthOrWellnessTopics": false,
+        "horrorOrFearThemes": "NONE",
+        "koreaAgeRatingOverride": "NONE",
+        "lootBox": false,
+        "matureOrSuggestiveThemes": "NONE",
+        "medicalOrTreatmentInformation": "NONE",
+        "messagingAndChat": false,
+        "parentalControls": false,
+        "profanityOrCrudeHumor": "NONE",
+        "sexualContentGraphicAndNudity": "NONE",
+        "sexualContentOrNudity": "NONE",
+        "unrestrictedWebAccess": false,
+        "userGeneratedContent": false,
+        "violenceCartoonOrFantasy": "NONE",
+        "violenceRealistic": "NONE",
+        "violenceRealisticProlongedGraphicOrSadistic": "NONE"
+      },
+      "id": "17beb0ae-3711-438e-ba12-756f041aa843",
+      "type": "ageRatingDeclarations"
+    },
+    "app": {
+      "fields": {
+        "contentRightsDeclaration": "DOES_NOT_USE_THIRD_PARTY_CONTENT",
+        "primaryLocale": "en-US"
+      },
+      "id": "6753944720",
+      "type": "apps"
+    },
+    "appInfo": {
+      "fields": {
+        "primaryCategory": "UTILITIES",
+        "secondaryCategory": "NAVIGATION"
+      },
+      "id": "17beb0ae-3711-438e-ba12-756f041aa843",
+      "type": "appInfos"
+    },
+    "appInfoLocalization:ar-SA": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "7af99754-4ea8-4220-8bda-dd4ce3d36c66",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:bn-BD": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "30950ec5-86a0-44b6-8571-8fd249d7b66e",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ca": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "641f6c9b-4c9e-4384-8c6d-32d4a38d6ead",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:cs": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "d32f7ab3-69e2-4db6-bc9c-9518807a50d7",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:da": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "5337786a-82c7-48ab-87c7-6c2b3e6bd194",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:de-DE": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "8e64441d-2d2e-4573-8ef3-1a74edb023f6",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:el": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "4f56ab3e-8194-4dda-a8cb-4659d398cf39",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:en-AU": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "01e3eade-59c2-4f7d-8e16-c93db6b76622",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:en-CA": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "fd11c44e-0e93-4812-8df2-e75bc7cce20c",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:en-GB": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "6e15c728-a4f0-4f7d-b445-7d45616ccde2",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:en-US": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "be1b06c3-899e-4e52-87af-bbf505a3887c",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:es-ES": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "2e4731b2-8c3b-4d5b-b8ee-fab9359af91e",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:es-MX": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "e26dacf3-847e-4ee7-88eb-a955dfc67c60",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:fi": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "df8c9131-e3da-4fe7-b583-eae4d147a065",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:fr-CA": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "83e33a53-a295-4aef-bc1f-7f39ef6f2f0f",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:fr-FR": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "148f5d9e-5525-447d-b138-1db4e3d3518f",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:gu-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "b017a73b-3ddb-4c6f-944e-de11797e9307",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:he": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "15694e05-9fca-423a-b7e2-e1202ccb874c",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:hi": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "ce7e4de9-b02c-4d77-96ab-1bf11f29217a",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:hr": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "f9bff3b7-0eba-497a-b165-1d67959ab77d",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:hu": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "fa1a1eb5-fc3c-4d52-bbe5-6af44a2a0b38",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:id": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "6161eca5-7fd9-47e7-92ac-d9fa07f124dd",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:it": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "04d12449-84aa-4a27-a36c-1cb20315b108",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ja": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "fa4f8894-eee2-427f-aada-890e908cc0b9",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:kn-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "e2665eaa-b032-4506-9362-9b424645e8af",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ko": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "5402c448-52c6-4a9c-97ce-018af133a96e",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ml-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "6a486188-89e8-4191-8971-a0b09eb9ff51",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:mr-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "8b1d7812-3c33-4291-ad98-43e289bf0614",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ms": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "5b09fc33-fb3e-472e-b759-82bd98e6e738",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:nl-NL": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "4ae51db2-27df-4ea0-ab5b-c06f0756b795",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:no": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "dddb31fd-b74e-41bf-9b5c-8ff805ead935",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:or-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "0362bb98-3a54-4b70-9afb-d4aab93c5de7",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:pa-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "33372277-3200-4c84-a446-75395fcdf798",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:pl": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "d2509b62-5a19-428f-b8d8-58f7df4575eb",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:pt-BR": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "776940ec-483e-43e5-9a54-40fb4b03269a",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:pt-PT": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "04f22f1d-aa49-42fb-b82b-72ff2c44cc8b",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ro": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "e42880da-5bb1-4050-95ab-4740d07de159",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ru": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "098de015-73f3-4de1-aa33-874b3af076e0",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:sk": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "1809438c-d213-4f8d-9b51-53bda58364e4",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:sl-SI": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "6e41359c-b83e-4bf6-a6b1-aa8775a30494",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:sv": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "aa45db60-ecdb-4488-85aa-457c67b42a00",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ta-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "e8770b74-d91a-49de-968f-81644f90a74e",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:te-IN": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "e48f19e2-9bca-4beb-9940-09c9d86e5c87",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:th": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "c461a4b7-f736-4e0a-9839-dc3e18344660",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:tr": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "a3c5a8b6-df34-4b1d-bb30-c1da48c794fa",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:uk": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "962f2bb6-87e4-4dce-b49d-520871bc6381",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:ur-PK": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "f8afff21-71b5-4ba7-b777-155936710137",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:vi": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "202ff8c5-9371-45f9-9bba-3bbb960fa79f",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:zh-Hans": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "b33c0a5f-f8fe-4b50-aff4-01d1e6d69af9",
+      "type": "appInfoLocalizations"
+    },
+    "appInfoLocalization:zh-Hant": {
+      "fields": {
+        "name": "SpotClock - Parking Timer",
+        "privacyPolicyUrl": "https://transfinite.us/policies/",
+        "subtitle": "Avoid parking tickets."
+      },
+      "id": "36c7e029-829f-412a-b543-636746f1d4f0",
+      "type": "appInfoLocalizations"
+    },
+    "appStoreReviewDetail:IOS:1.3.0": {
+      "fields": {
+        "contactEmail": "gerard@transfinite.cloud",
+        "contactFirstName": "Gerard",
+        "contactLastName": "Gomez",
+        "contactPhone": "6469388594",
+        "demoAccountRequired": false
+      },
+      "id": "ddbe161d-8346-4390-a6f9-92e969718311",
+      "type": "appStoreReviewDetails"
+    },
+    "appStoreVersion:IOS:1.3.0": {
+      "fields": {
+        "copyright": "Transfinite LLC",
+        "releaseType": "AFTER_APPROVAL",
+        "versionString": "1.3.0"
+      },
+      "id": "b9665c37-628e-45f1-901b-9f3bda9b453f",
+      "type": "appStoreVersions"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ar-SA": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "fee8fde0-b17c-4aa5-8b1b-d0a2d409458f",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:bn-BD": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "3591bc3f-f645-4e12-a44f-7370dc0ee05b",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ca": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6f451c93-d8d6-4c6a-9dfe-fd2e794120cc",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:cs": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "738e792d-1d88-445a-84d8-330624263f24",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:da": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "9d91d6c9-42c8-4f63-9d4e-61a8751d017f",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:de-DE": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "0c615de0-bb59-4339-b3c4-63ad1722a416",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:el": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "3e690b7b-8317-451c-8d51-29c42963a952",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:en-AU": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "71455162-2123-4311-b6d2-8fe69b44db0f",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:en-CA": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "3b643e86-cb10-4231-b842-bcf7ac9fa371",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:en-GB": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "8e9ccfaf-b5a9-4a88-a1a3-7db78fc94274",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:en-US": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "75b7c8a9-16ed-41a0-b39d-3dbad5c71655",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:es-ES": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "04275503-d552-4a8e-bfd4-e67734c79596",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:es-MX": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "706b96ad-2c00-4d7a-93e7-67fa6a5a3e96",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:fi": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "9d27c861-7af5-4ef1-9b1b-015b4ea54629",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:fr-CA": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "7d4c97b7-c27b-481b-b95a-1890a6c6d26c",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:fr-FR": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "585696bb-c2b6-4824-897e-5ccf7f574874",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:gu-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "f783e7b6-0e6a-4abd-bfe5-238703b621b3",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:he": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "0874cbc0-5bda-4a85-ac0d-72ad3524064f",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:hi": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "a6762ea5-bdc7-4a0b-aab0-bc6cea6da2ee",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:hr": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6ebe0c42-dca4-4621-9c35-6be67187f857",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:hu": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "fbb228c9-da11-4113-ab44-52395a90f0a9",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:id": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "f637316f-9cfe-45a0-bbf5-87ef9d5259da",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:it": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "87f136f3-0606-4183-8818-42da24e1d53d",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ja": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "86e75969-32b4-4bb2-8b9b-7e79090675c0",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:kn-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6d341f0a-1ebb-437d-aff2-2c4b62442030",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ko": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6d95e032-a780-45af-9959-8665ab1f3cee",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ml-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "61ba6c72-0b3b-45a4-b0b2-ee71ec4f0ffa",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:mr-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "a0866da9-51a5-4ba6-8601-182450c79b4e",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ms": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "a16844ff-8622-429f-b50b-190403cce376",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:nl-NL": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6e4e9090-fc7c-4f80-adc9-cc6e4292f872",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:no": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "dcef9df0-0a3f-4481-8b90-b5f2fe5c3d82",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:or-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "0fe80c99-5018-4e47-84a1-5cce96cb22f2",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:pa-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "31c292a0-62e9-428e-a5dd-77815d933aa5",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:pl": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "1c1002f7-11ee-4497-afc4-4e6810d8247e",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:pt-BR": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "f3af9e9e-c633-4aca-a3da-6bd09be73e7b",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:pt-PT": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "046787a1-8131-4e20-ad52-2bfc76970efd",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ro": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "93a104b1-1989-43cf-ad2d-1c6ff019b9c4",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ru": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "9e98fb5b-1661-4f0f-a69c-c6a53ad8145a",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:sk": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "52cdb59f-6ae6-4476-8d87-93b9b36d7b70",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:sl-SI": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "4634783a-4a44-4fe7-8242-1e57b9e26ce2",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:sv": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "7290a2e9-303c-4d47-9a0f-7b89a85b2347",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ta-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "a87ae51d-e6db-4795-9230-dd50be332cae",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:te-IN": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "2a7b76ef-c3e1-4bf0-81d5-e3ddc650e315",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:th": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "904ba50e-f94b-4753-a15f-a23a4864c584",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:tr": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "6707f903-099b-4403-86b9-5ab5e77e6e99",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:uk": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "7e800a96-2a04-43d7-8b58-0be43a936ac5",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:ur-PK": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "ccfa1031-e582-427e-9b1c-d00450f987fd",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:vi": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "b6a0e39c-597c-441e-a185-ac20492c2435",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:zh-Hans": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "625fb22f-6212-4ce2-8230-e11449ebf4f2",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:1.3.0:zh-Hant": {
+      "fields": {
+        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
+      },
+      "id": "8ecfd964-44c2-4fcf-bc15-9ed65fcabcba",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionScreenshotSet:IOS:1.3.0:en-US:APP_IPAD_PRO_3GEN_129": {
+      "fields": {
+        "screenshots": [
+          {
+            "file": "Rotato Image 1485.png",
+            "fileSize": 1536426,
+            "sourceFileChecksum": "073751224d8a21ad8c43f1e5bbb0809a"
+          }
+        ]
+      },
+      "id": "fa157740-f894-427e-85ac-1b58d3282168",
+      "type": "appScreenshotSets"
+    },
+    "appStoreVersionScreenshotSet:IOS:1.3.0:en-US:APP_IPHONE_65": {
+      "fields": {
+        "screenshots": [
+          {
+            "file": "Rotato Image E850.png",
+            "fileSize": 612241,
+            "sourceFileChecksum": "a56f0bc1ea6805a8e84abf99a3e7ff61"
+          },
+          {
+            "file": "Rotato Image F8F5.png",
+            "fileSize": 653565,
+            "sourceFileChecksum": "c7b97b868e60c10c3acca60bfb33d841"
+          },
+          {
+            "file": "Rotato Image 63AF.png",
+            "fileSize": 892669,
+            "sourceFileChecksum": "bdaab2f36b4866423159e4f8862e75f8"
+          },
+          {
+            "file": "Rotato Image C061.png",
+            "fileSize": 754522,
+            "sourceFileChecksum": "23d2ebb45de30d7b9486b82aa8c2d7c6"
+          },
+          {
+            "file": "Rotato Image BB16.png",
+            "fileSize": 787921,
+            "sourceFileChecksum": "0baead16e6880c28608e392ad355ec2a"
+          },
+          {
+            "file": "Rotato Image 70BB.png",
+            "fileSize": 351868,
+            "sourceFileChecksum": "9f6247646752393ae90b14c2176793e6"
+          }
+        ]
+      },
+      "id": "467ac083-b249-4b24-818a-7c647627d9d0",
+      "type": "appScreenshotSets"
+    },
+    "availability": {
+      "fields": {
+        "territories": [
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AFG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AGO"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AIA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ALB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ARE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ARG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ARM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ATG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AUS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AUT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "AZE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BEL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BEN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BFA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BGR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BHR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BHS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BIH"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BLR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BLZ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BMU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BOL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BRA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BRB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BRN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BTN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "BWA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CAN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CHE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CHL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CHN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CIV"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CMR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "COD"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "COG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "COL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CPV"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CRI"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CYM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CYP"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "CZE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "DEU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "DMA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "DNK"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "DOM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "DZA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ECU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "EGY"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ESP"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "EST"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "FIN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "FJI"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "FRA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "FSM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GAB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GBR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GEO"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GHA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GMB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GNB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GRC"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GRD"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GTM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "GUY"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "HKG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "HND"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "HRV"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "HUN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "IDN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "IND"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "IRL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "IRQ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ISL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ISR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ITA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "JAM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "JOR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "JPN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KAZ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KEN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KGZ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KHM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KNA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KOR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "KWT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LAO"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LBN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LBR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LBY"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LCA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LKA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LTU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LUX"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "LVA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MAC"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MAR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MDA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MDG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MDV"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MEX"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MKD"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MLI"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MLT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MMR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MNE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MNG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MOZ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MRT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MSR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MUS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MWI"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "MYS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NAM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NER"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NGA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NIC"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NLD"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NOR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NPL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NRU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "NZL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "OMN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PAK"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PAN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PER"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PHL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PLW"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PNG"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "POL"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PRT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "PRY"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "QAT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ROU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "RUS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "RWA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SAU"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SEN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SGP"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SLB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SLE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SLV"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SRB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "STP"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SUR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SVK"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SVN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SWE"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SWZ"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "SYC"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TCA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TCD"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "THA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TJK"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TKM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TON"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TTO"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TUN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TUR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TWN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "TZA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "UGA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "UKR"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "URY"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "USA"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "UZB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "VCT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "VEN"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "VGB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "VNM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "VUT"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "XKS"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "YEM"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ZAF"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ZMB"
+          },
+          {
+            "available": true,
+            "preOrderEnabled": false,
+            "releaseDate": "2025-10-15",
+            "territory": "ZWE"
+          }
+        ]
+      },
+      "id": "6753944720",
+      "type": "appAvailabilities"
+    },
+    "pricing": {
+      "fields": {
+        "baseTerritory": "USA",
+        "manualPrices": [
+          {
+            "customerPrice": "0",
+            "territory": "USA"
+          }
+        ]
+      },
+      "id": "6753944720",
+      "type": "appPriceSchedules"
+    },
+    "subscription:com.spotclock.subscriptions.monthly": {
+      "fields": {
+        "familySharable": true,
+        "groupLevel": 1,
+        "name": "SpotClock Pro Monthly",
+        "reviewNote": "It is simple subscription using StoreKit 2 native subscription view.",
+        "subscriptionPeriod": "ONE_MONTH"
+      },
+      "id": "6753945128",
+      "type": "subscriptions"
+    },
+    "subscription:com.spotclock.subscriptions.weekly": {
+      "fields": {
+        "familySharable": true,
+        "groupLevel": 1,
+        "name": "SpotClock Pro Weekly",
+        "reviewNote": "It is simple subscription using StoreKit 2 native subscription view.",
+        "subscriptionPeriod": "ONE_WEEK"
+      },
+      "id": "6753945220",
+      "type": "subscriptions"
+    },
+    "subscription:com.spotclock.subscriptions.yearly": {
+      "fields": {
+        "familySharable": true,
+        "groupLevel": 1,
+        "name": "SpotClock Pro Yearly",
+        "reviewNote": "It is simple subscription using StoreKit 2 native subscription view.",
+        "subscriptionPeriod": "ONE_YEAR"
+      },
+      "id": "6753945104",
+      "type": "subscriptions"
+    },
+    "subscriptionAvailability:com.spotclock.subscriptions.monthly": {
+      "fields": {
+        "availableInNewTerritories": true,
+        "availableTerritories": [
+          "AFG",
+          "AGO",
+          "AIA",
+          "ALB",
+          "ARE",
+          "ARG",
+          "ARM",
+          "ATG",
+          "AUS",
+          "AUT",
+          "AZE",
+          "BEL",
+          "BEN",
+          "BFA",
+          "BGR",
+          "BHR",
+          "BHS",
+          "BIH",
+          "BLR",
+          "BLZ",
+          "BMU",
+          "BOL",
+          "BRA",
+          "BRB",
+          "BRN",
+          "BTN",
+          "BWA",
+          "CAN",
+          "CHE",
+          "CHL",
+          "CHN",
+          "CIV",
+          "CMR",
+          "COD",
+          "COG",
+          "COL",
+          "CPV",
+          "CRI",
+          "CYM",
+          "CYP",
+          "CZE",
+          "DEU",
+          "DMA",
+          "DNK",
+          "DOM",
+          "DZA",
+          "ECU",
+          "EGY",
+          "ESP",
+          "EST",
+          "FIN",
+          "FJI",
+          "FRA",
+          "FSM",
+          "GAB",
+          "GBR",
+          "GEO",
+          "GHA",
+          "GMB",
+          "GNB",
+          "GRC",
+          "GRD",
+          "GTM",
+          "GUY",
+          "HKG",
+          "HND",
+          "HRV",
+          "HUN",
+          "IDN",
+          "IND",
+          "IRL",
+          "IRQ",
+          "ISL",
+          "ISR",
+          "ITA",
+          "JAM",
+          "JOR",
+          "JPN",
+          "KAZ",
+          "KEN",
+          "KGZ",
+          "KHM",
+          "KNA",
+          "KOR",
+          "KWT",
+          "LAO",
+          "LBN",
+          "LBR",
+          "LBY",
+          "LCA",
+          "LKA",
+          "LTU",
+          "LUX",
+          "LVA",
+          "MAC",
+          "MAR",
+          "MDA",
+          "MDG",
+          "MDV",
+          "MEX",
+          "MKD",
+          "MLI",
+          "MLT",
+          "MMR",
+          "MNE",
+          "MNG",
+          "MOZ",
+          "MRT",
+          "MSR",
+          "MUS",
+          "MWI",
+          "MYS",
+          "NAM",
+          "NER",
+          "NGA",
+          "NIC",
+          "NLD",
+          "NOR",
+          "NPL",
+          "NRU",
+          "NZL",
+          "OMN",
+          "PAK",
+          "PAN",
+          "PER",
+          "PHL",
+          "PLW",
+          "PNG",
+          "POL",
+          "PRT",
+          "PRY",
+          "QAT",
+          "ROU",
+          "RUS",
+          "RWA",
+          "SAU",
+          "SEN",
+          "SGP",
+          "SLB",
+          "SLE",
+          "SLV",
+          "SRB",
+          "STP",
+          "SUR",
+          "SVK",
+          "SVN",
+          "SWE",
+          "SWZ",
+          "SYC",
+          "TCA",
+          "TCD",
+          "THA",
+          "TJK",
+          "TKM",
+          "TON",
+          "TTO",
+          "TUN",
+          "TUR",
+          "TWN",
+          "TZA",
+          "UGA",
+          "UKR",
+          "URY",
+          "USA",
+          "UZB",
+          "VCT",
+          "VEN",
+          "VGB",
+          "VNM",
+          "VUT",
+          "XKS",
+          "YEM",
+          "ZAF",
+          "ZMB",
+          "ZWE"
+        ]
+      },
+      "id": "6753945128",
+      "type": "subscriptionAvailabilities"
+    },
+    "subscriptionAvailability:com.spotclock.subscriptions.weekly": {
+      "fields": {
+        "availableInNewTerritories": true,
+        "availableTerritories": [
+          "AFG",
+          "AGO",
+          "AIA",
+          "ALB",
+          "ARE",
+          "ARG",
+          "ARM",
+          "ATG",
+          "AUS",
+          "AUT",
+          "AZE",
+          "BEL",
+          "BEN",
+          "BFA",
+          "BGR",
+          "BHR",
+          "BHS",
+          "BIH",
+          "BLR",
+          "BLZ",
+          "BMU",
+          "BOL",
+          "BRA",
+          "BRB",
+          "BRN",
+          "BTN",
+          "BWA",
+          "CAN",
+          "CHE",
+          "CHL",
+          "CHN",
+          "CIV",
+          "CMR",
+          "COD",
+          "COG",
+          "COL",
+          "CPV",
+          "CRI",
+          "CYM",
+          "CYP",
+          "CZE",
+          "DEU",
+          "DMA",
+          "DNK",
+          "DOM",
+          "DZA",
+          "ECU",
+          "EGY",
+          "ESP",
+          "EST",
+          "FIN",
+          "FJI",
+          "FRA",
+          "FSM",
+          "GAB",
+          "GBR",
+          "GEO",
+          "GHA",
+          "GMB",
+          "GNB",
+          "GRC",
+          "GRD",
+          "GTM",
+          "GUY",
+          "HKG",
+          "HND",
+          "HRV",
+          "HUN",
+          "IDN",
+          "IND",
+          "IRL",
+          "IRQ",
+          "ISL",
+          "ISR",
+          "ITA",
+          "JAM",
+          "JOR",
+          "JPN",
+          "KAZ",
+          "KEN",
+          "KGZ",
+          "KHM",
+          "KNA",
+          "KOR",
+          "KWT",
+          "LAO",
+          "LBN",
+          "LBR",
+          "LBY",
+          "LCA",
+          "LKA",
+          "LTU",
+          "LUX",
+          "LVA",
+          "MAC",
+          "MAR",
+          "MDA",
+          "MDG",
+          "MDV",
+          "MEX",
+          "MKD",
+          "MLI",
+          "MLT",
+          "MMR",
+          "MNE",
+          "MNG",
+          "MOZ",
+          "MRT",
+          "MSR",
+          "MUS",
+          "MWI",
+          "MYS",
+          "NAM",
+          "NER",
+          "NGA",
+          "NIC",
+          "NLD",
+          "NOR",
+          "NPL",
+          "NRU",
+          "NZL",
+          "OMN",
+          "PAK",
+          "PAN",
+          "PER",
+          "PHL",
+          "PLW",
+          "PNG",
+          "POL",
+          "PRT",
+          "PRY",
+          "QAT",
+          "ROU",
+          "RUS",
+          "RWA",
+          "SAU",
+          "SEN",
+          "SGP",
+          "SLB",
+          "SLE",
+          "SLV",
+          "SRB",
+          "STP",
+          "SUR",
+          "SVK",
+          "SVN",
+          "SWE",
+          "SWZ",
+          "SYC",
+          "TCA",
+          "TCD",
+          "THA",
+          "TJK",
+          "TKM",
+          "TON",
+          "TTO",
+          "TUN",
+          "TUR",
+          "TWN",
+          "TZA",
+          "UGA",
+          "UKR",
+          "URY",
+          "USA",
+          "UZB",
+          "VCT",
+          "VEN",
+          "VGB",
+          "VNM",
+          "VUT",
+          "XKS",
+          "YEM",
+          "ZAF",
+          "ZMB",
+          "ZWE"
+        ]
+      },
+      "id": "6753945220",
+      "type": "subscriptionAvailabilities"
+    },
+    "subscriptionAvailability:com.spotclock.subscriptions.yearly": {
+      "fields": {
+        "availableInNewTerritories": true,
+        "availableTerritories": [
+          "AFG",
+          "AGO",
+          "AIA",
+          "ALB",
+          "ARE",
+          "ARG",
+          "ARM",
+          "ATG",
+          "AUS",
+          "AUT",
+          "AZE",
+          "BEL",
+          "BEN",
+          "BFA",
+          "BGR",
+          "BHR",
+          "BHS",
+          "BIH",
+          "BLR",
+          "BLZ",
+          "BMU",
+          "BOL",
+          "BRA",
+          "BRB",
+          "BRN",
+          "BTN",
+          "BWA",
+          "CAN",
+          "CHE",
+          "CHL",
+          "CHN",
+          "CIV",
+          "CMR",
+          "COD",
+          "COG",
+          "COL",
+          "CPV",
+          "CRI",
+          "CYM",
+          "CYP",
+          "CZE",
+          "DEU",
+          "DMA",
+          "DNK",
+          "DOM",
+          "DZA",
+          "ECU",
+          "EGY",
+          "ESP",
+          "EST",
+          "FIN",
+          "FJI",
+          "FRA",
+          "FSM",
+          "GAB",
+          "GBR",
+          "GEO",
+          "GHA",
+          "GMB",
+          "GNB",
+          "GRC",
+          "GRD",
+          "GTM",
+          "GUY",
+          "HKG",
+          "HND",
+          "HRV",
+          "HUN",
+          "IDN",
+          "IND",
+          "IRL",
+          "IRQ",
+          "ISL",
+          "ISR",
+          "ITA",
+          "JAM",
+          "JOR",
+          "JPN",
+          "KAZ",
+          "KEN",
+          "KGZ",
+          "KHM",
+          "KNA",
+          "KOR",
+          "KWT",
+          "LAO",
+          "LBN",
+          "LBR",
+          "LBY",
+          "LCA",
+          "LKA",
+          "LTU",
+          "LUX",
+          "LVA",
+          "MAC",
+          "MAR",
+          "MDA",
+          "MDG",
+          "MDV",
+          "MEX",
+          "MKD",
+          "MLI",
+          "MLT",
+          "MMR",
+          "MNE",
+          "MNG",
+          "MOZ",
+          "MRT",
+          "MSR",
+          "MUS",
+          "MWI",
+          "MYS",
+          "NAM",
+          "NER",
+          "NGA",
+          "NIC",
+          "NLD",
+          "NOR",
+          "NPL",
+          "NRU",
+          "NZL",
+          "OMN",
+          "PAK",
+          "PAN",
+          "PER",
+          "PHL",
+          "PLW",
+          "PNG",
+          "POL",
+          "PRT",
+          "PRY",
+          "QAT",
+          "ROU",
+          "RUS",
+          "RWA",
+          "SAU",
+          "SEN",
+          "SGP",
+          "SLB",
+          "SLE",
+          "SLV",
+          "SRB",
+          "STP",
+          "SUR",
+          "SVK",
+          "SVN",
+          "SWE",
+          "SWZ",
+          "SYC",
+          "TCA",
+          "TCD",
+          "THA",
+          "TJK",
+          "TKM",
+          "TON",
+          "TTO",
+          "TUN",
+          "TUR",
+          "TWN",
+          "TZA",
+          "UGA",
+          "UKR",
+          "URY",
+          "USA",
+          "UZB",
+          "VCT",
+          "VEN",
+          "VGB",
+          "VNM",
+          "VUT",
+          "XKS",
+          "YEM",
+          "ZAF",
+          "ZMB",
+          "ZWE"
+        ]
+      },
+      "id": "6753945104",
+      "type": "subscriptionAvailabilities"
+    },
+    "subscriptionGracePeriod": {
+      "fields": {
+        "duration": "SIXTEEN_DAYS",
+        "optIn": false,
+        "renewalType": "ALL_RENEWALS",
+        "sandboxOptIn": true
+      },
+      "id": "6753944720",
+      "type": "subscriptionGracePeriods"
+    },
+    "subscriptionGroup:SpotClock Pro": {
+      "fields": {
+        "referenceName": "SpotClock Pro"
+      },
+      "id": "21805417",
+      "type": "subscriptionGroups"
+    },
+    "subscriptionGroupLocalization:SpotClock Pro:en-US": {
+      "fields": {
+        "name": "SpotClock Pro"
+      },
+      "id": "03857eba-8b78-4988-840e-ee6da4416b82",
+      "type": "subscriptionGroupLocalizations"
+    },
+    "subscriptionLocalization:com.spotclock.subscriptions.monthly:en-US": {
+      "fields": {
+        "description": "Unlimited parking timers, and saved parking history.",
+        "name": "SpotClock Pro (Monthly)"
+      },
+      "id": "5a6a4554-83d8-4209-8687-d6e8d3fe78a6",
+      "type": "subscriptionLocalizations"
+    },
+    "subscriptionLocalization:com.spotclock.subscriptions.weekly:en-US": {
+      "fields": {
+        "description": "Unlimited parking timers, and saved parking history.",
+        "name": "SpotClock Pro (Weekly)"
+      },
+      "id": "fca00177-400e-4f89-a264-f5c6753c67ff",
+      "type": "subscriptionLocalizations"
+    },
+    "subscriptionLocalization:com.spotclock.subscriptions.yearly:en-US": {
+      "fields": {
+        "description": "Unlimited parking timers, and saved parking history.",
+        "name": "SpotClock Pro (Yearly)"
+      },
+      "id": "901285a2-181f-49bc-8f64-019ba0dc6a79",
+      "type": "subscriptionLocalizations"
+    },
+    "subscriptionPricing:com.spotclock.subscriptions.monthly": {
+      "fields": {
+        "baseTerritory": "USA",
+        "prices": [
+          {
+            "customerPrice": "3.49",
+            "territory": "BGR"
+          },
+          {
+            "customerPrice": "2.99",
+            "territory": "COG"
+          },
+          {
+            "customerPrice": "49000",
+            "territory": "IDN"
+          },
+          {
+            "customerPrice": "2.99",
+            "territory": "MAR"
+          },
+          {
+            "customerPrice": "2.99",
+            "territory": "MUS"
+          },
+          {
+            "customerPrice": "129.99",
+            "territory": "TUR"
+          },
+          {
+            "customerPrice": "2.99",
+            "territory": "USA"
+          }
+        ]
+      },
+      "id": "6753945128",
+      "type": "subscriptionPrices"
+    },
+    "subscriptionPricing:com.spotclock.subscriptions.weekly": {
+      "fields": {
+        "baseTerritory": "USA",
+        "prices": [
+          {
+            "customerPrice": "39.99",
+            "territory": "TUR"
+          },
+          {
+            "customerPrice": "0.99",
+            "territory": "USA"
+          }
+        ]
+      },
+      "id": "6753945220",
+      "type": "subscriptionPrices"
+    },
+    "subscriptionPricing:com.spotclock.subscriptions.yearly": {
+      "fields": {
+        "baseTerritory": "USA",
+        "prices": [
+          {
+            "customerPrice": "19.99",
+            "territory": "BGR"
+          },
+          {
+            "customerPrice": "20",
+            "territory": "CHE"
+          },
+          {
+            "customerPrice": "19.99",
+            "territory": "COG"
+          },
+          {
+            "customerPrice": "349000",
+            "territory": "IDN"
+          },
+          {
+            "customerPrice": "69.9",
+            "territory": "ISR"
+          },
+          {
+            "customerPrice": "29000",
+            "territory": "KOR"
+          },
+          {
+            "customerPrice": "19.99",
+            "territory": "MAR"
+          },
+          {
+            "customerPrice": "19.99",
+            "territory": "MUS"
+          },
+          {
+            "customerPrice": "899.99",
+            "territory": "TUR"
+          },
+          {
+            "customerPrice": "19.99",
+            "territory": "USA"
+          }
+        ]
+      },
+      "id": "6753945104",
+      "type": "subscriptionPrices"
+    },
+    "subscriptionReviewScreenshot:com.spotclock.subscriptions.monthly": {
+      "fields": {
+        "screenshot": {
+          "fileSize": 767934,
+          "sourceFileChecksum": "ef670c19b8686852fcc54ad486ace852"
+        }
+      },
+      "id": "f1b87d94-677a-4400-865f-edb3d9cc0007",
+      "type": "subscriptionAppStoreReviewScreenshots"
+    },
+    "subscriptionReviewScreenshot:com.spotclock.subscriptions.weekly": {
+      "fields": {
+        "screenshot": {
+          "fileSize": 738959,
+          "sourceFileChecksum": "862e20a2f50c6e6b54400a0885d0859a"
+        }
+      },
+      "id": "8922156a-601c-4234-90c0-7a3b59257f25",
+      "type": "subscriptionAppStoreReviewScreenshots"
+    },
+    "subscriptionReviewScreenshot:com.spotclock.subscriptions.yearly": {
+      "fields": {
+        "screenshot": {
+          "fileSize": 804586,
+          "sourceFileChecksum": "e15035910b032f7a30cd33f8687b6e4a"
+        }
+      },
+      "id": "2d94a63d-3aa6-4a3f-90f5-d5931000ebfc",
+      "type": "subscriptionAppStoreReviewScreenshots"
+    }
+  }
+}

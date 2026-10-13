@@ -1,0 +1,2 @@
+Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.
+
