@@ -20,38 +20,75 @@ struct SettingsView: View {
     @State private var alertMessage: String = ""
     #if DEBUG
     @State private var isRunningDeveloperAction = false
+    @State private var showCaptureStudio = false
+    @Environment(\.isMarketingCapture) private var isMarketingCapture
+    @Environment(\.dismiss) private var dismiss
     #endif
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppBackground()
-
-                ScrollView {
-                    VStack(spacing: 20) {
-                        subscriptionSection
-                        actionsSection
-                        aboutSection
-
-                        #if DEBUG
-                        developerToolsSection
-                        #endif
+            Form {
+                Section {
+                    HStack(spacing: 16) {
+                        Image(systemName: "parkingsign")
+                            .font(.title.bold()).foregroundStyle(.white)
+                            .frame(width: 64, height: 64)
+                            .background(DesignSystem.primaryGradient, in: .rect(cornerRadius: 20))
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("A considered companion.").font(.system(.title3, design: .serif))
+                            Text("SpotClock · Designed for your day.").font(.subheadline).foregroundStyle(.secondary)
+                        }
                     }
-                    .padding(DesignSystem.screenPadding)
-                    .appContentWidth()
+                    .padding(.vertical, 10)
                 }
-                .scrollIndicators(.hidden)
+                .listRowBackground(Color.clear)
+                Section("Your membership") { subscriptionSection }
+                Section("Make it yours") {
+                    Button {
+                        Task { await subscriptionManager.restorePurchases() }
+                    } label: { Label("Restore purchases", systemImage: "arrow.clockwise") }
+                    .disabled(!allowsServiceActions)
+                    Button { requestNotificationPermission() } label: {
+                        Label("Enable parking alarms", systemImage: "bell.badge.fill")
+                    }
+                    .disabled(!allowsServiceActions)
+                }
+                Section("About SpotClock") {
+                    LabeledContent("Version", value: getAppVersionAndBuild.version ?? "2.0.0")
+                    Link("Privacy policy", destination: privacyPolicyURL)
+                    Link("Terms of service", destination: termsURL)
+                }
+                #if DEBUG
+                Section("Development") {
+                    if isMarketingCapture {
+                        Button("Exit capture studio", systemImage: "xmark") { dismiss() }
+                    } else {
+                        Button("Open marketing capture studio", systemImage: "sparkles") { showCaptureStudio = true }
+                    }
+                    if !isMarketingCapture { developerToolsSection }
+                }
+                #endif
             }
+            .scrollContentBackground(.hidden)
+            .background { AppBackground() }
             .navigationTitle("Settings")
-            .sheet(isPresented: $showSubscription) {
-                SubscriptionView()
-            }
+            .sheet(isPresented: $showSubscription) { SubscriptionView() }
+            #if DEBUG
+            .fullScreenCover(isPresented: $showCaptureStudio) { MarketingCaptureStudioView() }
+            #endif
             .alert(alertTitle, isPresented: $showAlert) {
                 Button("OK", role: .cancel) {}
-            } message: {
-                Text(alertMessage)
-            }
+            } message: { Text(alertMessage) }
         }
+        .tint(DesignSystem.brandBlue)
+    }
+
+    private var allowsServiceActions: Bool {
+        #if DEBUG
+        !isMarketingCapture
+        #else
+        true
+        #endif
     }
 
     private var subscriptionSection: some View {
@@ -97,8 +134,7 @@ struct SettingsView: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(20)
-        .appCard(fill: DesignSystem.elevatedCardBackground)
+        .padding(.vertical, 10)
     }
 
     private var actionsSection: some View {
@@ -293,9 +329,4 @@ struct SettingsView: View {
     private var termsURL: URL {
         URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") ?? URL(filePath: "/")
     }
-}
-
-#Preview {
-    SettingsView()
-        .environment(SubscriptionService())
 }

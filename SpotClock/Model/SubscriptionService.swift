@@ -21,6 +21,7 @@ final class SubscriptionService {
     var monthlySessionsUsed = 0
     var currentMonthStart = Date()
     private var transactionTask: Task<Void, Never>?
+    private let persistsUsage: Bool
     var activeSubscriptionGroupID: String = ""
     
     private var maxFreeSessions: Int {
@@ -35,12 +36,17 @@ final class SubscriptionService {
     let subscriptionGroupID = "21805417"
   
     
-    init() {
+    init(persistsUsage: Bool = true) {
+        self.persistsUsage = persistsUsage
         #if DEBUG
         activeSubscriptionGroupID = subscriptionGroupIDTesting
         #else
         activeSubscriptionGroupID = subscriptionGroupID
         #endif
+        guard persistsUsage else {
+            hasProAccess = true
+            return
+        }
         loadSessionCount()
         Task { await refreshEntitlements() }
         
@@ -154,6 +160,7 @@ final class SubscriptionService {
     }
     
     private func saveSessionCount() {
+        guard persistsUsage else { return }
         let data = SessionData(count: monthlySessionsUsed, monthStart: currentMonthStart)
         if let encoded = try? JSONEncoder().encode(data) {
             UserDefaults.standard.set(encoded, forKey: "sessionData")

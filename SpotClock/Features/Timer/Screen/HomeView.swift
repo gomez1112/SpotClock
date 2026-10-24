@@ -1,157 +1,126 @@
-//
-//  HomeView.swift
-//  SpotClock
-//
-//  Created by Gerard Gomez on 10/12/25.
-//
 import SwiftUI
-import MapKit
-import SwiftData
 
 struct HomeView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Environment(TimerService.self) private var timerManager
-    @Environment(SubscriptionService.self) private var subscriptionManager
-    @Environment(LocationService.self) private var locationManager: LocationService
+    @Environment(TimerService.self) private var timerService
+    @Environment(SubscriptionService.self) private var subscriptionService
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var showNewTimer = false
     @State private var showSubscription = false
-    @State private var pulseAnimation = false
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    
+    @State private var selectedDuration: TimeInterval = 3600
+
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppBackground()
-                
-                if timerManager.isRunning, let session = timerManager.activeSession {
-                    ActiveTimerView(session: session)
-                } else {
-                    idleView
+            parkingContent
+            .background { AppBackground() }
+            .navigationTitle("SpotClock")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                if !subscriptionService.hasProAccess {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("SpotClock Pro", systemImage: "crown") { showSubscription = true }
+                    }
                 }
             }
-            .navigationTitle("SpotClock")
-            .navigationBarTitleDisplayMode(.large)
-            .sheet(isPresented: $showNewTimer) {
-                NewTimerView()
-            }
-            .sheet(isPresented: $showSubscription) {
-                SubscriptionView()
-            }
+            .sheet(isPresented: $showNewTimer) { NewTimerView(initialDuration: selectedDuration) }
+            .sheet(isPresented: $showSubscription) { SubscriptionView() }
         }
     }
 
-    private var idleView: some View {
+    @ViewBuilder
+    private var parkingContent: some View {
+        if timerService.isRunning, let session = timerService.activeSession {
+            ActiveTimerView(session: session)
+        } else {
+            idleParking
+        }
+    }
+
+    private var idleParking: some View {
+        ArrangementView {
+            parkingSetup.splitArrangementLayoutSize(minWidth: 300)
+        } secondary: {
+            ParkingReadyMapView().splitArrangementLayoutSize(minWidth: 300)
+        }
+        .arrangementViewStyle(.split.axes(arrangementAxes))
+    }
+
+    private var arrangementAxes: Axis.Set {
+        if horizontalSizeClass == .regular { return [.horizontal, .vertical] }
+        return .horizontal
+    }
+
+    private var parkingSetup: some View {
         ScrollView {
-            VStack(spacing: 24) {
-                VStack(spacing: 24) {
-                    ZStack {
-                        Circle()
-                            .fill(DesignSystem.brandTeal.opacity(pulseAnimation ? 0.18 : 0.08))
-                            .frame(width: 176, height: 176)
-                            .scaleEffect(reduceMotion ? 1 : (pulseAnimation ? 1.04 : 0.96))
-                            .animation(
-                                reduceMotion
-                                ? .default
-                                : .smooth(duration: 1.8).repeatForever(autoreverses: true),
-                                value: pulseAnimation
-                            )
-
-                        Image(systemName: "parkingsign.circle.fill")
-                            .symbolRenderingMode(.hierarchical)
-                            .font(.system(size: 92, weight: .semibold))
-                            .foregroundStyle(DesignSystem.primaryGradient)
-                    }
-                    .onAppear { pulseAnimation = true }
-
-                    VStack(spacing: 10) {
-                        Text("Ready to Park")
-                            .font(.largeTitle.bold())
-                            .foregroundStyle(.primary)
-
-                        Text("Start a timer, save your spot, and get back before time runs out.")
-                            .font(.body)
-                            .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-
-                    if !subscriptionManager.hasProAccess {
-                        Label("\(subscriptionManager.sessionsRemaining) free timers remaining this month", systemImage: "timer.circle.fill")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
-                            .background(DesignSystem.elevatedCardBackground, in: .capsule)
-                            .overlay(
-                                Capsule()
-                                    .strokeBorder(DesignSystem.cardStroke(), lineWidth: 1)
-                            )
-                            .accessibilityLabel("\(subscriptionManager.sessionsRemaining) free parking timers remaining this month")
-                    }
+            VStack(spacing: 22) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("PARKING, AT YOUR PACE")
+                        .font(.caption2.weight(.semibold)).tracking(2)
+                        .foregroundStyle(DesignSystem.warmAccent)
+                    Text("Time, on your side.")
+                        .font(.system(.largeTitle, design: .serif)).tracking(-0.8)
+                    Text("Choose your stay. Leave the clock to us.")
+                        .font(.subheadline).foregroundStyle(.secondary)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(28)
-                .appCard(fill: DesignSystem.elevatedCardBackground)
-
-                VStack(spacing: 16) {
-                    Button {
-                        let generator = UIImpactFeedbackGenerator(style: .medium)
-                        generator.impactOccurred()
-                        
-                        if subscriptionManager.canStartSession {
-                            showNewTimer = true
-                        } else {
-                            showSubscription = true
-                        }
-                    } label: {
-                        Label("Start Parking Timer", systemImage: "play.circle.fill")
-                            .font(.headline)
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 6)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                ParkingDialView(progress: 1, time: durationText, caption: "hours · minutes", maximumDiameter: 240)
+                durationPicker
+                Label("Return at \(Date.now.addingTimeInterval(selectedDuration).formatted(date: .omitted, time: .shortened))", systemImage: "clock")
+                    .font(.subheadline).foregroundStyle(.secondary)
+                Divider().overlay(DesignSystem.warmAccent.opacity(0.2))
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: "mappin.and.ellipse").foregroundStyle(DesignSystem.warmAccent)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("A place to come back to.").font(.subheadline.weight(.medium))
+                        Text("Your location is saved when you start.").font(.caption).foregroundStyle(.secondary)
                     }
-                    .tint(DesignSystem.brandBlue)
-                    .buttonSizing(.flexible)
-                    .buttonStyle(.borderedProminent)
-                    .accessibilityLabel(subscriptionManager.canStartSession ? "Start parking timer" : "Upgrade to start more parking timers")
-                    .accessibilityHint(subscriptionManager.canStartSession ? "Opens timer setup." : "Opens the subscription screen.")
-
-                    if !subscriptionManager.hasProAccess && subscriptionManager.sessionsRemaining == 0 {
-                        Button {
-                            showSubscription = true
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "crown.fill")
-                                    .foregroundStyle(DesignSystem.warmAccent)
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Upgrade to Pro")
-                                        .font(.headline)
-                                    Text("Get unlimited parking timers")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .font(.caption.bold())
-                                    .foregroundStyle(.secondary)
-                            }
-                            .padding()
-                            .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityHint("Opens subscription options.")
-                    }
+                    Spacer(minLength: 0)
                 }
             }
-            .padding(DesignSystem.screenPadding)
-            .appContentWidth()
+            .padding(24)
+            .appContentWidth(540)
         }
         .scrollBounceBehavior(.basedOnSize)
+        .safeAreaInset(edge: .bottom) {
+            Button {
+                if subscriptionService.canStartSession { showNewTimer = true }
+                else { showSubscription = true }
+            } label: {
+                HStack {
+                    Image(systemName: "parkingsign")
+                    Text("Start parking").font(.headline)
+                    Spacer()
+                    Image(systemName: "arrow.right")
+                }
+                .foregroundStyle(.white).padding(20)
+                .background(DesignSystem.ink, in: .rect(cornerRadius: 20))
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 24).padding(.vertical, 12)
+            .appContentWidth(540)
+            .background(DesignSystem.appBackground)
+            .accessibilityIdentifier("parking.start")
+            .accessibilityHint("Review your parking spot and start the timer.")
+        }
     }
-}
 
-#Preview(traits: .previewData) {
-    HomeView()
-        .environment(LocationService())
-        .environment(SubscriptionService())
-        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
+    @ViewBuilder private var durationPicker: some View {
+        if dynamicTypeSize.isAccessibilitySize { presets.pickerStyle(.menu) }
+        else { presets.pickerStyle(.segmented) }
+    }
+
+    private var presets: some View {
+        Picker("Parking duration", selection: $selectedDuration) {
+            Text("15 min").tag(TimeInterval(900))
+            Text("30 min").tag(TimeInterval(1800))
+            Text("1 hour").tag(TimeInterval(3600))
+            Text("2 hours").tag(TimeInterval(7200))
+        }
+    }
+
+    private var durationText: String {
+        let hours = Int(selectedDuration) / 3600
+        let minutes = Int(selectedDuration) % 3600 / 60
+        return "\(hours):\(minutes.formatted(.number.precision(.integerLength(2))))"
+    }
 }

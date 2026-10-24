@@ -65,41 +65,33 @@ struct HistoryView: View {
     }
 
     private var sessionsList: some View {
-        ScrollView {
-            LazyVStack(spacing: 16) {
-                // Group sessions by date
-                ForEach(groupedSessions, id: \.key) { group in
-                    Section {
-                        ForEach(group.value) { session in
-                            ImprovedSessionRow(session: session) {
-                                selectedSession = session
-                                showMap = true
-                            }
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Places you’ve been.")
+                        .font(.system(.title, design: .serif))
+                        .tracking(-1)
+                    Text("\(sessions.count) stays, thoughtfully remembered.")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 12)
+            }
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            ForEach(groupedSessions, id: \.key) { group in
+                Section(formatSectionHeader(group.key)) {
+                    ForEach(group.value) { session in
+                        ImprovedSessionRow(session: session) {
+                            selectedSession = session
                         }
-                    } header: {
-                        HStack {
-                            Text(formatSectionHeader(group.key))
-                                .font(.headline)
-                                .foregroundStyle(.primary)
-                            Spacer()
-                            Text("\(group.value.count) session\(group.value.count == 1 ? "" : "s")")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(.ultraThinMaterial, in: Capsule())
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 8)
                     }
                 }
             }
-            .padding(.vertical, 16)
-            .appContentWidth()
         }
+        .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
     }
-    
+
     private var groupedSessions: [(key: Date, value: [ParkingSession])] {
         let calendar = Calendar.current
         let grouped = Dictionary(grouping: sessions) { session in
@@ -147,7 +139,7 @@ struct ImprovedSessionRow: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(session.location.isEmpty ? "Unknown Location" : session.location)
                         .font(.headline)
-                        .lineLimit(1)
+                        .lineLimit(2)
                     
                     Text(session.startTime.formatted(.dateTime.hour().minute()))
                         .font(.subheadline)
@@ -179,10 +171,10 @@ struct ImprovedSessionRow: View {
                             Text("Map")
                         }
                         .font(.caption.bold())
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(DesignSystem.brandBlue)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(.blue.opacity(0.1), in: Capsule())
+                        .background(DesignSystem.softAccent, in: Capsule())
                     }
                 }
             }
@@ -200,9 +192,7 @@ struct ImprovedSessionRow: View {
                 .padding(.top, 4)
             }
         }
-        .padding(20)
-        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 20)
-        .padding(.horizontal, 20)
+        .padding(.vertical, 10)
         .contextMenu {
             Button(role: .destructive) {
                 withAnimation {
@@ -241,7 +231,7 @@ struct ImprovedSessionRow: View {
     }
     
     private var statusColor: Color {
-        session.isExpired ? .green : .blue
+        session.isExpired ? DesignSystem.brandTeal : DesignSystem.brandBlue
     }
     
     private func formatDuration(_ duration: TimeInterval) -> String {
@@ -258,9 +248,4 @@ struct ImprovedSessionRow: View {
     private func formatDate(_ date: Date) -> String {
         date.formatted(.dateTime.month(.abbreviated).day())
     }
-}
-
-#Preview {
-    HistoryView()
-        .environment(SubscriptionService())
 }

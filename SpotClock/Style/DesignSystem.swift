@@ -16,13 +16,17 @@ struct DesignSystem {
     static let screenPadding: CGFloat = 20
     static let cardCornerRadius: CGFloat = 24
 
-    static let brandBlue = Color(red: 0.08, green: 0.32, blue: 0.88)
-    static let brandTeal = Color(red: 0.04, green: 0.58, blue: 0.56)
-    static let brandIndigo = Color(red: 0.26, green: 0.24, blue: 0.72)
-    static let warmAccent = Color(red: 0.95, green: 0.58, blue: 0.18)
+    static let brandBlue = Color.accentColor
+    static let brandTeal = Color(red: 0.28, green: 0.48, blue: 0.43)
+    static let brandIndigo = Color(red: 0.12, green: 0.22, blue: 0.30)
+    static let warmAccent = Color("Brass")
+    static let ink = Color(red: 0.08, green: 0.14, blue: 0.21)
+    static let lavender = Color(red: 0.82, green: 0.75, blue: 0.61)
+    static let mint = Color(red: 0.79, green: 0.87, blue: 0.82)
+    static let softAccent = Color("SoftAccent")
 
     static let primaryGradient = LinearGradient(
-        colors: [brandBlue, brandTeal],
+        colors: [ink, brandIndigo],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
@@ -54,18 +58,10 @@ struct DesignSystem {
         ]
     )
     
-    static let cardBackground = Color(.secondarySystemGroupedBackground)
-    static let elevatedCardBackground = Color(.systemBackground)
+    static let cardBackground = Color("Surface")
+    static let elevatedCardBackground = Color("Surface")
 
-    static let appBackground = LinearGradient(
-        colors: [
-            Color(.systemGroupedBackground),
-            Color(.systemBackground),
-            brandTeal.opacity(0.08)
-        ],
-        startPoint: .top,
-        endPoint: .bottom
-    )
+    static let appBackground = Color("Canvas")
 
     static func cardStroke(_ opacity: Double = 0.08) -> Color {
         Color.primary.opacity(opacity)

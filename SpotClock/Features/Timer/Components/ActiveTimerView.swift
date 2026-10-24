@@ -100,138 +100,107 @@ struct ActiveTimerView: View {
 
     private var timerContent: some View {
         ScrollView {
-            VStack(spacing: 16) {
-                Spacer(minLength: 8)
-                
-                VStack(spacing: 12) {
-                    Text("Time Remaining")
-                        .font(.headline)
-                        .foregroundStyle(.secondary)
-                        .textCase(.uppercase)
-                        .tracking(1.2)
-                    
-                    Text(formatTimeRemaining(timerService.timeRemaining))
-                        .font(.system(size: countdownFontSize, weight: .bold, design: .rounded))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
-                        .foregroundStyle(timeColor)
-                        .monospacedDigit()
-                        .contentTransition(.numericText())
-                        .animation(.smooth, value: timerService.timeRemaining)
-                    
-                    // Status indicator
+            VStack(spacing: 18) {
+                VStack(alignment: .leading, spacing: 8) {
                     HStack {
-                        Circle()
-                            .fill(timeColor)
-                            .frame(width: 8, height: 8)
-                        Text(statusText)
-                            .font(.subheadline)
+                        Label("PARKED & PRESENT", systemImage: "car.fill")
+                            .font(.caption2.weight(.semibold)).tracking(1.5)
+                            .foregroundStyle(DesignSystem.warmAccent)
+                        Spacer()
+                        Text(statusText).font(.caption.weight(.medium))
                             .foregroundStyle(timeColor)
                     }
-                    .padding()
-                    .background(timeColor.opacity(0.1), in: Capsule())
+                    Text("Enjoy your time.")
+                        .font(.system(.largeTitle, design: .serif)).tracking(-0.8)
+                    Text(session.location.isEmpty ? "Your parking timer is running." : session.location)
+                        .font(.subheadline).foregroundStyle(.secondary)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(24)
-                .appCard(fill: DesignSystem.elevatedCardBackground)
-                
-                DualRingView(outerProgress: CGFloat(timerService.timeRemaining / max(1, session.duration)), innerProgress: LeaveNowAdvisor.innerRingProgress(leaveBy: leaveBy, sessionStart: session.startTime, sessionDuration: session.duration))
-                    .padding(.vertical, 12)
-                
-                
-                ViewThatFits(in: .horizontal) {
-                    HStack {
-                        returnToCarControls
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                ParkingDialView(
+                    progress: timerService.timeRemaining / max(1, session.duration),
+                    time: formatTimeRemaining(timerService.timeRemaining),
+                    caption: "time remaining", maximumDiameter: 220
+                )
+
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("RETURN BY").font(.caption2.weight(.semibold)).tracking(1.5)
+                        Text(session.endTime, format: .dateTime.hour().minute())
+                            .font(.system(.title2, design: .serif))
                     }
-                    VStack(spacing: 16) {
-                        returnToCarControls
-                    }
+                    Spacer()
+                    Image(systemName: "bell.badge.fill").font(.title3)
                 }
-                .padding(.horizontal, 4)
-            }
-            .padding(DesignSystem.screenPadding)
-            .appContentWidth()
-            
-            VStack(spacing: 14) {
-                let extensionLayout = dynamicTypeSize.isAccessibilitySize
-                    ? AnyLayout(VStackLayout(spacing: 12))
-                    : AnyLayout(HStackLayout(spacing: 12))
-                extensionLayout {
-                    extendButton(minutes: 15, icon: "15.circle.fill")
-                    extendButton(minutes: 30, icon: "30.circle.fill")
+                .foregroundStyle(.white).padding(16)
+                .background(DesignSystem.ink, in: .rect(cornerRadius: 20))
+
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Stay a little longer.").font(.subheadline.weight(.medium))
+                    let layout = dynamicTypeSize.isAccessibilitySize
+                        ? AnyLayout(VStackLayout(spacing: 12))
+                        : AnyLayout(HStackLayout(spacing: 12))
+                    layout {
+                        extendButton(minutes: 15, icon: "plus")
+                        extendButton(minutes: 30, icon: "plus")
+                    }
+                    Text("Extends your reminder. Pay the meter separately.")
+                        .font(.caption).foregroundStyle(.secondary)
                 }
 
-                parkingActions
+                if !session.notes.isEmpty {
+                    Divider()
+                    HStack(alignment: .top, spacing: 12) {
+                        Image(systemName: "note.text").foregroundStyle(DesignSystem.warmAccent)
+                        Text(session.notes).font(.subheadline)
+                        Spacer(minLength: 0)
+                    }
+                }
+                HStack {
+                    Button("Copy details", systemImage: "document.on.document") { copyParkingDetails() }
+                        .sensoryFeedback(.success, trigger: copyHapticTick)
+                    Spacer()
+                    Button("End parking", systemImage: "stop.fill", role: .destructive) {
+                        endHapticTick += 1
+                        timerService.stopParking()
+                    }
+                    .accessibilityIdentifier("parking.end")
+                    .sensoryFeedback(.success, trigger: endHapticTick)
+                }
+                .font(.subheadline).buttonStyle(.borderless)
+                .padding(.vertical, 10)
+                if let copiedDetailsMessage {
+                    Text(copiedDetailsMessage).font(.footnote).foregroundStyle(.secondary)
+                }
             }
-            .padding(DesignSystem.screenPadding)
-            .appContentWidth()
+            .padding(20)
+            .appContentWidth(540)
         }
         .scrollBounceBehavior(.basedOnSize)
-    }
-
-    @ViewBuilder
-    private var returnToCarControls: some View {
-        LeaveNowTile(
-            leaveBy: leaveBy,
-            isGoNow: (leaveBy ?? .distantPast) <= Date()
-        ) {
+        .safeAreaInset(edge: .bottom) {
             if hasCarLocation {
-                showDirections = true
+                Button { showDirections = true } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "figure.walk").font(.title2)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Return to your car").font(.headline)
+                            if let leaveBy {
+                                Text("Leave by \(leaveBy.formatted(date: .omitted, time: .shortened))")
+                                    .font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
+                        Spacer()
+                        Image(systemName: "arrow.up.right")
+                    }
+                    .foregroundStyle(.primary).padding(18)
+                    .background(DesignSystem.cardBackground, in: .rect(cornerRadius: 20))
+                    .overlay { RoundedRectangle(cornerRadius: 20).strokeBorder(DesignSystem.warmAccent.opacity(0.25)) }
+                }
+                .buttonStyle(.plain).padding(.horizontal, 24).padding(.vertical, 12)
+                .appContentWidth(540).background(DesignSystem.appBackground)
+                .accessibilityHint("Opens walking directions to your saved parking location.")
             }
         }
-        .sensoryFeedback(.success, trigger: (leaveBy ?? .distantPast) <= Date())
-
-        if hasCarLocation, distance > 0 {
-            CompassToCar(bearingRadians: bearing, distanceMeters: distance)
-        }
-    }
-
-    @ViewBuilder
-    private var parkingActions: some View {
-        Button(role: .destructive) {
-            endHapticTick += 1
-            timerService.stopParking()
-    } label: {
-        HStack {
-            Image(systemName: "stop.circle.fill")
-                .font(.title3)
-            Text("End Parking")
-                .font(.headline)
-        }
-        .foregroundStyle(.white)
-        .padding(.vertical)
-        .shadow(color: .blue.opacity(0.4), radius: 12, y: 6)
-    }
-    .tint(.red)
-    .buttonSizing(.flexible)
-    .buttonStyle(.borderedProminent)
-    .sensoryFeedback(.success, trigger: endHapticTick)
-    .accessibilityHint("Ends the current parking timer.")
-
-    Button {
-        copyParkingDetails()
-    } label: {
-        HStack {
-            Image(systemName: "doc.on.doc")
-                .font(.title3)
-            Text("Copy Parking Details")
-                .font(.headline)
-        }
-        .foregroundStyle(.blue)
-        .padding(.vertical)
-    }
-    .buttonSizing(.flexible)
-    .buttonStyle(.bordered)
-    .sensoryFeedback(.success, trigger: copyHapticTick)
-    .accessibilityHint("Copies your parking location, expiry time, and notes.")
-
-    if let copiedDetailsMessage {
-        Text(copiedDetailsMessage)
-            .font(.footnote)
-            .foregroundStyle(.secondary)
-            .transition(.opacity)
-            .accessibilityLabel(copiedDetailsMessage)
-    }
     }
 
     private var hasCarLocation: Bool {
@@ -343,15 +312,15 @@ struct ActiveTimerView: View {
     }
     
     private var timeColor: Color {
-        if timerService.timeRemaining > 600 { return .green }
+        if timerService.timeRemaining > 600 { return DesignSystem.brandTeal }
         else if timerService.timeRemaining > 300 { return .orange }
         else { return .red }
     }
     
     private var statusText: String {
-        if timerService.timeRemaining > 600 { return "All Good" }
-        else if timerService.timeRemaining > 300 { return "Heads Up" }
-        else { return "Time Running Out!" }
+        if timerService.timeRemaining > 600 { return "Timer active" }
+        else if timerService.timeRemaining > 300 { return "Return soon" }
+        else { return "Time is nearly up" }
     }
 
     private func copyParkingDetails() {
@@ -401,19 +370,14 @@ struct ActiveTimerView: View {
             extendHapticTick += 1
             timerService.extendParking(by: TimeInterval(minutes * 60))
         } label: {
-            VStack {
-                Image(systemName: icon)
-                    .font(.title2)
-                Text("+\(minutes) min")
-                    .font(.subheadline.bold())
-            }
-            .foregroundStyle(.white)
-            .padding(1)
-            .shadow(color: .blue.opacity(0.3), radius: 8, y: 4)
+            Label("\(minutes) min", systemImage: icon)
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .foregroundStyle(DesignSystem.brandBlue)
+                .background(DesignSystem.softAccent, in: .rect(cornerRadius: 16))
         }
-        .tint(.blue)
-        .buttonSizing(.flexible)
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.plain)
         .sensoryFeedback(.impact(weight: .light), trigger: extendHapticTick)
         .accessibilityLabel("Extend parking by \(minutes) minutes")
     }

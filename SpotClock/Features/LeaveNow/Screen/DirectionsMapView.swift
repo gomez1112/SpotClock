@@ -46,10 +46,10 @@ struct DirectionsMapView: View {
                 Map(position: $position) {
                     UserAnnotation()
                     Marker(carAddress, systemImage: "car.fill", coordinate: carLocation)
-                        .tint(.red)
+                        .tint(DesignSystem.brandIndigo)
                     if let route {
                         MapPolyline(route.polyline)
-                            .stroke(.blue, lineWidth: 5)
+                            .stroke(DesignSystem.brandIndigo, lineWidth: 5)
                     }
                 }
                 .mapStyle(.standard(elevation: .realistic))
@@ -61,7 +61,7 @@ struct DirectionsMapView: View {
             }
             .arrangementViewStyle(.overlay)
             .background { AppBackground() }
-            .navigationTitle("Directions to Car")
+            .navigationTitle("Back to your car")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -110,7 +110,7 @@ struct DirectionsMapView: View {
                 VStack(spacing: 4) {
                     Image(systemName: "figure.walk")
                         .font(.title2)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(DesignSystem.brandBlue)
                     Text(formatDistance(route.distance))
                         .font(.headline)
                     Text("Distance")
@@ -125,7 +125,7 @@ struct DirectionsMapView: View {
                 VStack(spacing: 4) {
                     Image(systemName: "clock.fill")
                         .font(.title2)
-                        .foregroundStyle(.orange)
+                        .foregroundStyle(DesignSystem.warmAccent)
                     Text(formatDuration(route.expectedTravelTime))
                         .font(.headline)
                     Text("Walking Time")
@@ -147,7 +147,7 @@ struct DirectionsMapView: View {
                 .padding(.vertical, 12)
                 .background(
                     LinearGradient(
-                        colors: [.blue, .blue.opacity(0.8)],
+                        colors: [DesignSystem.ink, DesignSystem.brandIndigo],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     ),

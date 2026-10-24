@@ -24,24 +24,24 @@ struct OnboardingView: View {
             TabView(selection: $currentPage) {
                 OnboardingPageView(
                     icon: "car.fill",
-                    title: "Never Get a\nParking Ticket",
-                    description: "Set timers for your parking meter and get notified before it expires.",
+                    title: "Time, on your side.",
+                    description: "Set your parking timer and go enjoy the good part of your day.",
                     accentColor: .blue
                 )
                 .tag(0)
 
                 OnboardingPageView(
                     icon: "bell.badge.fill",
-                    title: "Smart Alerts",
-                    description: "Receive notifications 10 and 5 minutes before your meter expires.",
+                    title: "A little heads-up.",
+                    description: "Timely parking alerts help you return before your meter expires.",
                     accentColor: .orange
                 )
                 .tag(1)
 
                 OnboardingPageView(
                     icon: "map.fill",
-                    title: "Never Forget\nWhere You Parked",
-                    description: "Automatically saves your parking location with every timer.",
+                    title: "Your way back,\nsorted.",
+                    description: "Your spot is saved with every timer. Walking directions take you right back.",
                     accentColor: .purple
                 )
                 .tag(2)
@@ -120,10 +120,10 @@ struct OnboardingView: View {
 
     private var backgroundColors: [Color] {
         switch currentPage {
-            case 0: return [DesignSystem.brandBlue, DesignSystem.brandTeal]
-            case 1: return [DesignSystem.warmAccent, DesignSystem.brandBlue]
-            case 2: return [DesignSystem.brandIndigo, DesignSystem.brandTeal]
-            default: return [DesignSystem.brandTeal, DesignSystem.brandBlue]
+            case 0: return [DesignSystem.ink, DesignSystem.brandIndigo]
+            case 1: return [DesignSystem.ink, DesignSystem.brandIndigo]
+            case 2: return [DesignSystem.ink, DesignSystem.brandIndigo]
+            default: return [DesignSystem.ink, DesignSystem.brandIndigo]
         }
     }
     
@@ -136,7 +136,7 @@ struct OnboardingView: View {
                     .accessibilityHidden(true)
 
                 Text("Enable Permissions")
-                    .font(.largeTitle.bold())
+                    .font(.system(.largeTitle, design: .serif))
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
 

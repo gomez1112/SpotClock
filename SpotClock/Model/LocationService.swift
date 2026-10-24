@@ -22,6 +22,7 @@ final class LocationService: NSObject {
     var authorizationStatus: CLAuthorizationStatus = .notDetermined
     var locationName: String = "Current Location"
     var errorMessage: String?
+    var isCaptureSession = false
     
     // ✅ NEW: Track if we're actively updating location
     private var isUpdatingLocation = false
@@ -37,6 +38,7 @@ final class LocationService: NSObject {
     }
     
     func requestPermission() {
+        guard !isCaptureSession else { return }
         authorizationStatus = manager.authorizationStatus
         manager.requestWhenInUseAuthorization()
         
@@ -48,6 +50,7 @@ final class LocationService: NSObject {
     
     // ✅ NEW: Start continuous location updates (for maps)
     func startUpdatingLocation() {
+        guard !isCaptureSession else { return }
         guard !isUpdatingLocation else { return }
         isUpdatingLocation = true
         manager.startUpdatingLocation()
@@ -61,6 +64,7 @@ final class LocationService: NSObject {
     }
     
     func ensureLocationName() async -> String {
+        if isCaptureSession { return locationName }
         guard await locationServicesAreEnabled() else {
             errorMessage = "Location Services are turned off."
             locationName = "Location Unavailable"
@@ -176,6 +180,7 @@ extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let last = locations.last else { return }
         Task { @MainActor in
+            guard !self.isCaptureSession else { return }
             // Update the current location for continuous tracking
             self.location = last
             
@@ -187,6 +192,7 @@ extension LocationService: CLLocationManagerDelegate {
     
     nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         Task { @MainActor in
+            guard !self.isCaptureSession else { return }
             // ✅ FIXED: If the manager fails, throw the error to the awaiting function.
             self.locationContinuation?.resume(throwing: error)
             self.locationContinuation = nil
@@ -197,6 +203,7 @@ extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let status = manager.authorizationStatus
         Task { @MainActor in
+            guard !self.isCaptureSession else { return }
             self.authorizationStatus = status
             if status == .authorizedWhenInUse || status == .authorizedAlways {
                 if self.locationContinuation == nil && !self.isUpdatingLocation {

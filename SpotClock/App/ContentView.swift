@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(TimerService.self) var timerManager: TimerService
-    @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+    @State private var showOnboarding: Bool
     private enum Tabs: Hashable { case insights, timer, history, settings }
     @State private var selectedTab: Tabs = .timer
     
+    init(skipsOnboarding: Bool = false) {
+        showOnboarding = !skipsOnboarding && !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+    }
+
     var body: some View {
         Group {
             if showOnboarding {
@@ -43,11 +47,4 @@ struct ContentView: View {
         .tabBarMinimizeBehavior(.onScrollDown)
         .tint(DesignSystem.brandBlue)
     }
-}
-
-#Preview {
-    ContentView()
-        .environment(TimerService(container: ModelContainerFactory.createPreviewContainer))
-        .environment(SubscriptionService())
-        .environment(LocationService())
 }

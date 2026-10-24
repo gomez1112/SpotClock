@@ -42,7 +42,7 @@ struct InsightsView: View {
                 AppBackground()
 
                 ScrollView {
-                    VStack(spacing: 28) {
+                    VStack(spacing: 22) {
                         timeframePicker
                             .padding(.top, 8)
                             .onChange(of: selectedTimeframe) { _, newValue in
@@ -51,17 +51,15 @@ struct InsightsView: View {
                         
                         if filteredSessions.isEmpty {
                             emptyStateView
-                                .padding(.top, 60)
+                                .padding(.top, 20)
                                 .id("empty-\(sessions.count)")
                         } else {
                             Group {
                                 heroSection
                                 
-                                quickStatsSection
-                                
-                                insightsSection
-                                
                                 analyticsSection
+
+                                insightsSection
                                 
                                 heatmapSection
                                 
@@ -173,13 +171,17 @@ struct InsightsView: View {
         ].filter { $0.count > 0 }
     }
     // MARK: - Timeframe Picker
-    private var timeframePicker: some View {
+    @ViewBuilder private var timeframePicker: some View {
+        if dynamicTypeSize.isAccessibilitySize { timeframeOptions.pickerStyle(.menu) }
+        else { timeframeOptions.pickerStyle(.segmented) }
+    }
+
+    private var timeframeOptions: some View {
         Picker("Timeframe", selection: $selectedTimeframe) {
             ForEach(Timeframe.allCases, id: \.self) { timeframe in
                 Text(timeframe.rawValue).tag(timeframe)
             }
         }
-        .pickerStyle(.segmented)
     }
     
     // MARK: - Empty State
@@ -201,79 +203,32 @@ struct InsightsView: View {
     
     // MARK: - Hero Section
     private var heroSection: some View {
-        ZStack {
-            DesignSystem.primaryGradient
-            
-            VStack(spacing: 24) {
-                // Main celebration
-                VStack(spacing: 12) {
-                    HStack(spacing: 12) {
-                        Image(systemName: "trophy.fill")
-                            .font(.title)
-                            .foregroundStyle(
-                                LinearGradient(
-                                    colors: [.yellow, .orange],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                            )
-                            .symbolEffect(.bounce, value: ticketsAvoided)
-                        
-                        Text("\(ticketsAvoided)")
-                            .font(.system(size: 64, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                            .contentTransition(.numericText())
-                            .shadow(color: .black.opacity(0.2), radius: 10, y: 5)
-                    }
-                    
-                    Text("Tickets Avoided")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(.white.opacity(0.9))
-                        .textCase(.uppercase)
-                        .tracking(2)
-                }
-                
-                // Money saved highlight
-                HStack(spacing: 20) {
-                    VStack(spacing: 6) {
-                        Text("$\(moneySaved)")
-                            .font(.system(size: 36, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                        Text("Money Saved")
-                            .font(.caption)
-                            .foregroundStyle(.white.opacity(0.8))
-                            .textCase(.uppercase)
-                            .tracking(1.5)
-                    }
-                    
-                    Divider()
-                        .frame(height: 60)
-                        .overlay(.white.opacity(0.3))
-                    
-                    VStack(spacing: 6) {
-                        HStack(spacing: 4) {
-                            Text("\(streakDays)")
-                                .font(.system(size: 36, weight: .bold, design: .rounded))
-                                .foregroundStyle(.white)
-                            Image(systemName: "flame.fill")
-                                .font(.title2)
-                                .foregroundStyle(.orange)
-                                .symbolEffect(.pulse, value: streakDays)
-                        }
-                        Text("Day Streak")
-                            .font(.caption)
-                            .foregroundStyle(.white.opacity(0.8))
-                            .textCase(.uppercase)
-                            .tracking(1.5)
-                    }
-                }
+        VStack(alignment: .leading, spacing: 22) {
+            Text("A rhythm of your own.")
+                .font(.system(.title, design: .serif))
+            let layout = dynamicTypeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 18))
+                : AnyLayout(HStackLayout(alignment: .top, spacing: 20))
+            layout {
+                metric(value: filteredSessions.count.formatted(), label: "stays")
+                metric(value: totalHoursParked.formatted(.number.precision(.fractionLength(1))), label: "hours parked")
+                metric(value: formatDuration(averageDuration), label: "average stay")
             }
-            .padding(32)
+            Divider()
         }
-        .clipShape(.rect(cornerRadius: 28))
-        .shadow(color: DesignSystem.brandBlue.opacity(0.22), radius: 20, y: 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 10)
     }
-    
+
+    private func metric(value: String, label: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(value).font(.system(.title2, design: .serif))
+            Text(label).font(.caption).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .combine)
+    }
+
     // MARK: - Quick Stats
     private var quickStatsSection: some View {
         let layout = horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize
@@ -284,21 +239,21 @@ struct InsightsView: View {
                 icon: "clock.fill",
                 value: "\(Int(totalHoursParked))h",
                 label: "Total Hours",
-                gradient: [.blue, .cyan]
+                gradient: [DesignSystem.brandIndigo, DesignSystem.brandTeal]
             )
             
             StatCard(
                 icon: "chart.bar.fill",
                 value: formatDuration(averageDuration),
                 label: "Avg Duration",
-                gradient: [.purple, .pink]
+                gradient: [DesignSystem.warmAccent, DesignSystem.brandIndigo]
             )
             
             StatCard(
                 icon: "mappin.circle.fill",
                 value: "\(filteredSessions.count)",
                 label: "Sessions",
-                gradient: [.orange, .red]
+                gradient: [DesignSystem.brandTeal, DesignSystem.brandIndigo]
             )
         }
     }
@@ -347,12 +302,12 @@ struct InsightsView: View {
                         .foregroundStyle(
                             isSelected
                             ? LinearGradient(
-                                colors: [.indigo, .blue],
+                                colors: [DesignSystem.brandIndigo, DesignSystem.brandIndigo],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
                             : LinearGradient(
-                                colors: [.blue.opacity(hasSelection ? 0.3 : 0.7), .blue.opacity(hasSelection ? 0.15 : 0.4)],
+                                colors: [DesignSystem.brandIndigo.opacity(hasSelection ? 0.3 : 0.8), DesignSystem.brandIndigo.opacity(hasSelection ? 0.15 : 0.6)],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
@@ -366,7 +321,7 @@ struct InsightsView: View {
                                     VStack(spacing: 4) {
                                         Text(formatWeeklySelectionValue(data.hours))
                                             .font(.subheadline.weight(.bold))
-                                            .foregroundStyle(.indigo)
+                                            .foregroundStyle(DesignSystem.brandBlue)
                                         Text(data.date.formatted(.dateTime.weekday(.abbreviated)))
                                             .font(.caption2)
                                             .foregroundStyle(.secondary)
@@ -380,7 +335,7 @@ struct InsightsView: View {
                                     }
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                            .strokeBorder(.indigo.opacity(0.2), lineWidth: 1)
+                                            .strokeBorder(DesignSystem.warmAccent.opacity(0.2), lineWidth: 1)
                                     )
                                 }
                         }
@@ -412,7 +367,7 @@ struct InsightsView: View {
                     if let selectedWeeklyEntry {
                         HStack(spacing: 6) {
                             Circle()
-                                .fill(.indigo)
+                                .fill(DesignSystem.brandIndigo)
                                 .frame(width: 8, height: 8)
                             Text(selectedWeeklyEntry.date.formatted(.dateTime.weekday(.wide)))
                                 .font(.subheadline.weight(.medium))
@@ -420,7 +375,7 @@ struct InsightsView: View {
                                 .foregroundStyle(.tertiary)
                             Text(formatWeeklySelectionValue(selectedWeeklyEntry.hours))
                                 .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(.indigo)
+                                .foregroundStyle(DesignSystem.brandBlue)
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
@@ -721,9 +676,9 @@ struct InsightsView: View {
         
         achievements.append(Achievement(
             icon: "star.fill",
-            title: "Perfect Parker",
-            description: "30 days ticket-free",
-            isUnlocked: streakDays >= 30,
+            title: "Steady Routine",
+            description: "Park on 30 different days",
+            isUnlocked: Set(sessions.map { Calendar.current.startOfDay(for: $0.startTime) }).count >= 30,
             date: Date(),
             color: .yellow
         ))
@@ -787,9 +742,9 @@ struct InsightsView: View {
         
         achievements.append(Achievement(
             icon: "dollarsign.circle.fill",
-            title: "Money Saver",
-            description: "Save $1000",
-            isUnlocked: sessions.count * 75 >= 1000,
+            title: "Finding Your Rhythm",
+            description: "Complete 15 parking sessions",
+            isUnlocked: sessions.count >= 15,
             date: Date(),
             color: .green
         ))
@@ -864,22 +819,10 @@ struct InsightsView: View {
             color: .purple
         ))
         
-        if selectedTimeframe == .month {
-            let monthlySavings = ticketsAvoided * 75
-            if monthlySavings >= 200 {
-                insights.append(Insight(
-                    icon: "banknote.fill",
-                    title: "Big Saver!",
-                    description: "You've saved $\(monthlySavings) this month",
-                    color: .green
-                ))
-            }
-        }
-        
         if streakDays >= 7 {
             insights.append(Insight(
                 icon: "flame.fill",
-                title: "On Fire! 🔥",
+                title: "A steady rhythm",
                 description: "\(streakDays)-day streak! Keep it going!",
                 color: .orange
             ))

@@ -11,6 +11,6 @@ struct AppCardModifier: ViewModifier {
         RoundedRectangle(cornerRadius: cornerRadius)
           .strokeBorder(DesignSystem.cardStroke(), lineWidth: 1)
       )
-      .shadow(color: .black.opacity(0.06), radius: 18, y: 8)
+      .shadow(color: .black.opacity(0.025), radius: 12, y: 4)
   }
 }

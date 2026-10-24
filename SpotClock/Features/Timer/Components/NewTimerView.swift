@@ -18,7 +18,7 @@ struct NewTimerView: View {
     @Query(sort: \ParkingSession.startTime, order: .reverse) private var sessions: [ParkingSession]
     
     @State private var startTapped = false
-    @State private var selectedDuration: TimeInterval = 3600
+    @State private var selectedDuration: TimeInterval
     @State private var customHours = 1
     @State private var customMinutes = 0
     @State private var notes = ""
@@ -29,184 +29,112 @@ struct NewTimerView: View {
     @State private var errorMessage = ""
     @State private var isStartingTimer = false
     
+    init(initialDuration: TimeInterval = 3600) {
+        selectedDuration = initialDuration
+    }
+
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppBackground()
-                
-                ScrollView {
-                    VStack(spacing: 24) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Label("Parking Location", systemImage: "location.fill")
-                                .font(.headline)
-                            
-                            HStack {
-                                Image(systemName: "mappin.circle.fill")
-                                    .foregroundStyle(.blue)
-                                    .font(.title2)
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(locationManager.locationName)
-                                        .font(.subheadline.bold())
-                                    
-                                    if let location = locationManager.location {
-                                        Text(coordinateText(for: location.coordinate))
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                }
-                                
-                                Spacer()
-                            }
-                        }
-                        .padding()
-                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
-
-                        if !smartSuggestions.isEmpty {
-                            VStack(alignment: .leading, spacing: 16) {
-                                Label("Smart Suggestions", systemImage: "sparkles")
-                                    .font(.headline)
-
-                                Text("Based on your recent parking history around this time.")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-
-                                VStack(spacing: 10) {
-                                    ForEach(smartSuggestions) { suggestion in
-                                        Button {
-                                            useCustomDuration = false
-                                            selectedDuration = suggestion.duration
-                                        } label: {
-                                            HStack(spacing: 12) {
-                                                Image(systemName: selectedDuration == suggestion.duration && !useCustomDuration ? "checkmark.circle.fill" : "clock.arrow.2.circlepath")
-                                                    .foregroundStyle(selectedDuration == suggestion.duration && !useCustomDuration ? .blue : .secondary)
-
-                                                VStack(alignment: .leading, spacing: 4) {
-                                                    Text(suggestion.title)
-                                                        .font(.subheadline.bold())
-                                                        .foregroundStyle(.primary)
-                                                    Text(suggestion.detail)
-                                                        .font(.caption)
-                                                        .foregroundStyle(.secondary)
-                                                }
-
-                                                Spacer()
-                                            }
-                                            .padding(.horizontal, 14)
-                                            .padding(.vertical, 12)
-                                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                }
-                            }
-                            .padding()
-                            .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 16) {
-                            Label("Duration", systemImage: "timer")
-                                .font(.headline)
-                            
-                            LazyVGrid(columns: durationColumns, spacing: 12) {
-                                ForEach(DesignSystem.presetDurations, id: \.title) { preset in
-                                    DurationButton(
-                                        title: preset.title,
-                                        icon: preset.icon,
-                                        isSelected: !useCustomDuration && selectedDuration == preset.duration
-                                    ) {
-                                        useCustomDuration = false
-                                        selectedDuration = preset.duration
-                                    }
-                                }
-                                
-                                DurationButton(
-                                    title: "Custom",
-                                    icon: "slider.horizontal.3",
-                                    isSelected: useCustomDuration
-                                ) {
-                                    useCustomDuration = true
-                                }
-                            }
-                            
-                            if useCustomDuration {
-                                HStack(spacing: 20) {
-                                    VStack {
-                                        Text("Hours")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                        Picker("Hours", selection: $customHours) {
-                                            ForEach(0..<13) { hour in
-                                                Text("\(hour)").tag(hour)
-                                            }
-                                        }
-                                        .pickerStyle(.wheel)
-                                        .frame(height: 100)
-                                    }
-                                    
-                                    VStack {
-                                        Text("Minutes")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                        Picker("Minutes", selection: $customMinutes) {
-                                            ForEach(Array(stride(from: 0, to: 60, by: 5)), id: \.self) { minute in
-                                                Text("\(minute)").tag(minute)
-                                            }
-                                        }
-                                        .pickerStyle(.wheel)
-                                        .frame(height: 100)
-                                    }
-                                }
-                            }
-                        }
-                        .padding()
-                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
-                        
-                        VStack(alignment: .leading, spacing: 12) {
-                            Label("Notes (Optional)", systemImage: "note.text")
-                                .font(.headline)
-                            
-                            TextField("e.g., Zone 4B, near coffee shop", text: $notes)
-                                .textFieldStyle(.roundedBorder)
-                        }
-                        .padding()
-                        .appCard(fill: DesignSystem.elevatedCardBackground, cornerRadius: 18)
+            Form {
+                Section {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("One last detail.")
+                            .font(.system(.title, design: .serif))
+                        Text("A duration, a place, and peace of mind.")
+                            .font(.subheadline).foregroundStyle(.secondary)
                     }
-                    .padding(DesignSystem.screenPadding)
-                    .appContentWidth()
+                    .padding(.vertical, 8)
+                }
+                .listRowBackground(Color.clear)
+
+                Section("Your parking spot") {
+                    Label {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(locationManager.locationName).font(.headline)
+                            Text("Saved automatically when you start")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                    } icon: {
+                        Image(systemName: "mappin.and.ellipse")
+                            .foregroundStyle(DesignSystem.brandBlue)
+                    }
+                }
+
+                Section("How long are you staying?") {
+                    LazyVGrid(columns: durationColumns, spacing: 10) {
+                        ForEach(DesignSystem.presetDurations, id: \.title) { preset in
+                            DurationButton(title: preset.title, icon: preset.icon, isSelected: !useCustomDuration && selectedDuration == preset.duration) {
+                                useCustomDuration = false
+                                selectedDuration = preset.duration
+                            }
+                        }
+                        DurationButton(title: "Custom", icon: "clock", isSelected: useCustomDuration) {
+                            useCustomDuration = true
+                        }
+                    }
+                    .padding(.vertical, 8)
+                    if useCustomDuration {
+                        Picker("Hours", selection: $customHours) {
+                            ForEach(0..<13) { Text("\($0) hours").tag($0) }
+                        }
+                        Picker("Minutes", selection: $customMinutes) {
+                            ForEach(0..<12) { Text("\($0 * 5) minutes").tag($0 * 5) }
+                        }
+                    }
+                }
+
+                if !smartSuggestions.isEmpty {
+                    Section("Your usual stay") {
+                        ForEach(smartSuggestions) { suggestion in
+                            Button {
+                                useCustomDuration = false
+                                selectedDuration = suggestion.duration
+                            } label: {
+                                LabeledContent {
+                                    Image(systemName: "sparkles")
+                                } label: {
+                                    Text(suggestion.title).font(.subheadline.bold())
+                                    Text(suggestion.detail).font(.caption).foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Section {
+                    TextField("Level 2, near the elevator…", text: $notes, axis: .vertical)
+                        .lineLimit(2...4)
+                } header: {
+                    Text("A note for later")
+                } footer: {
+                    Label("We’ll keep an eye on the clock.", systemImage: "bell.badge.fill")
                 }
             }
-            .navigationTitle("New Timer")
+            .scrollContentBackground(.hidden)
+            .background { AppBackground() }
+            .navigationTitle("New parking")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", systemImage: "xmark") {
-                        dismiss()
-                    }
+                    Button("Cancel", systemImage: "xmark") { dismiss() }
                 }
-                
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Start", systemImage: "play.fill") {
+                    Button("Start timer", systemImage: "play.fill") {
                         startTapped.toggle()
                         startTimer()
                     }
+                    .accessibilityIdentifier("parking.confirm")
                     .disabled(isStartingTimer)
                     .sensoryFeedback(.impact(weight: .medium), trigger: startTapped)
-                    .fontWeight(.semibold)
                 }
             }
-            .sheet(isPresented: $showSubscription) {
-                SubscriptionView()
-            }
+            .sheet(isPresented: $showSubscription) { SubscriptionView() }
             .alert("Unable to Start Timer", isPresented: $showErrorAlert) {
                 Button("OK", role: .cancel) {}
-            } message: {
-                Text(errorMessage)
-            }
-            .task {
-                _ = await locationManager.ensureLocationName()
-            }
+            } message: { Text(errorMessage) }
+            .task { _ = await locationManager.ensureLocationName() }
         }
+        .tint(DesignSystem.brandBlue)
     }
 
     private var smartSuggestions: [ParkingDurationSuggestion] {
@@ -268,8 +196,4 @@ struct NewTimerView: View {
 
         }
     }
-}
-
-#Preview(traits: .previewData) {
-    NewTimerView()
 }

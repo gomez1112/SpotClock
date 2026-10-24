@@ -22,7 +22,7 @@ struct DurationButton: View {
                     .font(.subheadline.bold())
             }
             .frame(maxWidth: .infinity)
-            .padding()
+            .padding(.vertical, 18)
             .background(isSelected ? DesignSystem.primaryGradient : LinearGradient(colors: [DesignSystem.cardBackground], startPoint: .leading, endPoint: .trailing))
             .foregroundStyle(isSelected ? .white : .primary)
             .overlay(
@@ -32,9 +32,6 @@ struct DurationButton: View {
             .clipShape(.rect(cornerRadius: 14))
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
-}
-
-#Preview {
-    DurationButton(title: "No title", icon: "house", isSelected: true, action: {})
 }

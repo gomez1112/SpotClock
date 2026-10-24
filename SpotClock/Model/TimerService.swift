@@ -32,6 +32,8 @@ final class TimerService {
     var timeRemaining: TimeInterval = 0
     var isRunning = false
     var userMessage: String?
+    // Used only by the isolated, in-memory marketing capture studio.
+    var isCaptureSession = false
     
     // Private properties
     private var leaveAlarmUpdateTask: Task<Void, Never>?
@@ -41,10 +43,11 @@ final class TimerService {
     private var leaveNowAlarmID: UUID?
     var leaveNowDate: Date?
     
-    init(container: ModelContainer) {
+    init(container: ModelContainer, restoresSession: Bool = true) {
         self.container = container
         self.modelContext = ModelContext(container)
         
+        guard restoresSession else { return }
         Task {
             // ✅ FIXED: Restore state BEFORE cleanup
             await restoreActiveSession()
@@ -59,6 +62,20 @@ final class TimerService {
         longitude: Double,
         notes: String = ""
     ) async {
+        if isCaptureSession {
+            let capture = ParkingSession(endTime: Date().addingTimeInterval(duration), duration: duration,
+                location: location, latitude: latitude, longitude: longitude, notes: notes)
+            modelContext.insert(capture)
+            do {
+                try modelContext.save()
+                activeSession = capture
+                timeRemaining = duration
+                isRunning = true
+            } catch {
+                userMessage = "Could not save the sample parking session."
+            }
+            return
+        }
         // ✅ FIXED: Cancel any existing leave-now alarm before starting a new session
         if let existingLeaveAlarm = leaveNowAlarmID {
             try? alarmManager.cancel(id: existingLeaveAlarm)
@@ -131,7 +148,7 @@ final class TimerService {
             }
         }
         // ✅ FIXED: Also remove the session ID
-        UserDefaults.standard.removeObject(forKey: "activeSessionID")
+        if !isCaptureSession { UserDefaults.standard.removeObject(forKey: "activeSessionID") }
         
         // ✅ FIXED: Always cancel leave-now alarm when stopping
         if let leaveID = leaveNowAlarmID {
@@ -158,6 +175,11 @@ final class TimerService {
             logger.error("Failed to save extended session: \(error.localizedDescription)")
         }
         
+        if isCaptureSession {
+            timeRemaining = session.timeRemaining
+            return
+        }
+
         // Stop current timer
         tickTimer?.invalidate()
         tickTimer = nil
@@ -189,6 +211,7 @@ final class TimerService {
     }
     
     func updateLeaveNowAlarm(leaveBy: Date?) {
+        guard !isCaptureSession else { return }
         // Cancel any pending update task
         leaveAlarmUpdateTask?.cancel()
         

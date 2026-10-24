@@ -18,11 +18,11 @@ struct OnboardingPageView: View {
             VStack(spacing: 24) {
                 Image(systemName: icon)
                     .font(.largeTitle.scaled(by: 2.5))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(DesignSystem.lavender)
                     .accessibilityHidden(true)
 
                 Text(title)
-                    .font(.largeTitle.bold())
+                    .font(.system(.largeTitle, design: .serif))
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
 
