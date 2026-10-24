@@ -65,14 +65,16 @@ private final class MarketingCaptureSession {
                 wasExtended: index.isMultiple(of: 6)
             ))
         }
+        let remaining: TimeInterval = 44 * 60 + 7
+        let expiry = now.addingTimeInterval(remaining)
         let active = ParkingSession(
-            startTime: now.addingTimeInterval(-3600),
-            endTime: now.addingTimeInterval(44 * 60 + 7), duration: 7200,
+            startTime: expiry.addingTimeInterval(-7200),
+            endTime: expiry, duration: 7200,
             location: "Hayes Valley", latitude: 37.7769, longitude: -122.4241,
             notes: "Zone 4B · near the coffee shop"
         )
         timer.activeSession = active
-        timer.timeRemaining = 44 * 60 + 7
+        timer.timeRemaining = remaining
         timer.isRunning = true
     }
 }

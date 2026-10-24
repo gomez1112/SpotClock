@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 27.1, *)
 struct HomeView: View {
     @Environment(TimerService.self) private var timerService
     @Environment(SubscriptionService.self) private var subscriptionService

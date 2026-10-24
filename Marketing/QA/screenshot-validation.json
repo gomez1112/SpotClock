@@ -1,0 +1,66 @@
+{
+  "screenshots": [
+    {
+      "file": "Marketing/Exports/duo-outer/01-timer.png",
+      "width": 1398,
+      "height": 2034,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-outer/02-directions.png",
+      "width": 1398,
+      "height": 2034,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-outer/03-setup.png",
+      "width": 1398,
+      "height": 2034,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-outer/04-history.png",
+      "width": 1398,
+      "height": 2034,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-outer/05-insights.png",
+      "width": 1398,
+      "height": 2034,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-inner/01-timer.png",
+      "width": 2853,
+      "height": 2007,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-inner/02-directions.png",
+      "width": 2853,
+      "height": 2007,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-inner/03-setup.png",
+      "width": 2853,
+      "height": 2007,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-inner/04-history.png",
+      "width": 2853,
+      "height": 2007,
+      "passed": true
+    },
+    {
+      "file": "Marketing/Exports/duo-inner/05-insights.png",
+      "width": 2853,
+      "height": 2007,
+      "passed": true
+    }
+  ],
+  "nativeSourceCaptures": true,
+  "otherDeviceGroupsResizedFromDuo": false
+}

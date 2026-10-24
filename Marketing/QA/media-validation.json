@@ -1,0 +1,38 @@
+{
+  "previews" : [
+    {
+      "audio" : "silent stereo AAC",
+      "audioChannels" : 2,
+      "audioEstimatedBitrate" : 2250,
+      "audioSampleRate" : 48000,
+      "audioTargetBitrate" : 256000,
+      "audioTracks" : 1,
+      "codec" : "H.264",
+      "durationSeconds" : 20,
+      "file" : "spotclock-2-preview.mp4",
+      "fps" : 30,
+      "height" : 1920,
+      "passed" : true,
+      "videoProfile" : "High 4.0",
+      "videoTargetBitrate" : 11000000,
+      "width" : 886
+    },
+    {
+      "audio" : "silent stereo AAC",
+      "audioChannels" : 2,
+      "audioEstimatedBitrate" : 2250,
+      "audioSampleRate" : 48000,
+      "audioTargetBitrate" : 256000,
+      "audioTracks" : 1,
+      "codec" : "H.264",
+      "durationSeconds" : 20,
+      "file" : "spotclock-2-inner-preview.mp4",
+      "fps" : 30,
+      "height" : 886,
+      "passed" : true,
+      "videoProfile" : "High 4.0",
+      "videoTargetBitrate" : 11000000,
+      "width" : 1920
+    }
+  ]
+}

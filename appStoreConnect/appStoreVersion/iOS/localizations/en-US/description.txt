@@ -1,41 +1,25 @@
-Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.
+Time, on your side.
 
-SMART PARKING TIMERS
-- Set custom timers for any duration
-- Get notified 10 and 5 minutes before expiration
-- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours
-- Extend timers with one tap
+Meet SpotClock 2.0: a considered parking companion with a clear countdown, your saved spot, and a simpler way back to your car.
 
-AUTOMATIC LOCATION SAVING
-- Your parking spot is saved automatically
-- View your car's location on a map
-- Never forget where you parked
+SET YOUR STAY
+Choose a quick duration or set your own. Add a note for the level, bay, or nearby landmark, and start your parking timer.
 
-INTELLIGENT NOTIFICATIONS
-- Critical alerts before meter expiration
-- Never miss a notification
-- Customizable reminder timing
+KEEP TIME IN SIGHT
+See your countdown and return time at a glance. Parking alarms help you keep track of your stay. Need longer? Extend your reminder in a tap.
 
-PARKING HISTORY
-- Track all your parking sessions
-- View past locations and durations
-- Statistics on parking habits
+REMEMBER YOUR SPOT
+Your current location is saved when you start. Open your parking map, check walking directions, and see a suggested leave-by time based on your walk back.
+
+GET TO KNOW YOUR ROUTINE
+Browse past stays, revisit saved locations, and explore parking insights and duration suggestions based on your own history.
+
+MADE FOR IPHONE DUO
+On the open display, your timer and parking map share the space. Fold it closed and keep the essentials close at hand. Designed for iOS 27.1, with support for larger text, VoiceOver, and light and dark appearances.
 
 SPOTCLOCK PRO
-- Unlimited parking timers
-- No monthly limits
-- Priority support
-- One subscription pays for itself after avoiding just one ticket!
+Start with three free timers per month. Subscribe to Pro for unlimited parking timers. Plans and current prices are shown in the app. Subscriptions renew automatically unless cancelled through your App Store account.
 
-Perfect for:
-- City parking meters
-- Street parking with time limits
-- Airport parking
-- Shopping center parking
-- Any timed parking situation
+SpotClock is a parking reminder. It does not pay or extend your parking meter. Location and alarm permissions are needed for the corresponding features.
 
-A typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!
-
-Download SpotClock today and park with confidence!
-
-Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

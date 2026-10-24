@@ -1,0 +1,95 @@
+{
+  "version": "2.0.0",
+  "locale": "en-US",
+  "direction": {
+    "palette": [
+      "warm ivory",
+      "midnight blue",
+      "brass"
+    ],
+    "inspiration": "https://appscreens.com",
+    "principle": "One clear benefit per screenshot, grounded in real app captures."
+  },
+  "customProductPages": [
+    {
+      "name": "City stays",
+      "id": "59d2f69c-4749-4334-9602-2310eb2f5ad2",
+      "versionId": "efececca-9d1e-444b-b830-c929462e7101",
+      "localizationId": "6c7ccfc0-c69d-4787-894d-3f1cafc1088f",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "order": [
+        "01-timer",
+        "03-setup",
+        "02-directions",
+        "04-history",
+        "05-insights"
+      ]
+    },
+    {
+      "name": "Find your car",
+      "id": "ee28ae3e-c40b-4457-b5be-1166584f75fd",
+      "versionId": "23eaada7-fc40-4b83-adfa-58cbc0676bb7",
+      "localizationId": "48222aeb-a27e-4ebe-958d-066fb11e0267",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "order": [
+        "02-directions",
+        "01-timer",
+        "03-setup",
+        "04-history",
+        "05-insights"
+      ]
+    }
+  ],
+  "optimization": {
+    "id": "c1093445-7cea-4c3a-a7e0-6a9f8c2c301a",
+    "name": "SpotClock 2.0 · First impression",
+    "state": "PREPARE_FOR_SUBMISSION",
+    "trafficProportion": 40,
+    "controlTrafficPercent": 60,
+    "treatments": [
+      {
+        "name": "Time first",
+        "id": "2d9917d4-701f-43af-9c3b-b40890620270",
+        "localizationId": "44729267-0077-42d7-bb5b-15a15cd124dd",
+        "trafficPercent": 20,
+        "hypothesis": "Leading with an easy parking setup improves conversion.",
+        "firstCreative": "03-setup.png",
+        "order": [
+          "03-setup",
+          "01-timer",
+          "02-directions",
+          "04-history",
+          "05-insights"
+        ]
+      },
+      {
+        "name": "Saved spot first",
+        "id": "ef78a1a9-6f05-4ff4-b4a1-fe3e5efd0fe2",
+        "localizationId": "21b167cf-6308-4df2-ac6b-ac6851d8a56f",
+        "trafficPercent": 20,
+        "hypothesis": "Leading with a remembered parking spot improves conversion.",
+        "firstCreative": "02-directions.png",
+        "order": [
+          "02-directions",
+          "01-timer",
+          "03-setup",
+          "04-history",
+          "05-insights"
+        ]
+      }
+    ],
+    "successMetric": "App Store product-page conversion rate",
+    "runPlan": "Start only after version 2.0 is live and the new creatives are approved. Review Apple confidence and conversion uplift after sufficient traffic; allow 14–28 days, up to Apple’s 90-day maximum. Do not declare a winner from low-volume early results.",
+    "results": null,
+    "testVariable": "Screenshot order; all screenshots use the same design and copy.",
+    "additionalCreativeAlternatives": "Four locally exported first-slide headline concepts are provided in Marketing/Exports; they are not part of the draft ordering experiment.",
+    "requiresBeforeStart": [
+      "Replace legacy creatives on every draft with native Pro Max/iPad assets when the required simulator models are available.",
+      "Release version 2.0 after Apple approves the build and media.",
+      "Activate the experiment and collect real conversion data."
+    ],
+    "configurationVerified": true
+  },
+  "captureBlocker": "Installed iOS 27.1 runtime supports iPhone Duo only. Native Pro Max and 13-inch iPad captures are still required before release.",
+  "remoteSync": "2.0 draft listing updated; both custom pages and both treatments populated and order-verified."
+}

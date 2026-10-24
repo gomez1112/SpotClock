@@ -1,65 +1,82 @@
 {
   "appId": "6753944720",
   "derived": {
-    "appStoreVersionScreenshotSets": {
-      "IOS:1.3.0:en-US:APP_IPAD_PRO_3GEN_129": {
-        "screenshots": [
-          {
-            "fileName": "Rotato Image 1485.png",
-            "fileSize": 1536426,
-            "id": "b1c8e0fe-76f2-476e-9232-33408432004f",
-            "renditionChecksum": "fed10eace3bc71f0805675432904f316",
-            "sourceFileChecksum": "073751224d8a21ad8c43f1e5bbb0809a"
-          }
-        ],
-        "setID": "fa157740-f894-427e-85ac-1b58d3282168"
+    "appAssetLibraryAssets": {
+      "00800019-2910-8490-8009-773f7b854e58": {
+        "renditionChecksum": "79c1ecf375798a90cd626dea7bca5aa0",
+        "sourceFileChecksum": "bdaab2f36b4866423159e4f8862e75f8"
       },
-      "IOS:1.3.0:en-US:APP_IPHONE_65": {
-        "screenshots": [
-          {
-            "fileName": "Rotato Image E850.png",
-            "fileSize": 612241,
-            "id": "1650b846-ee07-418b-b485-ba1d4f4e9f8e",
-            "renditionChecksum": "579b497de4e5e4b2094e75877441799f",
-            "sourceFileChecksum": "a56f0bc1ea6805a8e84abf99a3e7ff61"
-          },
-          {
-            "fileName": "Rotato Image F8F5.png",
-            "fileSize": 653565,
-            "id": "8e3ba2b3-e6b5-4feb-90f3-6c6dc69f39cf",
-            "renditionChecksum": "830326af9f0caed84a11d2de3b77d379",
-            "sourceFileChecksum": "c7b97b868e60c10c3acca60bfb33d841"
-          },
-          {
-            "fileName": "Rotato Image 63AF.png",
-            "fileSize": 892669,
-            "id": "a6fa26c5-b5bb-4ca5-9c80-51f264934be1",
-            "renditionChecksum": "79c1ecf375798a90cd626dea7bca5aa0",
-            "sourceFileChecksum": "bdaab2f36b4866423159e4f8862e75f8"
-          },
-          {
-            "fileName": "Rotato Image C061.png",
-            "fileSize": 754522,
-            "id": "d2430206-d73b-4cec-a1de-73e438a6c682",
-            "renditionChecksum": "c49f282cbcad7a8fd40eab5bd101fb18",
-            "sourceFileChecksum": "23d2ebb45de30d7b9486b82aa8c2d7c6"
-          },
-          {
-            "fileName": "Rotato Image BB16.png",
-            "fileSize": 787921,
-            "id": "a0a9f829-60a8-4314-9669-26e3c4d7f877",
-            "renditionChecksum": "d24b37349d098aac042079a25a45cd12",
-            "sourceFileChecksum": "0baead16e6880c28608e392ad355ec2a"
-          },
-          {
-            "fileName": "Rotato Image 70BB.png",
-            "fileSize": 351868,
-            "id": "b023fad9-1110-4328-a2d0-8d13fad20a6d",
-            "renditionChecksum": "d01307588b9e1f309928202d3f88bcd2",
-            "sourceFileChecksum": "9f6247646752393ae90b14c2176793e6"
-          }
-        ],
-        "setID": "467ac083-b249-4b24-818a-7c647627d9d0"
+      "07400019-2910-8490-8033-7c9f2eaf0f0c": {
+        "sourceFileChecksum": "332b64a8aad51f80fec5f13af8847394"
+      },
+      "17000019-2910-8490-8123-7c6aa14398c1": {
+        "sourceFileChecksum": "f7dff9825cb31babed9af9a8925d97e3"
+      },
+      "1c400019-2910-8490-8032-4834bbf54a3d": {
+        "sourceFileChecksum": "313d867ba8cb2bf5c9ffb16821be491d"
+      },
+      "1d000019-2910-8490-8035-baade71fd846": {
+        "sourceFileChecksum": "85cb16361ccd9064cfb5ff57b2243915"
+      },
+      "20c00019-2910-8490-802f-b7c57ae939db": {
+        "sourceFileChecksum": "d695ba608fe451a96f4ba739c8c79a09"
+      },
+      "42c00019-2910-8490-803c-c75f756df2d2": {
+        "sourceFileChecksum": "2d8f22531d61e0d900303f3bdcce7219"
+      },
+      "47400019-2910-8490-8022-7da7baeb4a12": {
+        "renditionChecksum": "c49f282cbcad7a8fd40eab5bd101fb18",
+        "sourceFileChecksum": "23d2ebb45de30d7b9486b82aa8c2d7c6"
+      },
+      "50c00019-2910-8490-8129-8c57ec2f055c": {
+        "sourceFileChecksum": "55c9e16741f0ba8d35f90f28a460b455"
+      },
+      "51800019-2910-8490-802c-b36cb6547f29": {
+        "renditionChecksum": "fed10eace3bc71f0805675432904f316",
+        "sourceFileChecksum": "073751224d8a21ad8c43f1e5bbb0809a"
+      },
+      "61400019-2910-8490-8034-18842ec34c02": {
+        "renditionChecksum": "579b497de4e5e4b2094e75877441799f",
+        "sourceFileChecksum": "a56f0bc1ea6805a8e84abf99a3e7ff61"
+      },
+      "6a400019-2910-8490-8106-eaec185effc1": {
+        "sourceFileChecksum": "c5324efa6e7a1df6121bb78f75e5a36a"
+      },
+      "75400019-2910-8490-8000-41e3cd963fc4": {
+        "renditionChecksum": "d01307588b9e1f309928202d3f88bcd2",
+        "sourceFileChecksum": "9f6247646752393ae90b14c2176793e6"
+      },
+      "9a400019-2910-8490-8110-b593dd0de9c3": {
+        "sourceFileChecksum": "2553ebd147c78b95db0aeb3cdd0872c7"
+      },
+      "b9000019-2910-8490-8031-1c0ce53cef89": {
+        "sourceFileChecksum": "87651ad96fc755202a530168eeee3e83"
+      },
+      "bf000019-2910-8490-8031-2b31e36fa64a": {
+        "sourceFileChecksum": "9291fd7689ed89263ab840269826cc61"
+      },
+      "c5400019-2910-8490-8019-1821123bf836": {
+        "sourceFileChecksum": "e9eb6318be6d53286bef5276bace5d7b"
+      },
+      "c9000019-2910-8490-802c-085cc7ead753": {
+        "sourceFileChecksum": "aafcfff0349b57fab8a343fee8f1392f"
+      },
+      "d0c00019-2910-8490-8031-397d15ce7392": {
+        "renditionChecksum": "830326af9f0caed84a11d2de3b77d379",
+        "sourceFileChecksum": "c7b97b868e60c10c3acca60bfb33d841"
+      },
+      "d1400019-2910-8490-8026-3ead4a087199": {
+        "sourceFileChecksum": "060b23f5b1e95dcfa86ddbafd17315f5"
+      },
+      "d9000019-2910-8490-8032-2c02ff68dda4": {
+        "sourceFileChecksum": "05bb392ea4969cfda50bca99a3f51440"
+      },
+      "e4400019-2910-8490-8023-f36dff03498f": {
+        "renditionChecksum": "d24b37349d098aac042079a25a45cd12",
+        "sourceFileChecksum": "0baead16e6880c28608e392ad355ec2a"
+      },
+      "f4c00019-2910-8490-8030-f10bf1e466d4": {
+        "sourceFileChecksum": "866ac03f2f58e5a15d5f5c50be28737b"
       }
     },
     "pricing": {
@@ -786,7 +803,7 @@
       }
     }
   },
-  "formatVersion": 1,
+  "formatVersion": 2,
   "gitignore": "created",
   "resources": {
     "ageRatingDeclaration": {
@@ -1285,27 +1302,27 @@
       "id": "36c7e029-829f-412a-b543-636746f1d4f0",
       "type": "appInfoLocalizations"
     },
-    "appStoreReviewDetail:IOS:1.3.0": {
+    "appStoreReviewDetail:IOS:2.0.0": {
       "fields": {
         "contactEmail": "gerard@transfinite.cloud",
         "contactFirstName": "Gerard",
         "contactLastName": "Gomez",
-        "contactPhone": "6469388594",
+        "contactPhone": "+16469388594",
         "demoAccountRequired": false
       },
-      "id": "ddbe161d-8346-4390-a6f9-92e969718311",
+      "id": "955389fa-22a2-44b8-a2c2-5c0dae98f0a0",
       "type": "appStoreReviewDetails"
     },
-    "appStoreVersion:IOS:1.3.0": {
+    "appStoreVersion:IOS:2.0.0": {
       "fields": {
         "copyright": "Transfinite LLC",
         "releaseType": "AFTER_APPROVAL",
-        "versionString": "1.3.0"
+        "versionString": "2.0.0"
       },
-      "id": "b9665c37-628e-45f1-901b-9f3bda9b453f",
+      "id": "cd896332-eb30-476e-bd39-b2ea6f92437a",
       "type": "appStoreVersions"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ar-SA": {
+    "appStoreVersionLocalization:IOS:2.0.0:ar-SA": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1314,10 +1331,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "fee8fde0-b17c-4aa5-8b1b-d0a2d409458f",
+      "id": "9e22dbdb-a0b4-4a4a-a4d6-7ce8cf68a0e4",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:bn-BD": {
+    "appStoreVersionLocalization:IOS:2.0.0:bn-BD": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1326,10 +1343,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "3591bc3f-f645-4e12-a44f-7370dc0ee05b",
+      "id": "8906f968-4d5b-482b-b4e3-bab72858c257",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ca": {
+    "appStoreVersionLocalization:IOS:2.0.0:ca": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1338,10 +1355,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6f451c93-d8d6-4c6a-9dfe-fd2e794120cc",
+      "id": "cdb633b7-5de4-4a65-a6c7-4d2a8e4ecd01",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:cs": {
+    "appStoreVersionLocalization:IOS:2.0.0:cs": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1350,10 +1367,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "738e792d-1d88-445a-84d8-330624263f24",
+      "id": "3d77bf68-001c-4b49-82f0-f1230e0bfb6a",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:da": {
+    "appStoreVersionLocalization:IOS:2.0.0:da": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1362,10 +1379,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "9d91d6c9-42c8-4f63-9d4e-61a8751d017f",
+      "id": "6164c914-f4c1-4479-8b8b-35fc495cc197",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:de-DE": {
+    "appStoreVersionLocalization:IOS:2.0.0:de-DE": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1374,10 +1391,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "0c615de0-bb59-4339-b3c4-63ad1722a416",
+      "id": "5596a77f-e1c1-4659-a933-c6b1ac3cb676",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:el": {
+    "appStoreVersionLocalization:IOS:2.0.0:el": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1386,10 +1403,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "3e690b7b-8317-451c-8d51-29c42963a952",
+      "id": "4d53d29f-82b9-40ee-836d-0016ce3b4329",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:en-AU": {
+    "appStoreVersionLocalization:IOS:2.0.0:en-AU": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1398,10 +1415,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "71455162-2123-4311-b6d2-8fe69b44db0f",
+      "id": "329e78ac-b5c9-4db9-b0e9-ea2b419ee636",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:en-CA": {
+    "appStoreVersionLocalization:IOS:2.0.0:en-CA": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1410,10 +1427,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "3b643e86-cb10-4231-b842-bcf7ac9fa371",
+      "id": "47bbe639-02c8-4add-8468-c16040cc30dd",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:en-GB": {
+    "appStoreVersionLocalization:IOS:2.0.0:en-GB": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1422,10 +1439,22 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "8e9ccfaf-b5a9-4a88-a1a3-7db78fc94274",
+      "id": "403a8c8c-6262-4c9d-b219-dc87ed0fffa8",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:en-US": {
+    "appStoreVersionLocalization:IOS:2.0.0:en-US": {
+      "fields": {
+        "description": "Time, on your side.\n\nMeet SpotClock 2.0: a considered parking companion with a clear countdown, your saved spot, and a simpler way back to your car.\n\nSET YOUR STAY\nChoose a quick duration or set your own. Add a note for the level, bay, or nearby landmark, and start your parking timer.\n\nKEEP TIME IN SIGHT\nSee your countdown and return time at a glance. Parking alarms help you keep track of your stay. Need longer? Extend your reminder in a tap.\n\nREMEMBER YOUR SPOT\nYour current location is saved when you start. Open your parking map, check walking directions, and see a suggested leave-by time based on your walk back.\n\nGET TO KNOW YOUR ROUTINE\nBrowse past stays, revisit saved locations, and explore parking insights and duration suggestions based on your own history.\n\nMADE FOR IPHONE DUO\nOn the open display, your timer and parking map share the space. Fold it closed and keep the essentials close at hand. Designed for iOS 27.1, with support for larger text, VoiceOver, and light and dark appearances.\n\nSPOTCLOCK PRO\nStart with three free timers per month. Subscribe to Pro for unlimited parking timers. Plans and current prices are shown in the app. Subscriptions renew automatically unless cancelled through your App Store account.\n\nSpotClock is a parking reminder. It does not pay or extend your parking meter. Location and alarm permissions are needed for the corresponding features.\n\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
+        "marketingUrl": "https://transfinite.us/application/",
+        "promotionalText": "Meet SpotClock 2.0. A clear countdown. A spot remembered. A little more time for your day. Beautifully redesigned for iOS 27.1 and iPhone Duo.",
+        "supportUrl": "https://transfinite.us/contact/",
+        "whatsNew": "Welcome to SpotClock 2.0.\n\n• A complete redesign in warm ivory, midnight blue, and subtle brass.\n• A precise countdown with your return time clearly in view.\n• A simpler parking setup, with saved location and notes.\n• Refined parking history, insights, and walking directions.\n• A native iPhone Duo layout that brings your timer and map together when open.\n• Improved support for larger text and light and dark appearances."
+      },
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appStoreVersionLocalizations"
+    },
+    "appStoreVersionLocalization:IOS:2.0.0:es-ES": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1434,10 +1463,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "75b7c8a9-16ed-41a0-b39d-3dbad5c71655",
+      "id": "25704527-eda2-40ba-9362-76a35b48f522",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:es-ES": {
+    "appStoreVersionLocalization:IOS:2.0.0:es-MX": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1446,10 +1475,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "04275503-d552-4a8e-bfd4-e67734c79596",
+      "id": "fe201ee0-f076-4c30-a6ca-bdef35dc91cf",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:es-MX": {
+    "appStoreVersionLocalization:IOS:2.0.0:fi": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1458,10 +1487,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "706b96ad-2c00-4d7a-93e7-67fa6a5a3e96",
+      "id": "0465451c-79d4-4ea1-a49f-cfee18ee786c",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:fi": {
+    "appStoreVersionLocalization:IOS:2.0.0:fr-CA": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1470,10 +1499,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "9d27c861-7af5-4ef1-9b1b-015b4ea54629",
+      "id": "eb8e207b-e4c4-4946-87c5-cbdf481cd474",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:fr-CA": {
+    "appStoreVersionLocalization:IOS:2.0.0:fr-FR": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1482,10 +1511,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "7d4c97b7-c27b-481b-b95a-1890a6c6d26c",
+      "id": "db03e1e8-f01c-4b68-a4e9-db0a2fd135ee",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:fr-FR": {
+    "appStoreVersionLocalization:IOS:2.0.0:gu-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1494,10 +1523,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "585696bb-c2b6-4824-897e-5ccf7f574874",
+      "id": "483ffb6a-42c6-493d-911f-36d8efee2cbb",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:gu-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:he": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1506,10 +1535,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "f783e7b6-0e6a-4abd-bfe5-238703b621b3",
+      "id": "959c3a97-9395-494e-a719-7f91718681fc",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:he": {
+    "appStoreVersionLocalization:IOS:2.0.0:hi": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1518,10 +1547,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "0874cbc0-5bda-4a85-ac0d-72ad3524064f",
+      "id": "6271b398-77dc-4c0f-bdbf-517725d5ddbe",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:hi": {
+    "appStoreVersionLocalization:IOS:2.0.0:hr": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1530,10 +1559,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "a6762ea5-bdc7-4a0b-aab0-bc6cea6da2ee",
+      "id": "c8125a76-3595-465f-8468-ecc3a0efd4c1",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:hr": {
+    "appStoreVersionLocalization:IOS:2.0.0:hu": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1542,10 +1571,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6ebe0c42-dca4-4621-9c35-6be67187f857",
+      "id": "fe3a08d4-3b33-4a6b-a1a6-95db36f330f2",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:hu": {
+    "appStoreVersionLocalization:IOS:2.0.0:id": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1554,10 +1583,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "fbb228c9-da11-4113-ab44-52395a90f0a9",
+      "id": "ae95c13a-a30e-4669-89dd-d6cdb886244a",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:id": {
+    "appStoreVersionLocalization:IOS:2.0.0:it": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1566,10 +1595,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "f637316f-9cfe-45a0-bbf5-87ef9d5259da",
+      "id": "5304aab4-51b4-46c8-80a2-24c8a2c8e6ed",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:it": {
+    "appStoreVersionLocalization:IOS:2.0.0:ja": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1578,10 +1607,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "87f136f3-0606-4183-8818-42da24e1d53d",
+      "id": "dab85122-d330-4d3a-9bb7-41b22681cb4d",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ja": {
+    "appStoreVersionLocalization:IOS:2.0.0:kn-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1590,10 +1619,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "86e75969-32b4-4bb2-8b9b-7e79090675c0",
+      "id": "e4d0b75e-5f31-49db-b720-272f25b4ce95",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:kn-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:ko": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1602,10 +1631,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6d341f0a-1ebb-437d-aff2-2c4b62442030",
+      "id": "f42e59d7-926b-4aed-89be-e70223bb9c6a",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ko": {
+    "appStoreVersionLocalization:IOS:2.0.0:ml-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1614,10 +1643,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6d95e032-a780-45af-9959-8665ab1f3cee",
+      "id": "f3bd95d7-c252-4308-9c0c-9950e1e99ded",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ml-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:mr-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1626,10 +1655,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "61ba6c72-0b3b-45a4-b0b2-ee71ec4f0ffa",
+      "id": "831daaa7-da75-4e62-9443-56bc246e9676",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:mr-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:ms": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1638,10 +1667,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "a0866da9-51a5-4ba6-8601-182450c79b4e",
+      "id": "bbf329c0-7775-4bbf-af7e-caa71eba5091",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ms": {
+    "appStoreVersionLocalization:IOS:2.0.0:nl-NL": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1650,10 +1679,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "a16844ff-8622-429f-b50b-190403cce376",
+      "id": "d04e411f-ee9f-4c40-aaef-d46d21a2d421",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:nl-NL": {
+    "appStoreVersionLocalization:IOS:2.0.0:no": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1662,10 +1691,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6e4e9090-fc7c-4f80-adc9-cc6e4292f872",
+      "id": "2e3c248a-4640-43a7-bc4d-3a0f992e8a83",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:no": {
+    "appStoreVersionLocalization:IOS:2.0.0:or-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1674,10 +1703,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "dcef9df0-0a3f-4481-8b90-b5f2fe5c3d82",
+      "id": "0670152f-88c5-47b6-8468-e70f5fe63a45",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:or-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:pa-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1686,10 +1715,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "0fe80c99-5018-4e47-84a1-5cce96cb22f2",
+      "id": "481347ec-68c6-48ea-b908-5ebb20c54d90",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:pa-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:pl": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1698,10 +1727,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "31c292a0-62e9-428e-a5dd-77815d933aa5",
+      "id": "49c4b39e-4513-4111-a963-50b47969ccb7",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:pl": {
+    "appStoreVersionLocalization:IOS:2.0.0:pt-BR": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1710,10 +1739,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "1c1002f7-11ee-4497-afc4-4e6810d8247e",
+      "id": "25aca199-8553-4f02-a655-0914a825d43f",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:pt-BR": {
+    "appStoreVersionLocalization:IOS:2.0.0:pt-PT": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1722,10 +1751,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "f3af9e9e-c633-4aca-a3da-6bd09be73e7b",
+      "id": "efe4802f-9b39-45b1-950c-fe7d9d70af4f",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:pt-PT": {
+    "appStoreVersionLocalization:IOS:2.0.0:ro": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1734,10 +1763,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "046787a1-8131-4e20-ad52-2bfc76970efd",
+      "id": "6af1dfcc-a7d1-4116-9949-c9f134b47d9c",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ro": {
+    "appStoreVersionLocalization:IOS:2.0.0:ru": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1746,10 +1775,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "93a104b1-1989-43cf-ad2d-1c6ff019b9c4",
+      "id": "6545c753-c9b0-4642-9471-db3888ef733f",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ru": {
+    "appStoreVersionLocalization:IOS:2.0.0:sk": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1758,10 +1787,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "9e98fb5b-1661-4f0f-a69c-c6a53ad8145a",
+      "id": "463c6de1-4907-494a-84df-84548ab23fd1",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:sk": {
+    "appStoreVersionLocalization:IOS:2.0.0:sl-SI": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1770,10 +1799,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "52cdb59f-6ae6-4476-8d87-93b9b36d7b70",
+      "id": "e4937569-1485-4ceb-8e80-717d754ec79d",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:sl-SI": {
+    "appStoreVersionLocalization:IOS:2.0.0:sv": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1782,10 +1811,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "4634783a-4a44-4fe7-8242-1e57b9e26ce2",
+      "id": "493f815c-1a19-4aa0-b7c3-ba8172124502",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:sv": {
+    "appStoreVersionLocalization:IOS:2.0.0:ta-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1794,10 +1823,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "7290a2e9-303c-4d47-9a0f-7b89a85b2347",
+      "id": "0f282d52-e8e5-4464-8830-3ddec8bf8ba8",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ta-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:te-IN": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1806,10 +1835,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "a87ae51d-e6db-4795-9230-dd50be332cae",
+      "id": "86a9cc2f-77cc-4eee-8ec4-276a4bc34919",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:te-IN": {
+    "appStoreVersionLocalization:IOS:2.0.0:th": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1818,10 +1847,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "2a7b76ef-c3e1-4bf0-81d5-e3ddc650e315",
+      "id": "e860b4f9-fdf3-4b33-9541-6b4290ee70aa",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:th": {
+    "appStoreVersionLocalization:IOS:2.0.0:tr": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1830,10 +1859,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "904ba50e-f94b-4753-a15f-a23a4864c584",
+      "id": "77ab46c2-2e14-44e4-8a85-f3295330a313",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:tr": {
+    "appStoreVersionLocalization:IOS:2.0.0:uk": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1842,10 +1871,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "6707f903-099b-4403-86b9-5ab5e77e6e99",
+      "id": "f33c3c99-5194-419f-8e14-1218124bf3de",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:uk": {
+    "appStoreVersionLocalization:IOS:2.0.0:ur-PK": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1854,10 +1883,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "7e800a96-2a04-43d7-8b58-0be43a936ac5",
+      "id": "55250a42-e1b6-47dc-bc11-0e0dc54c18c8",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:ur-PK": {
+    "appStoreVersionLocalization:IOS:2.0.0:vi": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1866,10 +1895,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "ccfa1031-e582-427e-9b1c-d00450f987fd",
+      "id": "8e2449a8-c1be-466c-861a-b0f7019b5904",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:vi": {
+    "appStoreVersionLocalization:IOS:2.0.0:zh-Hans": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1878,10 +1907,10 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "b6a0e39c-597c-441e-a185-ac20492c2435",
+      "id": "2057c84f-3fed-4f48-b05f-92954a087086",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:zh-Hans": {
+    "appStoreVersionLocalization:IOS:2.0.0:zh-Hant": {
       "fields": {
         "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
         "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
@@ -1890,71 +1919,163 @@
         "supportUrl": "https://transfinite.us/contact/",
         "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
       },
-      "id": "625fb22f-6212-4ce2-8230-e11449ebf4f2",
+      "id": "59aae82e-0dc4-4656-90c5-1ed1bfe51282",
       "type": "appStoreVersionLocalizations"
     },
-    "appStoreVersionLocalization:IOS:1.3.0:zh-Hant": {
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:APP_PREVIEW:IPHONE_DUO_PROFILE": {
       "fields": {
-        "description": "Never get a parking ticket again! SpotClock is the smartest parking timer app that helps you avoid costly tickets and fines.\n\nSMART PARKING TIMERS\n- Set custom timers for any duration\n- Get notified 10 and 5 minutes before expiration\n- Quick presets: 15 min, 30 min, 1 hour, 2 hours, 4 hours\n- Extend timers with one tap\n\nAUTOMATIC LOCATION SAVING\n- Your parking spot is saved automatically\n- View your car's location on a map\n- Never forget where you parked\n\nINTELLIGENT NOTIFICATIONS\n- Critical alerts before meter expiration\n- Never miss a notification\n- Customizable reminder timing\n\nPARKING HISTORY\n- Track all your parking sessions\n- View past locations and durations\n- Statistics on parking habits\n\nSPOTCLOCK PRO\n- Unlimited parking timers\n- No monthly limits\n- Priority support\n- One subscription pays for itself after avoiding just one ticket!\n\nPerfect for:\n- City parking meters\n- Street parking with time limits\n- Airport parking\n- Shopping center parking\n- Any timed parking situation\n\nA typical parking ticket costs $50-$100. SpotClock Pro costs less than a single ticket and could save you thousands!\n\nDownload SpotClock today and park with confidence!\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-        "keywords": "parking timer,parking meter,parking reminder,avoid ticket,parking app,meter alert,car parking",
-        "marketingUrl": "https://transfinite.us/application/",
-        "promotionalText": "Skip tickets and stress. SpotClock tracks your parking with smart timers, live countdowns, leave-by alerts, and walking directions back to your exact spot.",
-        "supportUrl": "https://transfinite.us/contact/",
-        "whatsNew": "Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.\n"
-      },
-      "id": "8ecfd964-44c2-4fcf-bc15-9ed65fcabcba",
-      "type": "appStoreVersionLocalizations"
-    },
-    "appStoreVersionScreenshotSet:IOS:1.3.0:en-US:APP_IPAD_PRO_3GEN_129": {
-      "fields": {
-        "screenshots": [
+        "appPreview": [
           {
-            "file": "Rotato Image 1485.png",
-            "fileSize": 1536426,
-            "sourceFileChecksum": "073751224d8a21ad8c43f1e5bbb0809a"
+            "checksum": "55c9e16741f0ba8d35f90f28a460b455",
+            "fileName": "spotclock-2-preview.mp4",
+            "fileSize": 10794941,
+            "previewFrameTimeCode": "00:00:06:00"
+          },
+          {
+            "checksum": "f7dff9825cb31babed9af9a8925d97e3",
+            "fileName": "spotclock-2-inner-preview.mp4",
+            "fileSize": 13720138,
+            "previewFrameTimeCode": "00:00:06:00"
           }
         ]
       },
-      "id": "fa157740-f894-427e-85ac-1b58d3282168",
-      "type": "appScreenshotSets"
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
     },
-    "appStoreVersionScreenshotSet:IOS:1.3.0:en-US:APP_IPHONE_65": {
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:APP_SCREENSHOT:IPAD_13_PROFILE": {
       "fields": {
-        "screenshots": [
+        "appScreenshot": [
           {
-            "file": "Rotato Image E850.png",
-            "fileSize": 612241,
-            "sourceFileChecksum": "a56f0bc1ea6805a8e84abf99a3e7ff61"
-          },
-          {
-            "file": "Rotato Image F8F5.png",
-            "fileSize": 653565,
-            "sourceFileChecksum": "c7b97b868e60c10c3acca60bfb33d841"
-          },
-          {
-            "file": "Rotato Image 63AF.png",
-            "fileSize": 892669,
-            "sourceFileChecksum": "bdaab2f36b4866423159e4f8862e75f8"
-          },
-          {
-            "file": "Rotato Image C061.png",
-            "fileSize": 754522,
-            "sourceFileChecksum": "23d2ebb45de30d7b9486b82aa8c2d7c6"
-          },
-          {
-            "file": "Rotato Image BB16.png",
-            "fileSize": 787921,
-            "sourceFileChecksum": "0baead16e6880c28608e392ad355ec2a"
-          },
-          {
-            "file": "Rotato Image 70BB.png",
-            "fileSize": 351868,
-            "sourceFileChecksum": "9f6247646752393ae90b14c2176793e6"
+            "checksum": "073751224d8a21ad8c43f1e5bbb0809a",
+            "fileName": "Rotato Image 1485.png",
+            "fileSize": 1536426
           }
         ]
       },
-      "id": "467ac083-b249-4b24-818a-7c647627d9d0",
-      "type": "appScreenshotSets"
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
+    },
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:APP_SCREENSHOT:IPHONE_DUO_PROFILE": {
+      "fields": {
+        "appScreenshot": [
+          {
+            "checksum": "87651ad96fc755202a530168eeee3e83",
+            "fileName": "duo-outer-01-timer.png",
+            "fileSize": 300006
+          },
+          {
+            "checksum": "e9eb6318be6d53286bef5276bace5d7b",
+            "fileName": "duo-outer-02-directions.png",
+            "fileSize": 996352
+          },
+          {
+            "checksum": "85cb16361ccd9064cfb5ff57b2243915",
+            "fileName": "duo-outer-03-setup.png",
+            "fileSize": 642502
+          },
+          {
+            "checksum": "060b23f5b1e95dcfa86ddbafd17315f5",
+            "fileName": "duo-outer-04-history.png",
+            "fileSize": 298180
+          },
+          {
+            "checksum": "aafcfff0349b57fab8a343fee8f1392f",
+            "fileName": "duo-outer-05-insights.png",
+            "fileSize": 469273
+          },
+          {
+            "checksum": "866ac03f2f58e5a15d5f5c50be28737b",
+            "fileName": "duo-inner-01-timer.png",
+            "fileSize": 1001621
+          },
+          {
+            "checksum": "2d8f22531d61e0d900303f3bdcce7219",
+            "fileName": "duo-inner-02-directions.png",
+            "fileSize": 1423636
+          },
+          {
+            "checksum": "05bb392ea4969cfda50bca99a3f51440",
+            "fileName": "duo-inner-03-setup.png",
+            "fileSize": 1087725
+          },
+          {
+            "checksum": "9291fd7689ed89263ab840269826cc61",
+            "fileName": "duo-inner-04-history.png",
+            "fileSize": 317295
+          },
+          {
+            "checksum": "d695ba608fe451a96f4ba739c8c79a09",
+            "fileName": "duo-inner-05-insights.png",
+            "fileSize": 535446
+          }
+        ]
+      },
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
+    },
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": {
+      "fields": {
+        "appScreenshot": [
+          {
+            "checksum": "a56f0bc1ea6805a8e84abf99a3e7ff61",
+            "fileName": "Rotato Image E850.png",
+            "fileSize": 612241
+          },
+          {
+            "checksum": "c7b97b868e60c10c3acca60bfb33d841",
+            "fileName": "Rotato Image F8F5.png",
+            "fileSize": 653565
+          },
+          {
+            "checksum": "bdaab2f36b4866423159e4f8862e75f8",
+            "fileName": "Rotato Image 63AF.png",
+            "fileSize": 892669
+          },
+          {
+            "checksum": "23d2ebb45de30d7b9486b82aa8c2d7c6",
+            "fileName": "Rotato Image C061.png",
+            "fileSize": 754522
+          },
+          {
+            "checksum": "0baead16e6880c28608e392ad355ec2a",
+            "fileName": "Rotato Image BB16.png",
+            "fileSize": 787921
+          },
+          {
+            "checksum": "9f6247646752393ae90b14c2176793e6",
+            "fileName": "Rotato Image 70BB.png",
+            "fileSize": 351868
+          }
+        ]
+      },
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
+    },
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:APP_STORE_SEARCH_RESULTS_ASSET:DEFAULT_PROFILE": {
+      "fields": {
+        "appStoreSearchResultsAsset": [
+          {
+            "checksum": "313d867ba8cb2bf5c9ffb16821be491d",
+            "fileName": "search-results.png",
+            "fileSize": 4742675
+          }
+        ]
+      },
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
+    },
+    "appStoreVersionPlacementGroup:IOS:2.0.0:en-US:PRODUCT_PAGE_HEADER_ASSET:DEFAULT_PROFILE": {
+      "fields": {
+        "productPageHeaderAsset": [
+          {
+            "checksum": "332b64a8aad51f80fec5f13af8847394",
+            "fileName": "product-header.png",
+            "fileSize": 3117357
+          }
+        ]
+      },
+      "id": "83878ff4-ba1e-4a31-830b-6a95f315f1ce",
+      "type": "appAssetLibraryPlacements"
     },
     "availability": {
       "fields": {
@@ -3638,26 +3759,26 @@
     },
     "subscriptionLocalization:com.spotclock.subscriptions.monthly:en-US": {
       "fields": {
-        "description": "Unlimited parking timers, and saved parking history.",
+        "description": "Unlimited parking timers and saved history",
         "name": "SpotClock Pro (Monthly)"
       },
-      "id": "5a6a4554-83d8-4209-8687-d6e8d3fe78a6",
+      "id": "ef5f2f13-597d-4e65-8152-176da1896cb1",
       "type": "subscriptionLocalizations"
     },
     "subscriptionLocalization:com.spotclock.subscriptions.weekly:en-US": {
       "fields": {
-        "description": "Unlimited parking timers, and saved parking history.",
+        "description": "Unlimited parking timers and saved history",
         "name": "SpotClock Pro (Weekly)"
       },
-      "id": "fca00177-400e-4f89-a264-f5c6753c67ff",
+      "id": "88c226fd-0c32-4583-9599-30642c025118",
       "type": "subscriptionLocalizations"
     },
     "subscriptionLocalization:com.spotclock.subscriptions.yearly:en-US": {
       "fields": {
-        "description": "Unlimited parking timers, and saved parking history.",
+        "description": "Unlimited parking timers and saved history",
         "name": "SpotClock Pro (Yearly)"
       },
-      "id": "901285a2-181f-49bc-8f64-019ba0dc6a79",
+      "id": "8b7f960c-ced4-41e1-a1ec-acf9e65adea4",
       "type": "subscriptionLocalizations"
     },
     "subscriptionPricing:com.spotclock.subscriptions.monthly": {

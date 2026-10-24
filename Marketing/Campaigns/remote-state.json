@@ -1,0 +1,643 @@
+{
+  "verifiedAt": "2026-10-24 01:50:32 UTC",
+  "appId": "6753944720",
+  "version": "2.0.0",
+  "appStoreVersionId": "cd896332-eb30-476e-bd39-b2ea6f92437a",
+  "mainListing": {
+    "state": "PREPARE_FOR_SUBMISSION",
+    "sync": "updated",
+    "counts": {
+      "APP_PREVIEW:IPHONE_DUO_PROFILE": 2,
+      "APP_SCREENSHOT:IPHONE_DUO_PROFILE": 10,
+      "APP_SCREENSHOT:IPAD_13_PROFILE": 1,
+      "APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": 6,
+      "APP_STORE_SEARCH_RESULTS_ASSET:DEFAULT_PROFILE": 1,
+      "PRODUCT_PAGE_HEADER_ASSET:DEFAULT_PROFILE": 1
+    }
+  },
+  "customProductPages": [
+    {
+      "id": "59d2f69c-4749-4334-9602-2310eb2f5ad2",
+      "name": "City stays",
+      "version": {
+        "attributes": {
+          "state": "PREPARE_FOR_SUBMISSION",
+          "version": "1"
+        },
+        "id": "efececca-9d1e-444b-b830-c929462e7101",
+        "type": "appCustomProductPageVersions"
+      }
+    },
+    {
+      "id": "ee28ae3e-c40b-4457-b5be-1166584f75fd",
+      "name": "Find your car",
+      "version": {
+        "attributes": {
+          "state": "PREPARE_FOR_SUBMISSION",
+          "version": "1"
+        },
+        "id": "23eaada7-fc40-4b83-adfa-58cbc0676bb7",
+        "type": "appCustomProductPageVersions"
+      }
+    }
+  ],
+  "optimization": {
+    "data": {
+      "attributes": {
+        "name": "SpotClock 2.0 · First impression",
+        "reviewRequired": true,
+        "startDate": null,
+        "state": "PREPARE_FOR_SUBMISSION",
+        "trafficProportion": 40
+      },
+      "id": "c1093445-7cea-4c3a-a7e0-6a9f8c2c301a",
+      "relationships": {
+        "appStoreVersionExperimentTreatments": {
+          "data": [
+            {
+              "id": "2d9917d4-701f-43af-9c3b-b40890620270",
+              "type": "appStoreVersionExperimentTreatments"
+            },
+            {
+              "id": "ef78a1a9-6f05-4ff4-b4a1-fe3e5efd0fe2",
+              "type": "appStoreVersionExperimentTreatments"
+            }
+          ],
+          "meta": {
+            "paging": {
+              "limit": 10,
+              "total": 2
+            }
+          }
+        }
+      },
+      "type": "appStoreVersionExperiments"
+    },
+    "included": [
+      {
+        "attributes": {
+          "appIcon": null,
+          "appIconName": null,
+          "name": "Time first",
+          "promotedDate": null
+        },
+        "id": "2d9917d4-701f-43af-9c3b-b40890620270",
+        "type": "appStoreVersionExperimentTreatments"
+      },
+      {
+        "attributes": {
+          "appIcon": null,
+          "appIconName": null,
+          "name": "Saved spot first",
+          "promotedDate": null
+        },
+        "id": "ef78a1a9-6f05-4ff4-b4a1-fe3e5efd0fe2",
+        "type": "appStoreVersionExperimentTreatments"
+      }
+    ]
+  },
+  "assetOrders": [
+    {
+      "target": "cpp_city",
+      "localeId": "6c7ccfc0-c69d-4787-894d-3f1cafc1088f",
+      "screenshotOrder": [
+        "duo-outer-01-timer.png",
+        "duo-outer-03-setup.png",
+        "duo-outer-02-directions.png",
+        "duo-outer-04-history.png",
+        "duo-outer-05-insights.png",
+        "duo-inner-01-timer.png",
+        "duo-inner-03-setup.png",
+        "duo-inner-02-directions.png",
+        "duo-inner-04-history.png",
+        "duo-inner-05-insights.png"
+      ],
+      "counts": {
+        "APP_PREVIEW:IPHONE_DUO_PROFILE": 2,
+        "APP_SCREENSHOT:IPHONE_DUO_PROFILE": 10,
+        "APP_SCREENSHOT:IPAD_13_PROFILE": 1,
+        "APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": 6,
+        "APP_STORE_SEARCH_RESULTS_ASSET:DEFAULT_PROFILE": 1,
+        "PRODUCT_PAGE_HEADER_ASSET:DEFAULT_PROFILE": 1
+      },
+      "passed": true,
+      "placements": [
+        {
+          "file": "duo-outer-01-timer.png",
+          "assetId": "b9000019-2910-8490-8031-1c0ce53cef89",
+          "placementId": "a2400019-2910-8490-8f1a-7bda4824645c"
+        },
+        {
+          "file": "duo-outer-03-setup.png",
+          "assetId": "1d000019-2910-8490-8035-baade71fd846",
+          "placementId": "ec000019-2910-8490-8f12-93b0ebb368b1"
+        },
+        {
+          "file": "duo-outer-02-directions.png",
+          "assetId": "c5400019-2910-8490-8019-1821123bf836",
+          "placementId": "df800019-2910-8490-8f36-3791aafb5e6c"
+        },
+        {
+          "file": "duo-outer-04-history.png",
+          "assetId": "d1400019-2910-8490-8026-3ead4a087199",
+          "placementId": "71c00019-2910-8490-8f3b-e0ac81ff9c4f"
+        },
+        {
+          "file": "duo-outer-05-insights.png",
+          "assetId": "c9000019-2910-8490-802c-085cc7ead753",
+          "placementId": "9f000019-2910-8490-8f36-f806a0ce4cd2"
+        },
+        {
+          "file": "duo-inner-01-timer.png",
+          "assetId": "f4c00019-2910-8490-8030-f10bf1e466d4",
+          "placementId": "1a400019-2910-8490-8f32-e6503f42de6c"
+        },
+        {
+          "file": "duo-inner-03-setup.png",
+          "assetId": "d9000019-2910-8490-8032-2c02ff68dda4",
+          "placementId": "b9800019-2910-8490-8f00-1e1f734df1f5"
+        },
+        {
+          "file": "duo-inner-02-directions.png",
+          "assetId": "42c00019-2910-8490-803c-c75f756df2d2",
+          "placementId": "c0000019-2910-8490-8f19-4f0e99db4aa2"
+        },
+        {
+          "file": "duo-inner-04-history.png",
+          "assetId": "bf000019-2910-8490-8031-2b31e36fa64a",
+          "placementId": "4a000019-2910-8490-8f03-84929b7ec1c7"
+        },
+        {
+          "file": "duo-inner-05-insights.png",
+          "assetId": "20c00019-2910-8490-802f-b7c57ae939db",
+          "placementId": "ca800019-2910-8490-8f0d-5772598c96ce"
+        }
+      ],
+      "additionalAssets": [
+        {
+          "file": "spotclock-2-preview.mp4",
+          "assetId": "50c00019-2910-8490-8129-8c57ec2f055c",
+          "placementId": "69800019-2910-8490-8f02-333ec8fcc4e8",
+          "type": "APP_PREVIEW",
+          "group": "IPHONE_DUO_PROFILE"
+        },
+        {
+          "file": "spotclock-2-inner-preview.mp4",
+          "assetId": "17000019-2910-8490-8123-7c6aa14398c1",
+          "placementId": "a9c00019-2910-8490-8f2e-5a0b9df1e4d5",
+          "type": "APP_PREVIEW",
+          "group": "IPHONE_DUO_PROFILE"
+        },
+        {
+          "file": "product-header.png",
+          "assetId": "07400019-2910-8490-8033-7c9f2eaf0f0c",
+          "placementId": "2e400019-2910-8490-8f1d-f0c553ed3766",
+          "type": "PRODUCT_PAGE_HEADER_ASSET",
+          "group": "DEFAULT_PROFILE"
+        },
+        {
+          "file": "search-results.png",
+          "assetId": "1c400019-2910-8490-8032-4834bbf54a3d",
+          "placementId": "28000019-2910-8490-8f33-32657a8cda3b",
+          "type": "APP_STORE_SEARCH_RESULTS_ASSET",
+          "group": "DEFAULT_PROFILE"
+        }
+      ]
+    },
+    {
+      "target": "cpp_return",
+      "localeId": "48222aeb-a27e-4ebe-958d-066fb11e0267",
+      "screenshotOrder": [
+        "duo-outer-02-directions.png",
+        "duo-outer-01-timer.png",
+        "duo-outer-03-setup.png",
+        "duo-outer-04-history.png",
+        "duo-outer-05-insights.png",
+        "duo-inner-02-directions.png",
+        "duo-inner-01-timer.png",
+        "duo-inner-03-setup.png",
+        "duo-inner-04-history.png",
+        "duo-inner-05-insights.png"
+      ],
+      "counts": {
+        "APP_PREVIEW:IPHONE_DUO_PROFILE": 2,
+        "APP_SCREENSHOT:IPHONE_DUO_PROFILE": 10,
+        "APP_SCREENSHOT:IPAD_13_PROFILE": 1,
+        "APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": 6,
+        "APP_STORE_SEARCH_RESULTS_ASSET:DEFAULT_PROFILE": 1,
+        "PRODUCT_PAGE_HEADER_ASSET:DEFAULT_PROFILE": 1
+      },
+      "passed": true,
+      "placements": [
+        {
+          "file": "duo-outer-02-directions.png",
+          "assetId": "c5400019-2910-8490-8019-1821123bf836",
+          "placementId": "e5c00019-2910-8490-8f20-75f2a7e81f23"
+        },
+        {
+          "file": "duo-outer-01-timer.png",
+          "assetId": "b9000019-2910-8490-8031-1c0ce53cef89",
+          "placementId": "41800019-2910-8490-8f16-e6045e485f6c"
+        },
+        {
+          "file": "duo-outer-03-setup.png",
+          "assetId": "1d000019-2910-8490-8035-baade71fd846",
+          "placementId": "44400019-2910-8490-8f04-769aefaf8c42"
+        },
+        {
+          "file": "duo-outer-04-history.png",
+          "assetId": "d1400019-2910-8490-8026-3ead4a087199",
+          "placementId": "fd800019-2910-8490-8f36-e6a2a43631b5"
+        },
+        {
+          "file": "duo-outer-05-insights.png",
+          "assetId": "c9000019-2910-8490-802c-085cc7ead753",
+          "placementId": "b8000019-2910-8490-8f0e-c35196a71c3d"
+        },
+        {
+          "file": "duo-inner-02-directions.png",
+          "assetId": "42c00019-2910-8490-803c-c75f756df2d2",
+          "placementId": "01800019-2910-8490-8f1f-c486c799be79"
+        },
+        {
+          "file": "duo-inner-01-timer.png",
+          "assetId": "f4c00019-2910-8490-8030-f10bf1e466d4",
+          "placementId": "b8c00019-2910-8490-8f3a-1089c2d18ea6"
+        },
+        {
+          "file": "duo-inner-03-setup.png",
+          "assetId": "d9000019-2910-8490-8032-2c02ff68dda4",
+          "placementId": "52000019-2910-8490-8f33-81b5afcd0df4"
+        },
+        {
+          "file": "duo-inner-04-history.png",
+          "assetId": "bf000019-2910-8490-8031-2b31e36fa64a",
+          "placementId": "54c00019-2910-8490-8f20-9f6ecbcbe547"
+        },
+        {
+          "file": "duo-inner-05-insights.png",
+          "assetId": "20c00019-2910-8490-802f-b7c57ae939db",
+          "placementId": "92400019-2910-8490-8f1f-a816f89040cb"
+        }
+      ],
+      "additionalAssets": [
+        {
+          "file": "spotclock-2-preview.mp4",
+          "assetId": "50c00019-2910-8490-8129-8c57ec2f055c",
+          "placementId": "9e000019-2910-8490-8f21-5bf85fdbf2d5",
+          "type": "APP_PREVIEW",
+          "group": "IPHONE_DUO_PROFILE"
+        },
+        {
+          "file": "spotclock-2-inner-preview.mp4",
+          "assetId": "17000019-2910-8490-8123-7c6aa14398c1",
+          "placementId": "a9000019-2910-8490-8f13-ec95d7e213c5",
+          "type": "APP_PREVIEW",
+          "group": "IPHONE_DUO_PROFILE"
+        },
+        {
+          "file": "product-header.png",
+          "assetId": "07400019-2910-8490-8033-7c9f2eaf0f0c",
+          "placementId": "9dc00019-2910-8490-8f18-1066709e8250",
+          "type": "PRODUCT_PAGE_HEADER_ASSET",
+          "group": "DEFAULT_PROFILE"
+        },
+        {
+          "file": "search-results.png",
+          "assetId": "1c400019-2910-8490-8032-4834bbf54a3d",
+          "placementId": "43400019-2910-8490-8f3c-6b8d53aec912",
+          "type": "APP_STORE_SEARCH_RESULTS_ASSET",
+          "group": "DEFAULT_PROFILE"
+        }
+      ]
+    },
+    {
+      "target": "ppo_time",
+      "localeId": "44729267-0077-42d7-bb5b-15a15cd124dd",
+      "screenshotOrder": [
+        "duo-outer-03-setup.png",
+        "duo-outer-01-timer.png",
+        "duo-outer-02-directions.png",
+        "duo-outer-04-history.png",
+        "duo-outer-05-insights.png",
+        "duo-inner-03-setup.png",
+        "duo-inner-01-timer.png",
+        "duo-inner-02-directions.png",
+        "duo-inner-04-history.png",
+        "duo-inner-05-insights.png"
+      ],
+      "counts": {
+        "APP_SCREENSHOT:IPHONE_DUO_PROFILE": 10,
+        "APP_SCREENSHOT:IPAD_13_PROFILE": 1,
+        "APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": 6
+      },
+      "passed": true,
+      "placements": [
+        {
+          "file": "duo-outer-03-setup.png",
+          "assetId": "1d000019-2910-8490-8035-baade71fd846",
+          "placementId": "06400019-2910-8490-8f2d-7ce7bbbfd5e1"
+        },
+        {
+          "file": "duo-outer-01-timer.png",
+          "assetId": "b9000019-2910-8490-8031-1c0ce53cef89",
+          "placementId": "edc00019-2910-8490-8f27-82e78ccb97af"
+        },
+        {
+          "file": "duo-outer-02-directions.png",
+          "assetId": "c5400019-2910-8490-8019-1821123bf836",
+          "placementId": "1b000019-2910-8490-8f3c-37f590d8e84c"
+        },
+        {
+          "file": "duo-outer-04-history.png",
+          "assetId": "d1400019-2910-8490-8026-3ead4a087199",
+          "placementId": "37400019-2910-8490-8f20-9566af2a0058"
+        },
+        {
+          "file": "duo-outer-05-insights.png",
+          "assetId": "c9000019-2910-8490-802c-085cc7ead753",
+          "placementId": "49800019-2910-8490-8f00-17b492a2fb74"
+        },
+        {
+          "file": "duo-inner-03-setup.png",
+          "assetId": "d9000019-2910-8490-8032-2c02ff68dda4",
+          "placementId": "5e800019-2910-8490-8f3b-f7eb50b3c178"
+        },
+        {
+          "file": "duo-inner-01-timer.png",
+          "assetId": "f4c00019-2910-8490-8030-f10bf1e466d4",
+          "placementId": "5fc00019-2910-8490-8f16-5221c6eea60b"
+        },
+        {
+          "file": "duo-inner-02-directions.png",
+          "assetId": "42c00019-2910-8490-803c-c75f756df2d2",
+          "placementId": "51800019-2910-8490-8f1c-360ae5fa4abe"
+        },
+        {
+          "file": "duo-inner-04-history.png",
+          "assetId": "bf000019-2910-8490-8031-2b31e36fa64a",
+          "placementId": "9ec00019-2910-8490-8f19-129885558c9b"
+        },
+        {
+          "file": "duo-inner-05-insights.png",
+          "assetId": "20c00019-2910-8490-802f-b7c57ae939db",
+          "placementId": "d5c00019-2910-8490-8f26-55357fd0173c"
+        }
+      ],
+      "additionalAssets": []
+    },
+    {
+      "target": "ppo_spot",
+      "localeId": "21b167cf-6308-4df2-ac6b-ac6851d8a56f",
+      "screenshotOrder": [
+        "duo-outer-02-directions.png",
+        "duo-outer-01-timer.png",
+        "duo-outer-03-setup.png",
+        "duo-outer-04-history.png",
+        "duo-outer-05-insights.png",
+        "duo-inner-02-directions.png",
+        "duo-inner-01-timer.png",
+        "duo-inner-03-setup.png",
+        "duo-inner-04-history.png",
+        "duo-inner-05-insights.png"
+      ],
+      "counts": {
+        "APP_SCREENSHOT:IPHONE_DUO_PROFILE": 10,
+        "APP_SCREENSHOT:IPAD_13_PROFILE": 1,
+        "APP_SCREENSHOT:IPHONE_FACE_ID_LARGE_PROFILE": 6
+      },
+      "passed": true,
+      "placements": [
+        {
+          "file": "duo-outer-02-directions.png",
+          "assetId": "c5400019-2910-8490-8019-1821123bf836",
+          "placementId": "fe400019-2910-8490-8f30-fa95e5bda95b"
+        },
+        {
+          "file": "duo-outer-01-timer.png",
+          "assetId": "b9000019-2910-8490-8031-1c0ce53cef89",
+          "placementId": "f3c00019-2910-8490-8f01-f6b38e127235"
+        },
+        {
+          "file": "duo-outer-03-setup.png",
+          "assetId": "1d000019-2910-8490-8035-baade71fd846",
+          "placementId": "79000019-2910-8490-8f01-99679fba88a8"
+        },
+        {
+          "file": "duo-outer-04-history.png",
+          "assetId": "d1400019-2910-8490-8026-3ead4a087199",
+          "placementId": "75000019-2910-8490-8f31-31d20c84ee1b"
+        },
+        {
+          "file": "duo-outer-05-insights.png",
+          "assetId": "c9000019-2910-8490-802c-085cc7ead753",
+          "placementId": "69000019-2910-8490-8f25-f6e8da8fff5b"
+        },
+        {
+          "file": "duo-inner-02-directions.png",
+          "assetId": "42c00019-2910-8490-803c-c75f756df2d2",
+          "placementId": "bf000019-2910-8490-8f3b-98bd294d0f5a"
+        },
+        {
+          "file": "duo-inner-01-timer.png",
+          "assetId": "f4c00019-2910-8490-8030-f10bf1e466d4",
+          "placementId": "a3400019-2910-8490-8f02-c19103751f70"
+        },
+        {
+          "file": "duo-inner-03-setup.png",
+          "assetId": "d9000019-2910-8490-8032-2c02ff68dda4",
+          "placementId": "e3c00019-2910-8490-8f29-c9edaac641f1"
+        },
+        {
+          "file": "duo-inner-04-history.png",
+          "assetId": "bf000019-2910-8490-8031-2b31e36fa64a",
+          "placementId": "e7400019-2910-8490-8f12-034192feaf19"
+        },
+        {
+          "file": "duo-inner-05-insights.png",
+          "assetId": "20c00019-2910-8490-802f-b7c57ae939db",
+          "placementId": "d7400019-2910-8490-8f2f-0bb2d0d3182e"
+        }
+      ],
+      "additionalAssets": []
+    }
+  ],
+  "assets": [
+    {
+      "attributes": {
+        "fileName": "duo-outer-01-timer.png",
+        "specId": "205e7ab6-a23a-4ee2-b327-0a99ec2a2520",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "b9000019-2910-8490-8031-1c0ce53cef89",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-outer-02-directions.png",
+        "specId": "205e7ab6-a23a-4ee2-b327-0a99ec2a2520",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "c5400019-2910-8490-8019-1821123bf836",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-outer-03-setup.png",
+        "specId": "205e7ab6-a23a-4ee2-b327-0a99ec2a2520",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "1d000019-2910-8490-8035-baade71fd846",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-outer-04-history.png",
+        "specId": "205e7ab6-a23a-4ee2-b327-0a99ec2a2520",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "d1400019-2910-8490-8026-3ead4a087199",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-outer-05-insights.png",
+        "specId": "205e7ab6-a23a-4ee2-b327-0a99ec2a2520",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "c9000019-2910-8490-802c-085cc7ead753",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-inner-01-timer.png",
+        "specId": "b83915b8-5b87-4e63-bba5-ab3a0c439862",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "f4c00019-2910-8490-8030-f10bf1e466d4",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-inner-02-directions.png",
+        "specId": "b83915b8-5b87-4e63-bba5-ab3a0c439862",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "42c00019-2910-8490-803c-c75f756df2d2",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-inner-03-setup.png",
+        "specId": "b83915b8-5b87-4e63-bba5-ab3a0c439862",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "d9000019-2910-8490-8032-2c02ff68dda4",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-inner-04-history.png",
+        "specId": "b83915b8-5b87-4e63-bba5-ab3a0c439862",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "bf000019-2910-8490-8031-2b31e36fa64a",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "duo-inner-05-insights.png",
+        "specId": "b83915b8-5b87-4e63-bba5-ab3a0c439862",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "20c00019-2910-8490-802f-b7c57ae939db",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "search-results.png",
+        "specId": "d2ffa3b7-6c55-5cdf-8512-229d92791333",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "1c400019-2910-8490-8032-4834bbf54a3d",
+      "type": "appAssetLibraryImages"
+    },
+    {
+      "attributes": {
+        "fileName": "product-header.png",
+        "specId": "1eb43b80-e0b7-4d96-bd32-47a42a8c5fed",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "07400019-2910-8490-8033-7c9f2eaf0f0c",
+      "type": "appAssetLibraryImages"
+    }
+  ],
+  "videos": [
+    {
+      "attributes": {
+        "fileName": "spotclock-2-preview.mp4",
+        "specId": "a7adff12-330a-5fa5-97d4-c5c7953edb0c",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "50c00019-2910-8490-8129-8c57ec2f055c",
+      "type": "appAssetLibraryVideos"
+    },
+    {
+      "attributes": {
+        "fileName": "spotclock-2-inner-preview.mp4",
+        "specId": "1861fdcb-eb99-59e6-8c6c-5a07479d9a84",
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "id": "17000019-2910-8490-8123-7c6aa14398c1",
+      "type": "appAssetLibraryVideos"
+    }
+  ],
+  "subscriptionMetadataDrafts": [
+    {
+      "name": "monthly",
+      "version": {
+        "attributes": {
+          "state": "PREPARE_FOR_SUBMISSION",
+          "version": 2
+        },
+        "id": "fedc4593-6d21-49eb-a733-4a8397e81948",
+        "type": "subscriptionVersions"
+      }
+    },
+    {
+      "name": "weekly",
+      "version": {
+        "attributes": {
+          "state": "PREPARE_FOR_SUBMISSION",
+          "version": 2
+        },
+        "id": "22ac6040-6fcc-4729-8c64-0659c8642643",
+        "type": "subscriptionVersions"
+      }
+    },
+    {
+      "name": "yearly",
+      "version": {
+        "attributes": {
+          "state": "PREPARE_FOR_SUBMISSION",
+          "version": 2
+        },
+        "id": "50172bf5-6c4d-476d-a2f8-3b597b912e2e",
+        "type": "subscriptionVersions"
+      }
+    }
+  ],
+  "validation": {
+    "listing": "valid",
+    "allFourDraftScreenshotOrdersMatch": true
+  },
+  "submittedForReview": false,
+  "experimentStarted": false,
+  "conversionResults": null,
+  "readyToSubmit": false,
+  "remaining": [
+    "Capture native Pro Max and 13-inch iPad screenshots using a runtime that supports those models.",
+    "Replace retained legacy creatives across the main listing, custom pages, and treatments.",
+    "Review and submit the 2.0 build and assets; release before activating the optimization experiment."
+  ]
+}

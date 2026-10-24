@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "build": "200",
+  "sdk": "iOS 27.1",
+  "compiler": "Apple Swift 6.4",
+  "languageMode": "Swift 6",
+  "deploymentTarget": "iOS 27.1",
+  "strictConcurrency": "complete",
+  "approachableConcurrency": true,
+  "debugPreview": "passed",
+  "releaseSimulatorBuild": "passed",
+  "tests": {
+    "result": "passed",
+    "count": 5,
+    "suite": [
+      "recommendationEnginePrefersRecentMatchingPatterns",
+      "leaveNowAdvisorSubtractsEtaAndBuffer",
+      "sampleTimerDoesNotChangeRestorationState",
+      "captureUsageIsIndependentOfRealUsage",
+      "testStartExtendAndEndParkingInIsolatedStore"
+    ]
+  },
+  "manualChecks": [
+    "Duo outer display",
+    "Duo inner display",
+    "partially folded landscape arrangement",
+    "largest accessibility text size",
+    "dark appearance",
+    "light appearance",
+    "walking route from seeded sample coordinates"
+  ],
+  "existingWarnings": [
+    "Existing unstructured timeout-task warning in LocationService",
+    "Two AlarmKit stopButton initializer deprecation warnings"
+  ],
+  "unverified": [
+    "Native Pro Max simulator capture unavailable in installed runtime",
+    "Native 13-inch iPad simulator capture unavailable in installed runtime",
+    "Physical-device alarm delivery and StoreKit purchases"
+  ]
+}

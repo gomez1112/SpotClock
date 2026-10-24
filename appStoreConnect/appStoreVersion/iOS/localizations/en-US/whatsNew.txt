@@ -1,2 +1,8 @@
-Completely redesigning the app to make it faster, clearer, and easier to use. We rebuilt the interface from the ground up so you can find what you need in fewer taps, with smoother navigation and more readable screens.
+Welcome to SpotClock 2.0.
 
+• A complete redesign in warm ivory, midnight blue, and subtle brass.
+• A precise countdown with your return time clearly in view.
+• A simpler parking setup, with saved location and notes.
+• Refined parking history, insights, and walking directions.
+• A native iPhone Duo layout that brings your timer and map together when open.
+• Improved support for larger text and light and dark appearances.

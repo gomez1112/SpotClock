@@ -1,0 +1,34 @@
+{
+  "placements": [
+    {
+      "fileName": "duo-outer-01-timer.png"
+    },
+    {
+      "fileName": "duo-outer-02-directions.png"
+    },
+    {
+      "fileName": "duo-outer-03-setup.png"
+    },
+    {
+      "fileName": "duo-outer-04-history.png"
+    },
+    {
+      "fileName": "duo-outer-05-insights.png"
+    },
+    {
+      "fileName": "duo-inner-01-timer.png"
+    },
+    {
+      "fileName": "duo-inner-02-directions.png"
+    },
+    {
+      "fileName": "duo-inner-03-setup.png"
+    },
+    {
+      "fileName": "duo-inner-04-history.png"
+    },
+    {
+      "fileName": "duo-inner-05-insights.png"
+    }
+  ]
+}
